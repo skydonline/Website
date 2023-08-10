@@ -15,12 +15,13 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 import { HamburgerIcon } from "@chakra-ui/icons";
+import ThemeToggleButton from "../components/theme-toggle-button";
 
 const LinkItem = ({ href, path, children }) => {
   const active = path === href;
-  const inactiveColor = useColorModeValue("gray200", "whiteAlpha.900");
+  const inactiveColor = useColorModeValue("gray.800", "whiteAlpha.900");
   return (
-    <NextLink href={href}>
+    <NextLink href={href} passHref scroll={false}>
       <Link
         p={2}
         bg={active ? "glassTeal" : undefined}
@@ -41,7 +42,7 @@ const Navbar = (props) => {
       w="100%"
       bg={useColorModeValue("#ffffff40", "#20202380")}
       style={{ backdropFilter: "blur(10px)" }}
-      zIndex={1}
+      zIndex={2}
       {...props}
     >
       <Container
@@ -67,7 +68,7 @@ const Navbar = (props) => {
           mt={{ base: 4, nmd: 0 }}
         >
           <LinkItem href="/works" path={path}>
-            Works
+            Projects
           </LinkItem>
           <LinkItem href="/posts" path={path}>
             Posts
@@ -75,8 +76,10 @@ const Navbar = (props) => {
         </Stack>
 
         <Box flex={1} align="right">
+          <ThemeToggleButton />
+
           <Box ml={2} display={{ base: "inline-block", md: "none" }}>
-            <Menu>
+            <Menu isLazy id="navbar-menu">
               <MenuButton
                 as={IconButton}
                 icon={<HamburgerIcon />}
@@ -93,7 +96,10 @@ const Navbar = (props) => {
                 <NextLink href="/posts" passHref>
                   <MenuItem as={Link}>Posts</MenuItem>
                 </NextLink>
-                <MenuItem as={Link} href="https://">
+                <MenuItem
+                  as={Link}
+                  href="https://github.com/skydonline/Website"
+                >
                   Source Code
                 </MenuItem>
               </MenuList>
