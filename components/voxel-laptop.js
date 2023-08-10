@@ -78,7 +78,7 @@ const VoxelLaptop = () => {
         receiveShadow: false,
         castShadow: false,
       }).then((object) => {
-        object.scale.set(4, 4, 4);
+        object.scale.set(3.5, 3.5, 3.5);
         animate();
         setLoading(false);
       });
