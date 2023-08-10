@@ -16,6 +16,10 @@ const Main = ({ children, router }) => {
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>Sky Deng</title>
+        <meta name="description" content="Sky's homepage" />
+        <meta name="author" content="Sky Deng" />
+        <link rel="icon" href="/website-icon.png" type="image/png" />
+        <link rel="shortcut icon" href="/website-icon.png" type="image/png" />
       </Head>
 
       <NavBar path={router.asPath} />

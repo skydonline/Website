@@ -13,7 +13,7 @@ const VoxelLaptop = () => {
   const [loading, setLoading] = useState(true);
   const [renderer, setRenderer] = useState();
   const [_camera, setCamera] = useState();
-  const [target] = useState(new THREE.Vector3(-2.2, 0, 0));
+  const [target] = useState(new THREE.Vector3(0, 0, 0));
   const [initialCameraPosition] = useState(
     new THREE.Vector3(
       20 * Math.sin(0.2 * Math.PI),
@@ -66,6 +66,7 @@ const VoxelLaptop = () => {
       setCamera(camera);
 
       const ambientLight = new THREE.AmbientLight(0xcccccc, 1);
+      ambientLight.intensity = 7;
       scene.add(ambientLight);
 
       const controls = new OrbitControls(camera, renderer.domElement);
@@ -107,7 +108,6 @@ const VoxelLaptop = () => {
       };
 
       return () => {
-        console.log("unmount");
         cancelAnimationFrame(req);
         renderer.dispose();
       };

@@ -34,7 +34,7 @@ const Page = () => {
           mb={6}
           align="center"
         >
-          Hello, I&apos;m Sky.
+          Hi there!!
         </Box>
 
         <Box display={{ md: "flex" }}>
@@ -64,34 +64,54 @@ const Page = () => {
         </Box>
         <Section delay={0.1}>
           <Heading as="h3" variant="section-title">
-            About
+            About Me
           </Heading>
           <Paragraph>
-            Paragraph TEMPORARY{" "}
-            <NextLink passHref href="/works/TEMPWORKS" scroll={false}>
+            Welcome! My name is Sky, and I&apos;m a Computer Science student
+            enrolled at McMaster University. I&apos;ve had a knack for all
+            things computers, ever since I was young, building little Arduino
+            projects. Through my long 10 year career as a competitive swimmer, I
+            know what it means to be dedicated, hard-working and manage time
+            well. I now apply those same skills to my early career as a software
+            engineer. You can see my projects below!{" "}
+            {/* <NextLink passHref href="/works/TEMPWORKS" scroll={false}>
               <Link>TEMPORARY</Link>
             </NextLink>
+  */}
           </Paragraph>
+
           <Box align="center" mt={4}>
-            <NextLink passHref href="/works" scroll={false}>
+            <NextLink passHref href="/projects" scroll={false}>
               <Button rightIcon={<ChevronRightIcon />} colorScheme="teal">
-                Portfolio
+                Projects
               </Button>
             </NextLink>
+          </Box>
+
+          <Box mt="4">
+            <Paragraph>
+              Other than coding, I throughly enjoy swimming, going to the gym,
+              hanging out with friends and family, or learning various tidbits
+              of information on the internet.
+            </Paragraph>
           </Box>
         </Section>
 
         <Section delay={0.2}>
           <Heading as="h3" variant="section-title">
-            Bio
+            Experience
           </Heading>
           <BioSection>
-            <BioYear>2004</BioYear>
-            Born in Toronto, Canada.
+            Software Developer at Auranova Inc.
+            <BioYear>Jul - Aug &apos;23</BioYear>
           </BioSection>
           <BioSection>
-            <BioYear>2023</BioYear>
-            Worked as a Web Developer at Auranova Inc.
+            Lifeguard at McMaster University
+            <BioYear>May &apos;23 - Present</BioYear>
+          </BioSection>
+          <BioSection>
+            Student Tutor at McMaster Science Society
+            <BioYear>Dec &apos;22 - Aug &apos;23</BioYear>
           </BioSection>
         </Section>
 
@@ -152,7 +172,9 @@ const Page = () => {
           <Heading as="h3" variant="section-title">
             Contact
           </Heading>
-          <p>If you have any questions, feel free to contact me via email.</p>
+          <p>
+            If you have any questions, feel free to contact me via email below.
+          </p>
 
           <Box align="center" my={4}>
             <Button

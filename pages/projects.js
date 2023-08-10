@@ -1,10 +1,10 @@
 import { Container, Heading, SimpleGrid, Divider } from "@chakra-ui/react";
 import Section from "../components/section";
 import { WorkGridItem } from "../components/grid-item";
-import network from "../public/images/works/networkThumbnail.png";
+import network from "../public/images/projects/networkThumbnail.png";
 import Layout from "../components/layouts/article";
 
-const Works = () => {
+const Projects = () => {
   return (
     <Layout>
       <Container>
@@ -50,4 +50,4 @@ const Works = () => {
   );
 };
 
-export default Works;
+export default Projects;
