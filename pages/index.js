@@ -91,8 +91,7 @@ const Page = () => {
           <Box mt="4">
             <Paragraph>
               Other than coding, I throughly enjoy swimming, going to the gym,
-              hanging out with friends and family, or learning various tidbits
-              of information on the internet.
+              hanging out with friends and family, or learning on the internet.
             </Paragraph>
           </Box>
         </Section>
