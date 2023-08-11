@@ -1,4 +1,4 @@
-import NextLink from "next/link";
+import NextLink from 'next/link'
 import {
   Container,
   Box,
@@ -10,18 +10,19 @@ import {
   List,
   ListItem,
   Icon,
-} from "@chakra-ui/react";
-import Section from "../components/section";
-import Paragraph from "../components/paragraph";
-import { ChevronRightIcon, EmailIcon } from "@chakra-ui/icons";
-import { BioSection, BioYear } from "../components/bio";
-import Layout from "../components/layouts/article";
+  Spacer
+} from '@chakra-ui/react'
+import Section from '../components/section'
+import Paragraph from '../components/paragraph'
+import { ChevronRightIcon, EmailIcon } from '@chakra-ui/icons'
+import { BioSection, BioYear } from '../components/bio'
+import Layout from '../components/layouts/article'
 import {
   IoLogoInstagram,
   IoLogoGithub,
   IoLogoLinkedin,
-  IoLogoYoutube,
-} from "react-icons/io5";
+  IoLogoYoutube
+} from 'react-icons/io5'
 
 const Page = () => {
   return (
@@ -29,7 +30,7 @@ const Page = () => {
       <Container>
         <Box
           borderRadius="lg"
-          bg={useColorModeValue("whiteAlpha.500", "whiteAlpha.200")}
+          bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
           p={3}
           mb={6}
           align="center"
@@ -37,7 +38,7 @@ const Page = () => {
           Hi there!!
         </Box>
 
-        <Box display={{ md: "flex" }}>
+        <Box display={{ md: 'flex' }}>
           <Box flexGrow={1}>
             <Heading as="h2" variant="page-title">
               Sky Deng
@@ -73,7 +74,7 @@ const Page = () => {
             projects. Through my long 10 year career as a competitive swimmer, I
             know what it means to be dedicated, hard-working and manage time
             well. I now apply those same skills to my early career as a software
-            engineer. You can see my projects below!{" "}
+            engineer. You can see my projects below!{' '}
             {/* <NextLink passHref href="/works/TEMPWORKS" scroll={false}>
               <Link>TEMPORARY</Link>
             </NextLink>
@@ -102,14 +103,17 @@ const Page = () => {
           </Heading>
           <BioSection>
             Software Developer at Auranova Inc.
+            <Spacer />
             <BioYear>Jul - Aug &apos;23</BioYear>
           </BioSection>
           <BioSection>
             Lifeguard at McMaster University
+            <Spacer />
             <BioYear>May &apos;23 - Present</BioYear>
           </BioSection>
           <BioSection>
             Student Tutor at McMaster Science Society
+            <Spacer />
             <BioYear>Dec &apos;22 - Aug &apos;23</BioYear>
           </BioSection>
         </Section>
@@ -189,7 +193,7 @@ const Page = () => {
         </Section>
       </Container>
     </Layout>
-  );
-};
+  )
+}
 
-export default Page;
+export default Page
