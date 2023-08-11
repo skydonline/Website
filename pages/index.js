@@ -104,17 +104,17 @@ const Page = () => {
           <BioSection>
             Software Developer at Auranova Inc.
             <Spacer />
-            <BioYear>Jul - Aug &apos;23</BioYear>
+            <BioYear>Jul - Aug&apos;23</BioYear>
           </BioSection>
           <BioSection>
             Lifeguard at McMaster University
             <Spacer />
-            <BioYear>May &apos;23 - Present</BioYear>
+            <BioYear>May&apos;23 - Present</BioYear>
           </BioSection>
           <BioSection>
             Student Tutor at McMaster Science Society
             <Spacer />
-            <BioYear>Dec &apos;22 - Aug &apos;23</BioYear>
+            <BioYear>Dec&apos;22 - Aug&apos;23</BioYear>
           </BioSection>
         </Section>
 
