@@ -5,20 +5,35 @@ import {
   List,
   ListItem,
   AspectRatio,
+  SimpleGrid,
 } from "@chakra-ui/react";
 import { ExternalLinkIcon } from "@chakra-ui/icons";
-import { Title, Meta } from "../../components/projects";
+import { Title, Meta, WorkImage } from "../../components/projects";
 import P from "../../components/paragraph";
 import Layout from "../../components/layouts/article";
 
 const Work = () => (
-  <Layout title="Pecunia">
+  <Layout title="Network">
+    {/* CHANGE NAME OF TITLE*/}
     <Container>
       <Title>
-        Pecunia <Badge>August 2023</Badge>
+        PROJECT NAME <Badge>PROJECT DATE</Badge>
       </Title>
-      <P>WORK IN PROGRESS</P>
+      <P>PROJECT DESCRIPTION</P>
       <List ml={4} my={4}>
+        <ListItem>
+          <Meta>Platform</Meta>
+          <span>Windows/macOS/Linux/iOS/Android</span>
+        </ListItem>
+
+        {/* change link href */}
+        <ListItem>
+          <Meta>External Link Name</Meta>
+          <Link href="">
+            Name of link <ExternalLinkIcon mx="2px" />
+          </Link>
+        </ListItem>
+
         <ListItem>
           <Meta>Source Code</Meta>
           <Link
@@ -32,19 +47,28 @@ const Work = () => (
 
         <ListItem>
           <Meta>Stack</Meta>
-          <span>
-            Node.js, Express.js, Vite.js, MongoDB, Redux Toolkit, Materials UI
-          </span>
+          <span>Django, Python, JavaScript, Bootstrap, HTML/CSS</span>
         </ListItem>
+
         <ListItem>
           <Meta>Concepts</Meta>
           <span>
-            Machine Learning, REST APIs, Responsive Web Design, Data Privacy and
-            Security
+            REST APIs, Responsive Web Design, User Authentication, Data Privacy
+            and Security
           </span>
         </ListItem>
       </List>
 
+      {/* singular big image */}
+      <WorkImage src="/images/projects/pecuniaThumbnail.png" alt="Pecunia" />
+
+      {/* for multiple images in a row */}
+      <SimpleGrid columns={2} gap={2}>
+        <WorkImage src="/images/projects/website-v1-2.gif" alt="Website-V1" />
+        <WorkImage src="/images/projects/website-v1-3.gif" alt="Website-V1" />
+      </SimpleGrid>
+
+      {/* embedded YouTube player */}
       <AspectRatio maxW="640px" ratio={1.7} my={4}>
         <iframe
           src="https://www.youtube.com/embed/rjhiqYT8x7E"
