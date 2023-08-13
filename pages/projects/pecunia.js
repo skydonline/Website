@@ -29,15 +29,14 @@ const Work = () => (
 
         <ListItem>
           <Meta>Stack</Meta>
-          <span>
-            Node.js, Express.js, Vite.js, MongoDB, Redux Toolkit, Materials UI
-          </span>
+          <span>MongoDB, Express.js, React (Material UI), Node.js</span>
         </ListItem>
         <ListItem>
           <Meta>Concepts</Meta>
           <span>
-            Machine Learning, REST APIs, Responsive Web Design, Data Privacy and
-            Security
+            Machine Learning, REST APIs, Responsive Web Design, Data Structures
+            and Algorithms, Data Management, Privacy, Security and
+            Visualization/Modeling
           </span>
         </ListItem>
       </List>
