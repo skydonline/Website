@@ -4,12 +4,12 @@ import {
   Link,
   List,
   ListItem,
-  AspectRatio,
-} from "@chakra-ui/react";
-import { ExternalLinkIcon } from "@chakra-ui/icons";
-import { Title, Meta } from "../../components/projects";
-import P from "../../components/paragraph";
-import Layout from "../../components/layouts/article";
+  AspectRatio
+} from '@chakra-ui/react'
+import { ExternalLinkIcon } from '@chakra-ui/icons'
+import { Title, Meta } from '../../components/projects'
+import P from '../../components/paragraph'
+import Layout from '../../components/layouts/article'
 
 const Work = () => (
   <Layout title="Network">
@@ -57,6 +57,6 @@ const Work = () => (
       </AspectRatio>
     </Container>
   </Layout>
-);
+)
 
-export default Work;
+export default Work

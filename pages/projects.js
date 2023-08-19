@@ -1,11 +1,11 @@
-import { Container, Heading, SimpleGrid, Divider } from "@chakra-ui/react";
-import Section from "../components/section";
-import { WorkGridItem } from "../components/grid-item";
-import Layout from "../components/layouts/article";
+import { Container, Heading, SimpleGrid, Divider } from '@chakra-ui/react'
+import Section from '../components/section'
+import { WorkGridItem } from '../components/grid-item'
+import Layout from '../components/layouts/article'
 
-import network from "../public/images/projects/networkThumbnail.png";
-import website from "../public/images/projects/website-v1Thumbnail.png";
-import pecunia from "../public/images/projects/pecuniaThumbnail.png";
+import network from '../public/images/projects/networkThumbnail.png'
+import website from '../public/images/projects/website-v1Thumbnail.png'
+import pecunia from '../public/images/projects/pecuniaThumbnail.png'
 
 const Projects = () => {
   return (
@@ -18,8 +18,8 @@ const Projects = () => {
         <SimpleGrid columns={[1, 1, 2]} gap={6}>
           <Section>
             <WorkGridItem id="pecunia" thumbnail={pecunia} title="Pecunia">
-              A personal finance application that provides predictions on future
-              balances based on machine learning.
+              A personal finance dashboard application that provides predictions
+              on future income based on machine learning.
             </WorkGridItem>
           </Section>
           <Section>
@@ -59,7 +59,7 @@ const Projects = () => {
         </SimpleGrid>
       </Container>
     </Layout>
-  );
-};
+  )
+}
 
-export default Projects;
+export default Projects
