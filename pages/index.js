@@ -23,6 +23,7 @@ import {
   IoLogoLinkedin,
   IoLogoYoutube
 } from 'react-icons/io5'
+import { SocialListItem } from '../components/list-item'
 
 const Page = () => {
   return (
@@ -75,7 +76,9 @@ const Page = () => {
             know what it means to be dedicated, hard-working and manage time
             well. I now apply those same skills to my early career as a software
             engineer. You can see my projects below!{' '}
-            {/* <NextLink passHref href="/works/TEMPWORKS" scroll={false}>
+            {/* Uncomment for adding links to paragraph
+            
+            <NextLink passHref href="/works/TEMPWORKS" scroll={false}>
               <Link>TEMPORARY</Link>
             </NextLink>
   */}
@@ -93,7 +96,16 @@ const Page = () => {
             <Paragraph>
               Other than coding, I throughly enjoy swimming, going to the gym,
               hanging out with friends and family, or learning on the internet.
+              I like to document my learning in the posts section of this
+              website, which you can find below.
             </Paragraph>
+            <Box align="center" mt={4}>
+              <NextLink passHref href="/posts" scroll={false}>
+                <Button rightIcon={<ChevronRightIcon />} colorScheme="teal">
+                  Posts
+                </Button>
+              </NextLink>
+            </Box>
           </Box>
         </Section>
 
@@ -123,53 +135,33 @@ const Page = () => {
             Socials
           </Heading>
           <List>
-            <ListItem>
-              <Link target="_blank" href="www.linkedin.com/in/skydeng">
-                <Button
-                  leftIcon={<Icon as={IoLogoLinkedin} />}
-                  colorScheme="teal"
-                  variant="ghost"
-                >
-                  Sky Deng
-                </Button>
-              </Link>
-            </ListItem>
+            <SocialListItem
+              link="https://www.linkedin.com/in/skydeng"
+              icon={IoLogoLinkedin}
+            >
+              Sky Deng
+            </SocialListItem>
 
-            <ListItem>
-              <Link target="_blank" href="https://github.com/skydonline">
-                <Button
-                  leftIcon={<Icon as={IoLogoGithub} />}
-                  colorScheme="teal"
-                  variant="ghost"
-                >
-                  @skydonline
-                </Button>
-              </Link>
-            </ListItem>
+            <SocialListItem
+              link="https://github.com/skydonline"
+              icon={IoLogoGithub}
+            >
+              @skydonline
+            </SocialListItem>
 
-            <ListItem>
-              <Link target="_blank" href="https://www.instagram.com/skyd_2004/">
-                <Button
-                  leftIcon={<Icon as={IoLogoInstagram} />}
-                  colorScheme="teal"
-                  variant="ghost"
-                >
-                  @skyd_2004
-                </Button>
-              </Link>
-            </ListItem>
+            <SocialListItem
+              link="https://www.instagram.com/skyd_2004/"
+              icon={IoLogoInstagram}
+            >
+              @skyd_2004
+            </SocialListItem>
 
-            <ListItem>
-              <Link target="_blank" href="https://youtube.com/@skyd.online">
-                <Button
-                  leftIcon={<Icon as={IoLogoYoutube} />}
-                  colorScheme="teal"
-                  variant="ghost"
-                >
-                  skyd.online
-                </Button>
-              </Link>
-            </ListItem>
+            <SocialListItem
+              link="https://youtube.com/@skyd.online"
+              icon={IoLogoYoutube}
+            >
+              skyd.online
+            </SocialListItem>
           </List>
 
           <Heading as="h3" variant="section-title">
