@@ -13,7 +13,7 @@ import P from '../../../components/paragraph'
 import Layout from '../../../components/layouts/article'
 import Section from '../../../components/section'
 import { PostGridItem } from '../../../components/grid-item'
-import meta from '../../../public/images/posts/metaReactThumbnail.png'
+import introMobileDev from '../../../public/images/posts/intro-mobile-dev.jpeg'
 
 const Work = () => (
   <Layout title="Meta React Native Specialization">
@@ -59,7 +59,7 @@ const Work = () => (
         <Section>
           <PostGridItem
             id="/meta-react-native-specialization/intro-mobile-dev"
-            thumbnail={meta}
+            thumbnail={introMobileDev}
             title="Introduction to Mobile Development"
           >
             App & Mobile Development, React, HTML, CSS

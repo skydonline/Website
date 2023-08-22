@@ -5,17 +5,12 @@ import {
   Heading,
   Image,
   useColorModeValue,
-  Link,
   Button,
-  List,
-  ListItem,
-  Icon,
-  Spacer
+  List
 } from '@chakra-ui/react'
 import Section from '../components/section'
 import Paragraph from '../components/paragraph'
 import { ChevronRightIcon, EmailIcon } from '@chakra-ui/icons'
-import { BioSection, BioYear } from '../components/bio'
 import Layout from '../components/layouts/article'
 import {
   IoLogoInstagram,
@@ -23,7 +18,7 @@ import {
   IoLogoLinkedin,
   IoLogoYoutube
 } from 'react-icons/io5'
-import { SocialListItem } from '../components/list-item'
+import { BioItem, SocialListItem } from '../components/home'
 
 const Page = () => {
   return (
@@ -76,7 +71,7 @@ const Page = () => {
             know what it means to be dedicated, hard-working and manage time
             well. I now apply those same skills to my early career as a software
             engineer. You can see my projects below!{' '}
-            {/* Uncomment for adding links to paragraph
+            {/* Adding links to paragraph
             
             <NextLink passHref href="/works/TEMPWORKS" scroll={false}>
               <Link>TEMPORARY</Link>
@@ -113,21 +108,18 @@ const Page = () => {
           <Heading as="h3" variant="section-title">
             Experience
           </Heading>
-          <BioSection>
-            Software Developer at Auranova Inc.
-            <Spacer />
-            <BioYear>Jul&apos;23 - Aug&apos;23</BioYear>
-          </BioSection>
-          <BioSection>
-            Lifeguard at McMaster University
-            <Spacer />
-            <BioYear>May&apos;23 - Present</BioYear>
-          </BioSection>
-          <BioSection>
-            Tutor at McMaster Science Society
-            <Spacer />
-            <BioYear>Dec&apos;22 - Aug&apos;23</BioYear>
-          </BioSection>
+          <BioItem
+            title="Software Developer at Auranova Inc."
+            date="Jul'23 - Aug'23"
+          />
+          <BioItem
+            title="Lifeguard at McMaster University"
+            date="May'23 - Present"
+          />
+          <BioItem
+            title="Tutor at McMaster Science Society"
+            date="Dec'22 - Aug'23"
+          />
         </Section>
 
         <Section delay={0.3}>

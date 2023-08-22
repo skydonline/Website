@@ -1,12 +1,5 @@
-import { ChevronRightIcon } from '@chakra-ui/icons'
-import { Button, Link, ListIcon, ListItem, Icon } from '@chakra-ui/react'
-
-export const PostListItem = ({ children }) => (
-  <ListItem>
-    <ListIcon as={ChevronRightIcon} />
-    {children}
-  </ListItem>
-)
+import { Button, Link, ListItem, Icon, Spacer } from '@chakra-ui/react'
+import { BioSection, BioYear } from './bio'
 
 export const SocialListItem = ({ link, icon, children }) => (
   <ListItem>
@@ -16,4 +9,12 @@ export const SocialListItem = ({ link, icon, children }) => (
       </Button>
     </Link>
   </ListItem>
+)
+
+export const BioItem = ({ title, date }) => (
+  <BioSection>
+    {title}
+    <Spacer />
+    <BioYear>{date}</BioYear>
+  </BioSection>
 )
