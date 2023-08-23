@@ -6,7 +6,8 @@ import {
   Link,
   Badge,
   ListItem,
-  ListIcon
+  ListIcon,
+  Text
 } from '@chakra-ui/react'
 import { ChevronRightIcon } from '@chakra-ui/icons'
 
@@ -41,4 +42,12 @@ export const PostListItem = ({ children }) => (
     <ListIcon as={ChevronRightIcon} />
     {children}
   </ListItem>
+)
+
+export const ImageCaption = ({ children }) => (
+  <Box width="100%" textAlign="center">
+    <Text as="i" fontSize={12}>
+      {children}
+    </Text>
+  </Box>
 )
