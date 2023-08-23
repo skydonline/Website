@@ -4,7 +4,6 @@ import { ImageCaption, Title } from '../../../components/posts'
 import P from '../../../components/paragraph'
 import Layout from '../../../components/layouts/article'
 import { PostListItem } from '../../../components/posts'
-
 import certificate from '../../../public/images/posts/intro-mobile-dev-cert.jpeg'
 import html from '../../../public/images/posts/html-dom.png'
 import css from '../../../public/images/posts/css.png'

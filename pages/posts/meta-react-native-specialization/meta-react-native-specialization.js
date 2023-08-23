@@ -13,7 +13,9 @@ import P from '../../../components/paragraph'
 import Layout from '../../../components/layouts/article'
 import Section from '../../../components/section'
 import { PostGridItem } from '../../../components/grid-item'
-import introMobileDev from '../../../public/images/posts/intro-mobile-dev.jpeg'
+
+import programJavaScript from '../../../public/images/posts/program-javascript.png'
+import introMobileDev from '../../../public/images/posts/intro-mobile-dev.png'
 
 const Work = () => (
   <Layout title="Meta React Native Specialization">
@@ -63,6 +65,16 @@ const Work = () => (
             title="Introduction to Mobile Development"
           >
             App & Mobile Development, React, HTML, CSS
+          </PostGridItem>
+        </Section>
+
+        <Section>
+          <PostGridItem
+            id="/meta-react-native-specialization/program-javascript"
+            thumbnail={programJavaScript}
+            title="Programming with JavaScript"
+          >
+            JavaScript, JavaScript technologies, Jest
           </PostGridItem>
         </Section>
       </SimpleGrid>
