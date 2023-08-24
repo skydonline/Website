@@ -1,9 +1,15 @@
-import { Box, Container, Heading, List, Text } from '@chakra-ui/react'
+import { Box, Container, List } from '@chakra-ui/react'
 import Image from 'next/image'
 import { ImageCaption, Title } from '../../../components/posts'
 import P from '../../../components/paragraph'
 import Layout from '../../../components/layouts/article'
-import { PostListItem } from '../../../components/posts'
+import {
+  PostListItem,
+  PSpacing,
+  PostBigHeading,
+  PostSmallHeading,
+  PostImage
+} from '../../../components/posts'
 
 import certificate from '../../../public/images/posts/intro-mobile-dev-cert.jpeg'
 import html from '../../../public/images/posts/html-dom.png'
@@ -13,25 +19,21 @@ const Work = () => (
   <Layout title="Meta React Native Specialization">
     <Container>
       <Title>Introduction to Mobile Development</Title>
-      <Heading as="h3" fontSize={20} mb={4} mt={6}>
-        Main Learnings:
-      </Heading>
+      <PostBigHeading>Main Learnings:</PostBigHeading>
       <List>
         <PostListItem>Role of a cross-platform mobile developer</PostListItem>
         <PostListItem>Fundamentals about React and React Native</PostListItem>
         <PostListItem>Basics of HTML and CSS</PostListItem>
       </List>
 
-      <Heading as="h3" fontSize={20} mb={4} mt={6}>
-        Content:
-      </Heading>
+      <PostBigHeading>Content:</PostBigHeading>
       <P>
         Mobile development is crucial in the modern world, since so many people
         have mobile devices. We want to ensure that they have a great user
         experience on their device, regardless of operating system or device
         type.
       </P>
-      <Box mt={2} />
+      <PSpacing />
       <P>
         The difficulty lies in creating a great application for both the web and
         mobile devices. We strive to have great UI/UX on both, but each
@@ -40,9 +42,7 @@ const Work = () => (
         accessing it.
       </P>
 
-      <Heading as="h5" fontSize={17} mt={4}>
-        Web
-      </Heading>
+      <PostSmallHeading>Web</PostSmallHeading>
       <P>
         A webpage is the document displayed on your screen, whereas a website is
         a collection of different webpages. Each webpage consists of 3 main
@@ -51,7 +51,7 @@ const Work = () => (
         physical structure (e.g. color, size), and JavaScript controls the user
         interaction (e.g. animations, dynamic UI).
       </P>
-      <Box mt={2} />
+      <PSpacing />
       <P>
         A server, as the name implies, provides services and runs applications
         to other computers. These can be anything, such as websites or messaging
@@ -59,6 +59,7 @@ const Work = () => (
         requests from client (the person on another computer), by sending back a
         response that contains the website&apos;s content.
       </P>
+      <PSpacing />
       <P>
         A web browser allows the user to browse the World Wide Web by sending a
         request to the web server, and then displays the web server response
@@ -69,6 +70,7 @@ const Work = () => (
         Protocol Secure (HTTPS). This process is called the request response
         cycle. Think of it as computers having a conversation.
       </P>
+      <PSpacing />
       <P>
         JavaScript is considered the language of the web. It is on every
         website, enabling them to have interactive elements and dynamic content
@@ -81,9 +83,7 @@ const Work = () => (
         users device.
       </P>
 
-      <Heading as="h5" fontSize={17} mt={4}>
-        Mobile Development
-      </Heading>
+      <PostSmallHeading>Mobile Development</PostSmallHeading>
       <P>
         The most popular mobile device operating systems in the world, iOS and
         Android, run on different languages. Most iOS applications run on Swift,
@@ -95,9 +95,7 @@ const Work = () => (
         concise syntax (being able to write less code and be more readable).
       </P>
 
-      <Heading as="h5" fontSize={17} mt={4}>
-        HTML
-      </Heading>
+      <PostSmallHeading>HTML</PostSmallHeading>
       <P>
         Hyper Text Markup Language (HTML) defines the structure of the webpage.
         It is the actual components of the webpage, such as text, images,
@@ -106,20 +104,12 @@ const Work = () => (
         HTML file.
       </P>
 
-      <Image
-        className="grid-item-thumbnail"
-        src={html}
-        alt="HTML DOM structure"
-        placeholder="blur"
-        loading="lazy"
-      />
+      <PostImage src={html} alt="HTML DOM structure" />
       <ImageCaption>
         Left: Example HTML, Right: DOM Structure of HTML
       </ImageCaption>
 
-      <Heading as="h5" fontSize={17} mt={4}>
-        CSS
-      </Heading>
+      <PostSmallHeading>CSS</PostSmallHeading>
       <P>
         Cascading Style Sheets (CSS) defines the styling of the components on
         the page. This includes, but is not limited to, color, placement, fonts.
@@ -129,18 +119,10 @@ const Work = () => (
         properties, specifying how they are applied to the element.
       </P>
 
-      <Image
-        className="grid-item-thumbnail"
-        src={css}
-        alt="CSS Rule"
-        placeholder="blur"
-        loading="lazy"
-      />
+      <PostImage src={css} alt="CSS Rule" />
       <ImageCaption>Example of a single CSS rule</ImageCaption>
 
-      <Heading as="h5" fontSize={17} mt={4}>
-        Cross-Platform Development
-      </Heading>
+      <PostSmallHeading>Cross-Platform Development</PostSmallHeading>
       <P>
         Cross-platform development means producing a single application that can
         be deployed or used on multiple operating systems, such as iOS, Android
@@ -154,9 +136,7 @@ const Work = () => (
         higher levels of efficiency.
       </P>
 
-      <Heading as="h5" fontSize={17} mt={4}>
-        React & React Native
-      </Heading>
+      <PostSmallHeading>React & React Native</PostSmallHeading>
       <P>
         React is a modern JavaScript library that is used to construct websites
         and UI. React Native is a framework that enables cross-platform app
@@ -168,7 +148,7 @@ const Work = () => (
         the most popular operating systems in the world. No need for 2
         codebases!
       </P>
-      <Box mt={2} />
+      <PSpacing />
       <P>
         React is incredibly efficient due to it usage of components. Components
         are a small piece if the user interface, such as the navigation bar.
@@ -178,7 +158,7 @@ const Work = () => (
         workflow, allowing you to write more concise code that has greater
         functionality.
       </P>
-      <Box mt={2} />
+      <PSpacing />
       <P>
         Additionally, React builds its own representation of the browser DOM in
         memory, called the Virtual DOM. When components are updated, React
@@ -189,7 +169,7 @@ const Work = () => (
         more efficient than updating the entire DOM everytime there is a change
         to a component, since updates only happen to updated components.
       </P>
-      <Box mt={2} />
+      <PSpacing />
       <P>
         React Native allows for mobile developers to utilize one code base to
         publish an iOS and Android application. Instead of creating 2 code
@@ -199,15 +179,7 @@ const Work = () => (
         focus more on pushing out new features for the application.
       </P>
 
-      <Box mt={6} mb={4}>
-        <Image
-          className="grid-item-thumbnail"
-          src={certificate}
-          alt="certification"
-          placeholder="blur"
-          loading="lazy"
-        />
-      </Box>
+      <PostImage src={certificate} alt="certification" />
     </Container>
   </Layout>
 )
