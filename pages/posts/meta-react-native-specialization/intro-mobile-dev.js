@@ -1,11 +1,9 @@
 import { Box, Container, List } from '@chakra-ui/react'
-import Image from 'next/image'
 import { ImageCaption, Title } from '../../../components/posts'
 import P from '../../../components/paragraph'
 import Layout from '../../../components/layouts/article'
 import {
   PostListItem,
-  PSpacing,
   PostBigHeading,
   PostSmallHeading,
   PostImage
@@ -33,7 +31,6 @@ const Work = () => (
         experience on their device, regardless of operating system or device
         type.
       </P>
-      <PSpacing />
       <P>
         The difficulty lies in creating a great application for both the web and
         mobile devices. We strive to have great UI/UX on both, but each
@@ -51,7 +48,6 @@ const Work = () => (
         physical structure (e.g. color, size), and JavaScript controls the user
         interaction (e.g. animations, dynamic UI).
       </P>
-      <PSpacing />
       <P>
         A server, as the name implies, provides services and runs applications
         to other computers. These can be anything, such as websites or messaging
@@ -59,7 +55,6 @@ const Work = () => (
         requests from client (the person on another computer), by sending back a
         response that contains the website&apos;s content.
       </P>
-      <PSpacing />
       <P>
         A web browser allows the user to browse the World Wide Web by sending a
         request to the web server, and then displays the web server response
@@ -70,7 +65,6 @@ const Work = () => (
         Protocol Secure (HTTPS). This process is called the request response
         cycle. Think of it as computers having a conversation.
       </P>
-      <PSpacing />
       <P>
         JavaScript is considered the language of the web. It is on every
         website, enabling them to have interactive elements and dynamic content
@@ -148,7 +142,6 @@ const Work = () => (
         the most popular operating systems in the world. No need for 2
         codebases!
       </P>
-      <PSpacing />
       <P>
         React is incredibly efficient due to it usage of components. Components
         are a small piece if the user interface, such as the navigation bar.
@@ -158,7 +151,6 @@ const Work = () => (
         workflow, allowing you to write more concise code that has greater
         functionality.
       </P>
-      <PSpacing />
       <P>
         Additionally, React builds its own representation of the browser DOM in
         memory, called the Virtual DOM. When components are updated, React
@@ -169,7 +161,6 @@ const Work = () => (
         more efficient than updating the entire DOM everytime there is a change
         to a component, since updates only happen to updated components.
       </P>
-      <PSpacing />
       <P>
         React Native allows for mobile developers to utilize one code base to
         publish an iOS and Android application. Instead of creating 2 code

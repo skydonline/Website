@@ -7,10 +7,19 @@ import {
   Badge,
   ListItem,
   ListIcon,
-  Text
+  Text,
+  Code,
+  TableContainer,
+  Table,
+  Thead,
+  Tr,
+  Th,
+  Tbody
 } from '@chakra-ui/react'
 import { ChevronRightIcon } from '@chakra-ui/icons'
 import NextImage from 'next/image'
+import SyntaxHighlighter from 'react-syntax-highlighter'
+import { atomOneDark } from 'react-syntax-highlighter/dist/esm/styles/hljs'
 
 export const Title = ({ children }) => (
   <Box>
@@ -53,8 +62,6 @@ export const ImageCaption = ({ children }) => (
   </Box>
 )
 
-export const PSpacing = () => <Box mt={2} />
-
 export const PostBigHeading = ({ children }) => (
   <Heading as="h3" fontSize={20} mb={4} mt={6}>
     {children}
@@ -77,4 +84,127 @@ export const PostImage = ({ src, alt }) => (
       loading="lazy"
     />
   </Box>
+)
+
+// Source: https://github.com/react-syntax-highlighter/react-syntax-highlighter#readme
+export const CodeBox = ({ language, children }) => (
+  <Box mt={2} mb={2}>
+    <SyntaxHighlighter language={language} style={atomOneDark}>
+      {children}
+    </SyntaxHighlighter>
+  </Box>
+)
+
+// IC shrot for "inline code", to make code cleaner
+export const IC = ({ children }) => (
+  <Code style={{ textIndent: '0' }}>{children}</Code>
+)
+
+const headerCellStyle = {
+  border: '2px solid',
+  textAlign: 'center',
+  fontSize: '14px',
+  textTransform: 'none'
+}
+
+const dataCellStyle = {
+  borderBottom: '1px solid',
+  borderLeft: '1px solid',
+  borderRight: '1px solid',
+  textAlign: 'center',
+  textTransform: 'none'
+}
+
+export const DataTypesTable = () => (
+  <TableContainer mt={4}>
+    <Table>
+      <Thead>
+        <Tr>
+          <Th style={headerCellStyle}>Data Type</Th>
+          <Th style={headerCellStyle}>Examples</Th>
+        </Tr>
+      </Thead>
+      <Tbody>
+        <Tr>
+          <Th style={dataCellStyle}>String</Th>
+          <Th style={dataCellStyle}>
+            &quot;Hello, World!&quot;, &quot;JavaScript&quot;
+          </Th>
+        </Tr>
+        <Tr>
+          <Th style={dataCellStyle}>Number</Th>
+          <Th style={dataCellStyle}>1, 2.3</Th>
+        </Tr>
+        <Tr>
+          <Th style={dataCellStyle}>Boolean</Th>
+          <Th style={dataCellStyle}>true, false</Th>
+        </Tr>
+      </Tbody>
+    </Table>
+  </TableContainer>
+)
+
+export const OperatorTable = () => (
+  <TableContainer mt={4}>
+    <Table>
+      <Thead>
+        <Tr>
+          <Th style={headerCellStyle}>Operator</Th>
+          <Th style={headerCellStyle}>Meaning</Th>
+          <Th style={headerCellStyle}>Example</Th>
+          <Th style={headerCellStyle}>Result</Th>
+        </Tr>
+      </Thead>
+      <Tbody>
+        <Tr>
+          <Th style={dataCellStyle}>+</Th>
+          <Th style={dataCellStyle}>Addition</Th>
+          <Th style={dataCellStyle}>1 + 1</Th>
+          <Th style={dataCellStyle}>2</Th>
+        </Tr>
+        <Tr>
+          <Th style={dataCellStyle}>-</Th>
+          <Th style={dataCellStyle}>Subtraction</Th>
+          <Th style={dataCellStyle}>2 - 2</Th>
+          <Th style={dataCellStyle}>0</Th>
+        </Tr>
+        <Tr>
+          <Th style={dataCellStyle}>*</Th>
+          <Th style={dataCellStyle}>Multiplication</Th>
+          <Th style={dataCellStyle}>3 * 3</Th>
+          <Th style={dataCellStyle}>9</Th>
+        </Tr>
+        <Tr>
+          <Th style={dataCellStyle}>/</Th>
+          <Th style={dataCellStyle}>Division</Th>
+          <Th style={dataCellStyle}>4 / 4</Th>
+          <Th style={dataCellStyle}>1</Th>
+        </Tr>
+        <Tr>
+          <Th style={dataCellStyle}>&gt;</Th>
+          <Th style={dataCellStyle}>Greater Than</Th>
+          <Th style={dataCellStyle}>5 &gt; 5</Th>
+          <Th style={dataCellStyle}>false</Th>
+        </Tr>
+        <Tr>
+          <Th style={dataCellStyle}>&lt;</Th>
+          <Th style={dataCellStyle}>Less Than</Th>
+          <Th style={dataCellStyle}>5 &lt; 6</Th>
+          <Th style={dataCellStyle}>true</Th>
+        </Tr>
+        <Tr>
+          <Th style={dataCellStyle}>==</Th>
+          <Th style={dataCellStyle}>Equal To</Th>
+          <Th style={dataCellStyle}>7 == 7</Th>
+          <Th style={dataCellStyle}>true</Th>
+        </Tr>
+        <Tr>
+          <Th style={dataCellStyle}>!=</Th>
+          <Th style={dataCellStyle}>Not Equal To</Th>
+          <Th style={dataCellStyle}>8 != 8</Th>
+          <Th style={dataCellStyle}>false</Th>
+        </Tr>
+      </Tbody>
+    </Table>
+  </TableContainer>
 )
