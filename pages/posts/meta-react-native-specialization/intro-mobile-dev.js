@@ -1,4 +1,4 @@
-import { Box, Container, List } from '@chakra-ui/react'
+import { Box, Container, List, Link } from '@chakra-ui/react'
 import { ImageCaption, Title } from '../../../components/posts'
 import P from '../../../components/paragraph'
 import Layout from '../../../components/layouts/article'
@@ -24,7 +24,31 @@ const Work = () => (
         <PostListItem>Basics of HTML and CSS</PostListItem>
       </List>
 
-      <PostBigHeading>Content:</PostBigHeading>
+      <PostBigHeading>Table of Contents</PostBigHeading>
+      <List>
+        <PostListItem>
+          <Link href="#web">Web</Link>
+        </PostListItem>
+        <PostListItem>
+          <Link href="#mobile-development">Mobile Development</Link>
+        </PostListItem>
+        <PostListItem>
+          <Link href="#html">HTML</Link>
+        </PostListItem>
+        <PostListItem>
+          <Link href="#css">CSS</Link>
+        </PostListItem>
+        <PostListItem>
+          <Link href="#cross-platform-development">
+            Cross-Platform Development
+          </Link>
+        </PostListItem>
+        <PostListItem>
+          <Link href="#react-&-react-native">React & React Native</Link>
+        </PostListItem>
+      </List>
+
+      <PostBigHeading>Introduction:</PostBigHeading>
       <P>
         Mobile development is crucial in the modern world, since so many people
         have mobile devices. We want to ensure that they have a great user
@@ -39,7 +63,7 @@ const Work = () => (
         accessing it.
       </P>
 
-      <PostSmallHeading>Web</PostSmallHeading>
+      <PostSmallHeading id="web">Web</PostSmallHeading>
       <P>
         A webpage is the document displayed on your screen, whereas a website is
         a collection of different webpages. Each webpage consists of 3 main
@@ -77,7 +101,9 @@ const Work = () => (
         users device.
       </P>
 
-      <PostSmallHeading>Mobile Development</PostSmallHeading>
+      <PostSmallHeading id="mobile-development">
+        Mobile Development
+      </PostSmallHeading>
       <P>
         The most popular mobile device operating systems in the world, iOS and
         Android, run on different languages. Most iOS applications run on Swift,
@@ -89,7 +115,7 @@ const Work = () => (
         concise syntax (being able to write less code and be more readable).
       </P>
 
-      <PostSmallHeading>HTML</PostSmallHeading>
+      <PostSmallHeading id="html">HTML</PostSmallHeading>
       <P>
         Hyper Text Markup Language (HTML) defines the structure of the webpage.
         It is the actual components of the webpage, such as text, images,
@@ -103,7 +129,7 @@ const Work = () => (
         Left: Example HTML, Right: DOM Structure of HTML
       </ImageCaption>
 
-      <PostSmallHeading>CSS</PostSmallHeading>
+      <PostSmallHeading id="css">CSS</PostSmallHeading>
       <P>
         Cascading Style Sheets (CSS) defines the styling of the components on
         the page. This includes, but is not limited to, color, placement, fonts.
@@ -116,7 +142,9 @@ const Work = () => (
       <PostImage src={css} alt="CSS Rule" />
       <ImageCaption>Example of a single CSS rule</ImageCaption>
 
-      <PostSmallHeading>Cross-Platform Development</PostSmallHeading>
+      <PostSmallHeading id="cross-platform-development">
+        Cross-Platform Development
+      </PostSmallHeading>
       <P>
         Cross-platform development means producing a single application that can
         be deployed or used on multiple operating systems, such as iOS, Android
@@ -130,7 +158,9 @@ const Work = () => (
         higher levels of efficiency.
       </P>
 
-      <PostSmallHeading>React & React Native</PostSmallHeading>
+      <PostSmallHeading id="react-&-react-native">
+        React & React Native
+      </PostSmallHeading>
       <P>
         React is a modern JavaScript library that is used to construct websites
         and UI. React Native is a framework that enables cross-platform app

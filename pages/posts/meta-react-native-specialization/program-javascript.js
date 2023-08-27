@@ -107,11 +107,44 @@ var object = {
 // assign a new key to "object" named newKey, which has value of "adding new value"
 object.newKey = "adding new value";
 
-// accesses the value stored in "language" key, prints "JavaScript"
+// access the value stored in "language" key, prints "JavaScript"
 console.log(object.language);
 
-// accesses the value stored in "property with space" key, prints "value"
+// access the value stored in "property with space" key, prints "value"
 console.log(object["property with space"])`
+
+const objectFunctionCode = `var computer = {
+  example: function() {
+    console.log("A function");
+  }
+}
+
+computer.new = function() {
+  console.log("New function");
+}
+
+computer.example()  // prints "A function"
+computer.new()  // prints "New function"`
+
+const bugErrorExampleCode = `console.log("1" + 2);  // prints "12" instead of 3
+console.log(c);  // reference error: c is never defined
+var word = "Hello;  // syntax error: the " was never closed
+(1).pop  // type error: not a function`
+
+const tryCatchThrowCode = `try {
+  console.log(a); // will try to execute this line of code
+}
+catch (err) {
+  // only executes if the try block creates an error
+  console.log(err); // prints the error to the console
+}
+
+try {
+  throw new Error("New error"); // executes catch block
+}
+catch (err) {
+  console.log(err); // prints "New error"
+}`
 
 const Work = () => (
   <Layout title="Programming with JavaScript">
@@ -126,7 +159,38 @@ const Work = () => (
         <PostListItem>Testing using Jest</PostListItem>
       </List>
 
-      <PostBigHeading>Content:</PostBigHeading>
+      <PostBigHeading>Table of Contents</PostBigHeading>
+      <List>
+        <PostListItem>
+          <Link href="#variables">Variables</Link>
+        </PostListItem>
+        <PostListItem>
+          <Link href="#data-types">Data Types</Link>
+        </PostListItem>
+        <PostListItem>
+          <Link href="#operators">Operators</Link>
+        </PostListItem>
+        <PostListItem>
+          <Link href="#conditional-statements">Conditional Statements</Link>
+        </PostListItem>
+        <PostListItem>
+          <Link href="#loops">Loops</Link>
+        </PostListItem>
+        <PostListItem>
+          <Link href="#functions">Functions</Link>
+        </PostListItem>
+        <PostListItem>
+          <Link href="#arrays">Arrays</Link>
+        </PostListItem>
+        <PostListItem>
+          <Link href="#objects">Objects</Link>
+        </PostListItem>
+        <PostListItem>
+          <Link href="#bugs-and-errors">Bugs and Errors</Link>
+        </PostListItem>
+      </List>
+
+      <PostBigHeading>Introduction:</PostBigHeading>
       <P>
         Programming is a set of instructions given to the computer, and a
         programming language is a method of communication between computers and
@@ -144,7 +208,7 @@ const Work = () => (
         in a large community of people that can aid you in your coding journey.
       </P>
 
-      <PostSmallHeading>Variables</PostSmallHeading>
+      <PostSmallHeading id="variables">Variables</PostSmallHeading>
       <P>
         Variables in programming is very similar to variables in math; you can
         assign the variable any value, they can change if desired, and they can
@@ -162,7 +226,7 @@ const Work = () => (
         variable <IC>name</IC> on the left.
       </P>
 
-      <PostSmallHeading>Data Types</PostSmallHeading>
+      <PostSmallHeading id="data-types">Data Types</PostSmallHeading>
       <P>
         Data is some sort of information. This can be text, numbers, etc. Each
         programming language has their own set of data types, but each typically
@@ -188,7 +252,7 @@ const Work = () => (
         .
       </ImageCaption>
 
-      <PostSmallHeading>Operators</PostSmallHeading>
+      <PostSmallHeading id="operators">Operators</PostSmallHeading>
       <P>
         Operators allow you to perform operations on variables and values. It
         has a similar meaning to mathematical operators, such as addition and
@@ -209,7 +273,9 @@ const Work = () => (
         .
       </ImageCaption>
 
-      <PostSmallHeading>Conditional Statements</PostSmallHeading>
+      <PostSmallHeading id="conditional-statements">
+        Conditional Statements
+      </PostSmallHeading>
       <P>
         Conditional statements only run if the condition is evaluated to true.
         This is useful if the developer only wants to run a block of code, based
@@ -236,7 +302,7 @@ const Work = () => (
       </P>
       <CodeBox language="javascript">{conditionalSwitchCode}</CodeBox>
 
-      <PostSmallHeading>Loops</PostSmallHeading>
+      <PostSmallHeading id="loops">Loops</PostSmallHeading>
       <P>
         Loops are used when a block of code needs to be repeatedly executed.
         They are similar to conditional statements, in the sense that some
@@ -276,7 +342,7 @@ const Work = () => (
         always be satisfied, so the block of code will run forever.
       </P>
 
-      <PostSmallHeading>Functions</PostSmallHeading>
+      <PostSmallHeading id="functions">Functions</PostSmallHeading>
       <P>
         Functions are a reusable block of code that can be run when it is
         called. It is declared by the <IC>function</IC> keyword, followed by the
@@ -289,7 +355,7 @@ const Work = () => (
       </P>
       <CodeBox language="javascript">{functionsExampleCode}</CodeBox>
 
-      <PostSmallHeading>Arrays</PostSmallHeading>
+      <PostSmallHeading id="arrays">Arrays</PostSmallHeading>
       <P>
         Arrays are used to store and group elements together. They allow for
         indexing into the array to access certain elements of that group. Note
@@ -309,7 +375,7 @@ const Work = () => (
       </P>
       <CodeBox language="javascript">{arrayPushPopCode}</CodeBox>
 
-      <PostSmallHeading>Objects</PostSmallHeading>
+      <PostSmallHeading id="objects">Objects</PostSmallHeading>
       <P>
         Objects are used to group related data together. The object can be
         assigned properties, which are variables that are attached to that
@@ -322,6 +388,46 @@ const Work = () => (
         spaces.
       </P>
       <CodeBox language="javascript">{objectExampleCode}</CodeBox>
+
+      <P>
+        Objects can contain functions inside of them. When a function is inside
+        a object, it is referred to as a &quot;method&quot;. Keep in mind, this
+        function is unique to that object, and can only be called using that
+        object. They can be called using dot or bracket notation, but are
+        typically called through dot notation.
+      </P>
+      <CodeBox language="javascript">{objectFunctionCode}</CodeBox>
+
+      <PostSmallHeading id="bugs-and-errors">Bugs and Errors</PostSmallHeading>
+      <P>
+        Bugs are defined as when the program doesn&apos;t run as intended. On
+        the other hand, errors are when the program stops running unexpectedly.
+        No further code is executed. There are numerous types of errors:
+        reference, syntax, type, etc. A reference error is when the code tries
+        to refer to a variable that doesn&quot;t exist. A syntax error is when
+        there is an issue in the syntax of the code, when the program cannot
+        read the code properly. A type error is when the program expects to be
+        presented with a certain data type, but is actually a different data
+        type.
+      </P>
+      <CodeBox language="javascript">{bugErrorExampleCode}</CodeBox>
+
+      <P>
+        Error handling is the process of managing unexpected errors that occur
+        during code execution. It ensures the program continues to run smoothly,
+        instead of get interrupted. A common method of error handling is using
+        the <IC>try</IC> and <IC>catch</IC> blocks. <IC>try</IC> is what the
+        program will try to execute, but if it recieves an error, it will
+        execute the <IC>catch</IC> block. If you want to create your own error
+        and custom message, use the <IC>throw</IC> keyword. Keep in mind in the
+        examples below, &quot;err&quot; can be anything, but it is common
+        convention to use &quot;err&quot; for catching the error from the try
+        block.
+      </P>
+      <CodeBox language="javascript">{tryCatchThrowCode}</CodeBox>
+      <ImageCaption>
+        Even though an error occurs, the program continues to run
+      </ImageCaption>
     </Container>
   </Layout>
 )

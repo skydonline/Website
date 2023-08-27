@@ -5,6 +5,8 @@ import VoxelLaptopLoader from '../voxel-laptop-loader'
 import dynamic from 'next/dynamic'
 import Footer from '../footer'
 import Script from 'next/script'
+import BackToTopButton from '../back-to-top-button'
+import { useEffect } from 'react'
 
 const LazyVoxelLaptop = dynamic(() => import('../voxel-laptop'), {
   ssr: false,
@@ -12,6 +14,19 @@ const LazyVoxelLaptop = dynamic(() => import('../voxel-laptop'), {
 })
 
 const Main = ({ children, router }) => {
+  useEffect(() => {
+    const handleScroll = () => {
+      const button = document.getElementById('backToTopButton')
+      if (button) {
+        button.style.display = window.scrollY > 0 ? 'block' : 'none'
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [])
   return (
     <Box as="main" pb={8}>
       <Head>
@@ -44,6 +59,7 @@ const Main = ({ children, router }) => {
         {children}
 
         <Footer />
+        <BackToTopButton />
       </Container>
     </Box>
   )

@@ -22,7 +22,7 @@ import {
 import { ChevronRightIcon, CopyIcon, CheckIcon } from '@chakra-ui/icons'
 import NextImage from 'next/image'
 import SyntaxHighlighter from 'react-syntax-highlighter'
-import { atomOneDark } from 'react-syntax-highlighter/dist/cjs/styles/hljs'
+import { nightOwl } from 'react-syntax-highlighter/dist/cjs/styles/hljs'
 
 export const Title = ({ children }) => (
   <Box>
@@ -71,8 +71,8 @@ export const PostBigHeading = ({ children }) => (
   </Heading>
 )
 
-export const PostSmallHeading = ({ children }) => (
-  <Heading as="h5" fontSize={17} mt={4}>
+export const PostSmallHeading = ({ children, id }) => (
+  <Heading id={id} as="h5" fontSize={17} mt={4}>
     {children}
   </Heading>
 )
@@ -149,7 +149,7 @@ export const CodeBox = ({ language, children }) => {
         <SyntaxHighlighter
           customStyle={{ padding: '20px' }}
           language={language}
-          style={atomOneDark}
+          style={nightOwl}
           wrapLongLines={true}
         >
           {children}
