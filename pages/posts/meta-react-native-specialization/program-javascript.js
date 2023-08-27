@@ -1,4 +1,4 @@
-import { Box, Container, List, Link } from '@chakra-ui/react'
+import { Box, Container, List, Link, Text } from '@chakra-ui/react'
 import P from '../../../components/paragraph'
 import Layout from '../../../components/layouts/article'
 import {
@@ -22,19 +22,19 @@ const variableDeclarationCode = `var name = value;`
 
 const conditionalIfCode = `var place = 'first';
 if (place == 'first') {
-  // Executes if place is 'first'
+  // executes if place is 'first'
   console.log("Gold medal");
 } 
 else if (place == 'second') {
-  // Executes if place is 'second'
+  // executes if place is 'second'
   console.log("Silver medal");
 }
 else if (place == 'third') {
-  // Executes if place is 'third'
+  // executes if place is 'third'
   console.log("Bronze medal");
 }
 else {
-  // Executes if all above conditions fail
+  // executes if all above conditions fail
   console.log("No medal");
 }
 `
@@ -42,33 +42,33 @@ else {
 const conditionalSwitchCode = `var place = 'first';
 switch(place) {
   case 'first':
-    // Executes if place is 'first'
+    // executes if place is 'first'
     console.log("Gold medal");
     break;
   case 'second':
-    // Executes if place is 'second'
+    // executes if place is 'second'
     console.log("Silver medal");
     break;
   case 'third':
-    // Executes if place is 'third'
+    // executes if place is 'third'
     console.log("Bronze medal");
     break;
   default:
-    // Executes if all above conditions fail
+    // executes if all above conditions fail
     console.log("No medal");
 }
 `
 
 const loopsSyntaxCode = `// for loop
-// "var i = 0" -> counter declaration
-// "i < 3" -> condition
-// "i++" -> increment counter after every iteration
+// counter declaration: "var i = 0"
+// condition: "i < 3"
+// increment counter after every iteration: "i++"
 for (var i = 0; i < 3; i++;) {
   console.log(i);
 }
 
 // while loop
-// "i < 3" -> condition
+// condition: "i < 3"
 var i = 0;  // counter outside function
 while (i < 3) {
   console.log(i);
@@ -78,7 +78,7 @@ while (i < 3) {
 
 const functionsExampleCode = `function name(argument) {
   console.log("The author is " + argument);
-  // Prints "The author is Sky"
+  // prints "The author is Sky"
 }
 
 name("Sky");`
@@ -87,6 +87,31 @@ const arrayExampleCode = `var array = ["Item 1", "Item 2", "Item 3"];   // intia
 console.log(array[0]);  // prints "Item 1"
 console.log(array[2]);  // prints "Item 3"
 `
+
+const arrayPushPopCode = `var array = ["Item 1", "Item 2"];
+
+array.push("Item 3"); // adds "Item 3" to array
+console.log(array); // prints ["Item 1", "Item 2", "Item 3"]
+
+array.pop();  // removes last item in array ("Item 3")
+console.log(array); // prints ["Item 1", "Item 2"]
+`
+
+const objectExampleCode = `// initalize object
+var object = {
+  propertyKey: "value",
+  age: 18,
+  language: "JavaScript",
+  "property with space": "value"
+}
+// assign a new key to "object" named newKey, which has value of "adding new value"
+object.newKey = "adding new value";
+
+// accesses the value stored in "language" key, prints "JavaScript"
+console.log(object.language);
+
+// accesses the value stored in "property with space" key, prints "value"
+console.log(object["property with space"])`
 
 const Work = () => (
   <Layout title="Programming with JavaScript">
@@ -146,8 +171,8 @@ const Work = () => (
         follows certain rules, in order for it to be considered valid. For
         example, strings need to be enclosed in quotation marks. Additionally,
         each data types have certain use cases, since they have specific
-        operations you can perform on them. Below are some examples of a few
-        data types:
+        operations you can perform on them. Below are some examples of data
+        types:
       </P>
       <DataTypesTable />
       <ImageCaption>
@@ -169,7 +194,7 @@ const Work = () => (
         has a similar meaning to mathematical operators, such as addition and
         subtraction symbols. Just like in math, there are arithmetic operators.
         In JavaScript, and in the majority of programming languages, there are
-        comparison operators. Below are a few common operators in JavaScript:
+        comparison operators. Here are a few common operators in JavaScript:
       </P>
       <OperatorTable />
       <ImageCaption>
@@ -193,7 +218,6 @@ const Work = () => (
         can have an <IC>else if</IC> statement, that runs another block of code,
         if the prior statements are evaluated to false. They can also include an{' '}
         <IC>else</IC> statement, which runs if no other conditions are true.
-        Below is an example:
       </P>
       <CodeBox language="javascript">{conditionalIfCode}</CodeBox>
 
@@ -227,8 +251,30 @@ const Work = () => (
       <CodeBox language="javascript">{loopsSyntaxCode}</CodeBox>
       <PostImage src={nestedLoops} alt="Nested Loops" />
       <ImageCaption>
-        A <IC>for</IC> loop inside of another <IC>for</IC> loop
+        Example of a{' '}
+        <Text display="inline" textDecoration="underline">
+          nested
+        </Text>{' '}
+        loop: a <IC>for</IC> loop inside of another <IC>for</IC> loop
       </ImageCaption>
+
+      <P>
+        Notice that no matter the type of loop, there are 3 components to it:
+      </P>
+      <List>
+        <PostListItem>Loop counter</PostListItem>
+        <PostListItem>Condition</PostListItem>
+        <PostListItem>Method to update counter</PostListItem>
+      </List>
+      <P>
+        The loop counter is some variable that counts how many times the block
+        of code has been executed. The condition must be satisfied before each
+        code block execution; if not, the loop will terminate and move onto the
+        next lines of code. The count variable needs to be updated in some sort
+        of way after each iteration of the loop, in order to prevent an infinite
+        loop. If the counter variable is never updated, then the condition will
+        always be satisfied, so the block of code will run forever.
+      </P>
 
       <PostSmallHeading>Functions</PostSmallHeading>
       <P>
@@ -239,7 +285,7 @@ const Work = () => (
         arguments placed inside the parentheses, which are just parameters the
         function takes in that can used inside the code block. The function is
         called by typing its name, and the arguments it requires inside
-        parentheses. Below is an example of a function:
+        parentheses.
       </P>
       <CodeBox language="javascript">{functionsExampleCode}</CodeBox>
 
@@ -252,10 +298,30 @@ const Work = () => (
         and so on. If an element is in an array, it signals to the programmer
         that it belongs to a collection of values. Arrays can be comprised of
         any data type, and can even be a collection of different data types.
-        Below is an example of an array, how to initalize it, and how to index
-        to access the individual elements:
       </P>
       <CodeBox language="javascript">{arrayExampleCode}</CodeBox>
+
+      <P>
+        Arrays have built-in methods that can be used to manipulate them. Some
+        of the most commonly used methods are <IC>push()</IC> and <IC>pop()</IC>
+        . <IC>push()</IC> adds the item to the end of the array, while{' '}
+        <IC>pop()</IC> removes the last item in the array.
+      </P>
+      <CodeBox language="javascript">{arrayPushPopCode}</CodeBox>
+
+      <PostSmallHeading>Objects</PostSmallHeading>
+      <P>
+        Objects are used to group related data together. The object can be
+        assigned properties, which are variables that are attached to that
+        object. Each property is a key value pair; the variable name is the
+        property key, and the variable value is the property value. Objects can
+        be modified after it is initalized, and each value of every key can be
+        accessed as well. The most common notations for objects are dot and
+        bracket notation. Dot notation is more clean and concise, but bracket
+        notation allows for accessing properties with special characters or
+        spaces.
+      </P>
+      <CodeBox language="javascript">{objectExampleCode}</CodeBox>
     </Container>
   </Layout>
 )

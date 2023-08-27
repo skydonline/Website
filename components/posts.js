@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import NextLink from 'next/link'
 import {
   Heading,
@@ -14,9 +15,11 @@ import {
   Thead,
   Tr,
   Th,
-  Tbody
+  Tbody,
+  Button,
+  useClipboard
 } from '@chakra-ui/react'
-import { ChevronRightIcon } from '@chakra-ui/icons'
+import { ChevronRightIcon, CopyIcon, CheckIcon } from '@chakra-ui/icons'
 import NextImage from 'next/image'
 import SyntaxHighlighter from 'react-syntax-highlighter'
 import { atomOneDark } from 'react-syntax-highlighter/dist/cjs/styles/hljs'
@@ -86,19 +89,75 @@ export const PostImage = ({ src, alt }) => (
   </Box>
 )
 
-// Source: https://github.com/react-syntax-highlighter/react-syntax-highlighter#readme
-export const CodeBox = ({ language, children }) => (
-  <Box mt={2} mb={2}>
-    <SyntaxHighlighter language={language} style={atomOneDark}>
-      {children}
-    </SyntaxHighlighter>
-  </Box>
-)
-
 // IC shrot for "inline code", to make code cleaner
 export const IC = ({ children }) => (
   <Code style={{ textIndent: '0' }}>{children}</Code>
 )
+
+// Source: https://github.com/react-syntax-highlighter/react-syntax-highlighter#readme
+export const CodeBox = ({ language, children }) => {
+  const [isCopied, setIsCopied] = useState(false)
+  const { onCopy } = useClipboard(children)
+
+  const handleCopy = () => {
+    onCopy()
+    setIsCopied(true)
+    setTimeout(() => {
+      setIsCopied(false)
+    }, 3000)
+  }
+
+  return (
+    <Box mt={2} mb={2}>
+      <Box
+        backgroundColor="#3a404d"
+        maxWidth="200%"
+        minWidth="25rem"
+        height="auto"
+        borderRadius="0.375rem"
+        overflow="hidden"
+      >
+        <Box
+          display="flex"
+          alignItems="center"
+          color="white"
+          justifyContent="space-between"
+          fontSize="0.75rem"
+          paddingLeft="1rem"
+          paddingRight="1rem"
+        >
+          <Text fontWeight="bold" fontSize="0.875rem">
+            {language}
+          </Text>
+          <Button
+            size="sm"
+            paddingY="0.25rem"
+            paddingX="0.5rem"
+            display="inline-flex"
+            gap="0.25rem"
+            alignItems="center"
+            onClick={handleCopy}
+          >
+            {isCopied ? (
+              <CheckIcon boxSize="1em" />
+            ) : (
+              <CopyIcon boxSize="1.25em" />
+            )}
+            {isCopied ? 'Copied!' : 'Copy Code'}
+          </Button>
+        </Box>
+        <SyntaxHighlighter
+          customStyle={{ padding: '20px' }}
+          language={language}
+          style={atomOneDark}
+          wrapLongLines={true}
+        >
+          {children}
+        </SyntaxHighlighter>
+      </Box>
+    </Box>
+  )
+}
 
 const headerCellStyle = {
   border: '2px solid',
