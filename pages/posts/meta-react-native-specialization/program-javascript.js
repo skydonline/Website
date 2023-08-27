@@ -188,6 +188,9 @@ const Work = () => (
         <PostListItem>
           <Link href="#bugs-and-errors">Bugs and Errors</Link>
         </PostListItem>
+        <PostListItem>
+          <Link href="#empty-values">Empty Values</Link>
+        </PostListItem>
       </List>
 
       <PostBigHeading>Introduction:</PostBigHeading>
@@ -403,12 +406,17 @@ const Work = () => (
         Bugs are defined as when the program doesn&apos;t run as intended. On
         the other hand, errors are when the program stops running unexpectedly.
         No further code is executed. There are numerous types of errors:
-        reference, syntax, type, etc. A reference error is when the code tries
-        to refer to a variable that doesn&quot;t exist. A syntax error is when
-        there is an issue in the syntax of the code, when the program cannot
-        read the code properly. A type error is when the program expects to be
-        presented with a certain data type, but is actually a different data
-        type.
+        reference, syntax, type, etc. For a more comprehensive list of errors,
+        visit this{' '}
+        <Link href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Errors">
+          reference
+          <ExternalLinkIcon mx="2px" />
+        </Link>
+        . A reference error is when the code tries to refer to a variable that
+        doesn&apos;t exist. A syntax error is when there is an issue in the
+        syntax of the code, when the program cannot read the code properly. A
+        type error is when the program expects to be presented with a certain
+        data type, but is actually a different data type.
       </P>
       <CodeBox language="javascript">{bugErrorExampleCode}</CodeBox>
 
@@ -428,6 +436,18 @@ const Work = () => (
       <ImageCaption>
         Even though an error occurs, the program continues to run
       </ImageCaption>
+
+      <PostSmallHeading id="empty-values">Empty Values</PostSmallHeading>
+      <P>
+        In programming, there may be situations where a value should exist, but
+        currently doesn&apos;t. This would require an empty value. In
+        JavaScript, there are 3 main types of empty value datatypes: null,
+        undefined, and empty strings. The null datatype is an intentional
+        assignment value, and means the absence of an object or value. The
+        undefined datatype is used when a variable has been declared but yet to
+        be given a specific value. An empty string can be used as a placeholder
+        for values that will be filled in later.
+      </P>
     </Container>
   </Layout>
 )
