@@ -76,6 +76,18 @@ while (i < 3) {
 }
 `
 
+const functionsExampleCode = `function name(argument) {
+  console.log("The author is " + argument);
+  // Prints "The author is Sky"
+}
+
+name("Sky");`
+
+const arrayExampleCode = `var array = ["Item 1", "Item 2", "Item 3"];   // intialization
+console.log(array[0]);  // prints "Item 1"
+console.log(array[2]);  // prints "Item 3"
+`
+
 const Work = () => (
   <Layout title="Programming with JavaScript">
     <Container>
@@ -217,6 +229,33 @@ const Work = () => (
       <ImageCaption>
         A <IC>for</IC> loop inside of another <IC>for</IC> loop
       </ImageCaption>
+
+      <PostSmallHeading>Functions</PostSmallHeading>
+      <P>
+        Functions are a reusable block of code that can be run when it is
+        called. It is declared by the <IC>function</IC> keyword, followed by the
+        name that you desire to give to the function (can be anything except
+        keywords), immediately followed by &quot;()&quot;. There can be
+        arguments placed inside the parentheses, which are just parameters the
+        function takes in that can used inside the code block. The function is
+        called by typing its name, and the arguments it requires inside
+        parentheses. Below is an example of a function:
+      </P>
+      <CodeBox language="javascript">{functionsExampleCode}</CodeBox>
+
+      <PostSmallHeading>Arrays</PostSmallHeading>
+      <P>
+        Arrays are used to store and group elements together. They allow for
+        indexing into the array to access certain elements of that group. Note
+        that in most programming languages, the first item of the array is
+        considered &quot;index 0&quot;, the second item is &quot;index 1&quot;,
+        and so on. If an element is in an array, it signals to the programmer
+        that it belongs to a collection of values. Arrays can be comprised of
+        any data type, and can even be a collection of different data types.
+        Below is an example of an array, how to initalize it, and how to index
+        to access the individual elements:
+      </P>
+      <CodeBox language="javascript">{arrayExampleCode}</CodeBox>
     </Container>
   </Layout>
 )

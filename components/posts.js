@@ -19,7 +19,7 @@ import {
 import { ChevronRightIcon } from '@chakra-ui/icons'
 import NextImage from 'next/image'
 import SyntaxHighlighter from 'react-syntax-highlighter'
-import { atomOneDark } from 'react-syntax-highlighter/dist/esm/styles/hljs'
+import { atomOneDark } from 'react-syntax-highlighter/dist/cjs/styles/hljs'
 
 export const Title = ({ children }) => (
   <Box>
