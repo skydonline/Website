@@ -57,6 +57,12 @@ export const PostListItem = ({ children }) => (
   </ListItem>
 )
 
+export const TableOfContents = ({ link, title }) => (
+  <PostListItem>
+    <Link href={`#${link}`}>{title}</Link>
+  </PostListItem>
+)
+
 export const ImageCaption = ({ children }) => (
   <Box width="100%" textAlign="center">
     <Text as="i" fontSize={12}>

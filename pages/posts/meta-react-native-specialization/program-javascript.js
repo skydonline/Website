@@ -1,4 +1,4 @@
-import { Box, Container, List, Link, Text } from '@chakra-ui/react'
+import { Box, Container, List, Link, Text, Code } from '@chakra-ui/react'
 import P from '../../../components/paragraph'
 import Layout from '../../../components/layouts/article'
 import {
@@ -11,7 +11,8 @@ import {
   IC,
   DataTypesTable,
   OperatorTable,
-  PostImage
+  PostImage,
+  TableOfContents
 } from '../../../components/posts'
 import { ExternalLinkIcon } from '@chakra-ui/icons'
 
@@ -146,6 +147,24 @@ catch (err) {
   console.log(err); // prints "New error"
 }`
 
+const functionalExampleCode = `function doubleNumber(num) {
+  return num * 2
+}
+var exampleNum = 2;
+var result = doubleNumber(exampleNum);  // passes 2 into doubleNumber function, stores return value (4) in result
+console.log(result);  // prints 4`
+
+const objectOrientedExampleCode = `var person = {
+  awake: true,
+  night: function() {
+    this.awake = false
+  }
+}
+
+console.log(person.awake);  // prints true
+person.night()  // executes night function in person object, changes person.awake to false
+console.log(person.awake);  // prints false`
+
 const Work = () => (
   <Layout title="Programming with JavaScript">
     <Container>
@@ -161,36 +180,27 @@ const Work = () => (
 
       <PostBigHeading>Table of Contents</PostBigHeading>
       <List>
-        <PostListItem>
-          <Link href="#variables">Variables</Link>
-        </PostListItem>
-        <PostListItem>
-          <Link href="#data-types">Data Types</Link>
-        </PostListItem>
-        <PostListItem>
-          <Link href="#operators">Operators</Link>
-        </PostListItem>
-        <PostListItem>
-          <Link href="#conditional-statements">Conditional Statements</Link>
-        </PostListItem>
-        <PostListItem>
-          <Link href="#loops">Loops</Link>
-        </PostListItem>
-        <PostListItem>
-          <Link href="#functions">Functions</Link>
-        </PostListItem>
-        <PostListItem>
-          <Link href="#arrays">Arrays</Link>
-        </PostListItem>
-        <PostListItem>
-          <Link href="#objects">Objects</Link>
-        </PostListItem>
-        <PostListItem>
-          <Link href="#bugs-and-errors">Bugs and Errors</Link>
-        </PostListItem>
-        <PostListItem>
-          <Link href="#empty-values">Empty Values</Link>
-        </PostListItem>
+        <TableOfContents link="variables" title="Variables" />
+        <TableOfContents link="data-types" title="Data Types" />
+        <TableOfContents link="operators" title="Operators" />
+        <TableOfContents
+          link="conditional-statements"
+          title="Conditional Statements"
+        />
+        <TableOfContents link="loops" title="Loops" />
+        <TableOfContents link="functions" title="Functions" />
+        <TableOfContents link="arrays" title="Arrays" />
+        <TableOfContents link="objects" title="Objects" />
+        <TableOfContents link="bugs-and-errors" title="Bugs and Errors" />
+        <TableOfContents link="empty-values" title="Empty Values" />
+        <TableOfContents
+          link="functional-programming"
+          title="Functional Programming"
+        />
+        <TableOfContents
+          link="object-oriented-programming"
+          title="Object-Oriented Programming"
+        />
       </List>
 
       <PostBigHeading>Introduction:</PostBigHeading>
@@ -204,8 +214,8 @@ const Work = () => (
       </P>
       <P>
         JavaScript is immensely popular due to its ease of use, used in every
-        website and has a large community to assist you. It doesn&apos;t require
-        a lot to setup, making it beginner friendly. All modern websites with
+        website and has a large community to assist you. It does not require a
+        lot to setup, making it beginner friendly. All modern websites with
         webpage interactivity use JavaScript, to facilitate those interactions.
         It is the most common programming language around the world, resulting
         in a large community of people that can aid you in your coding journey.
@@ -224,9 +234,9 @@ const Work = () => (
         be anything, as long as they are not &quot;keywords&quot;, which are
         words that are reserved in the programming language that have special
         functionality (e.g. <IC>var</IC>, <IC>if</IC>, <IC>const</IC>). The{' '}
-        <IC>=</IC> sign is the assignment operator; it doesn&apos;t mean
-        equivalent, instead stores the <IC>value</IC> on the right to the
-        variable <IC>name</IC> on the left.
+        <IC>=</IC> sign is the assignment operator; it does not mean equivalent,
+        instead stores the <IC>value</IC> on the right to the variable{' '}
+        <IC>name</IC> on the left.
       </P>
 
       <PostSmallHeading id="data-types">Data Types</PostSmallHeading>
@@ -283,9 +293,9 @@ const Work = () => (
         Conditional statements only run if the condition is evaluated to true.
         This is useful if the developer only wants to run a block of code, based
         on some condition. An <IC>if</IC> statement checks if the condition is
-        true; if it is, run the block of code, if false, don&apos;t run it. They
-        can have an <IC>else if</IC> statement, that runs another block of code,
-        if the prior statements are evaluated to false. They can also include an{' '}
+        true; if it is, run the block of code, if false, do not run it. They can
+        have an <IC>else if</IC> statement, that runs another block of code, if
+        the prior statements are evaluated to false. They can also include an{' '}
         <IC>else</IC> statement, which runs if no other conditions are true.
       </P>
       <CodeBox language="javascript">{conditionalIfCode}</CodeBox>
@@ -403,20 +413,19 @@ const Work = () => (
 
       <PostSmallHeading id="bugs-and-errors">Bugs and Errors</PostSmallHeading>
       <P>
-        Bugs are defined as when the program doesn&apos;t run as intended. On
-        the other hand, errors are when the program stops running unexpectedly.
-        No further code is executed. There are numerous types of errors:
-        reference, syntax, type, etc. For a more comprehensive list of errors,
-        visit this{' '}
+        Bugs are defined as when the program does not run as intended. On the
+        other hand, errors are when the program stops running unexpectedly. No
+        further code is executed. There are numerous types of errors: reference,
+        syntax, type, etc. For a more comprehensive list of errors, visit this{' '}
         <Link href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Errors">
           reference
           <ExternalLinkIcon mx="2px" />
         </Link>
         . A reference error is when the code tries to refer to a variable that
-        doesn&apos;t exist. A syntax error is when there is an issue in the
-        syntax of the code, when the program cannot read the code properly. A
-        type error is when the program expects to be presented with a certain
-        data type, but is actually a different data type.
+        does not exist. A syntax error is when there is an issue in the syntax
+        of the code, when the program cannot read the code properly. A type
+        error is when the program expects to be presented with a certain data
+        type, but is actually a different data type.
       </P>
       <CodeBox language="javascript">{bugErrorExampleCode}</CodeBox>
 
@@ -440,14 +449,68 @@ const Work = () => (
       <PostSmallHeading id="empty-values">Empty Values</PostSmallHeading>
       <P>
         In programming, there may be situations where a value should exist, but
-        currently doesn&apos;t. This would require an empty value. In
-        JavaScript, there are 3 main types of empty value datatypes: null,
-        undefined, and empty strings. The null datatype is an intentional
-        assignment value, and means the absence of an object or value. The
-        undefined datatype is used when a variable has been declared but yet to
-        be given a specific value. An empty string can be used as a placeholder
-        for values that will be filled in later.
+        currently does not. This would require an empty value. In JavaScript,
+        there are 3 main types of empty value datatypes: null, undefined, and
+        empty strings. The null datatype is an intentional assignment value, and
+        means the absence of an object or value. The undefined datatype is used
+        when a variable has been declared but yet to be given a specific value.
+        An empty string can be used as a placeholder for values that will be
+        filled in later.
       </P>
+
+      <PostSmallHeading id="functional-programming">
+        Functional Programming
+      </PostSmallHeading>
+      <P>
+        When speaking or writing English, the style of language varies: it can
+        be very formal, casual, or somewhere inbetween. The same goes for
+        programming, in the sense that there are different styles. Functional
+        programming focuses on utilizing functions to process data, and the data
+        exists outside that function. The functions can return new values, which
+        are then used elsewhere in the code.
+      </P>
+      <CodeBox language="javascript">{functionalExampleCode}</CodeBox>
+
+      <P>
+        First-class functions is an important concept in functional programming.
+        A function in JavaScript is essentially just a value, like a string or
+        number. We can pass a function to another function, save it in a
+        variable, or return it from other functions.
+      </P>
+      <P>
+        Higher-order functions can accept other functions are arguments or
+        return functions when executed. A function can be passed into another
+        function, or the return value of the function can be another function.
+      </P>
+      <P>
+        Pure functions always return the exact same result if it is given the
+        same arguments. As long as the inputs are the same, the output will be
+        the same. It should not have side-effects; this means the function does
+        not modify anything outside of itself. No external variables are
+        manipulated.
+      </P>
+      <P>
+        With the introduction of ES6 JavaScript, the keywords <IC>let</IC> and{' '}
+        <IC>const</IC> were introduced. These are preferred over the{' '}
+        <IC>var</IC> keyword to create variables. While they essentially have
+        the same syntax, just replacing <IC>var</IC> with <IC>let</IC> or{' '}
+        <IC>const</IC>, they have different functionality. Unlike <IC>var</IC>,
+        they cannot be used prior to declaration, the variable cannot be
+        redeclared, and is by default scoped to the block of code it is in.{' '}
+        <IC>let</IC> is used when the variable might change, and can be
+        reassigned a different value. <IC>const</IC> is used when the variable
+        will not change, since it cannot be reassigned.
+      </P>
+
+      <PostSmallHeading id="object-oriented-programming">
+        Object-Oriented Programming
+      </PostSmallHeading>
+      <P>
+        Another popular programming paradigm is object-oriented programming. The
+        main idea is that functions and data are grouped into objects, making
+        them &quot;belong together&quot;. The methods update the properties.
+      </P>
+      <CodeBox language="javascript">{objectOrientedExampleCode}</CodeBox>
     </Container>
   </Layout>
 )

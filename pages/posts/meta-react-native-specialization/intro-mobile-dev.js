@@ -6,7 +6,8 @@ import {
   PostListItem,
   PostBigHeading,
   PostSmallHeading,
-  PostImage
+  PostImage,
+  TableOfContents
 } from '../../../components/posts'
 
 import certificate from '../../../public/images/posts/intro-mobile-dev-cert.jpeg'
@@ -26,26 +27,18 @@ const Work = () => (
 
       <PostBigHeading>Table of Contents</PostBigHeading>
       <List>
-        <PostListItem>
-          <Link href="#web">Web</Link>
-        </PostListItem>
-        <PostListItem>
-          <Link href="#mobile-development">Mobile Development</Link>
-        </PostListItem>
-        <PostListItem>
-          <Link href="#html">HTML</Link>
-        </PostListItem>
-        <PostListItem>
-          <Link href="#css">CSS</Link>
-        </PostListItem>
-        <PostListItem>
-          <Link href="#cross-platform-development">
-            Cross-Platform Development
-          </Link>
-        </PostListItem>
-        <PostListItem>
-          <Link href="#react-&-react-native">React & React Native</Link>
-        </PostListItem>
+        <TableOfContents link="web" title="Web" />
+        <TableOfContents link="mobile-development" title="Mobile Development" />
+        <TableOfContents link="html" title="HTML" />
+        <TableOfContents link="css" title="CSS" />
+        <TableOfContents
+          link="cross-platform-development"
+          title="Cross-Platform Development"
+        />
+        <TableOfContents
+          link="react-&-react-native"
+          title="React & React Native"
+        />
       </List>
 
       <PostBigHeading>Introduction:</PostBigHeading>
