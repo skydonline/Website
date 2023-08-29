@@ -78,24 +78,31 @@ while (i < 3) {
 `
 
 const functionsExampleCode = `function name(argument) {
-  console.log("The author is " + argument);
-  // prints "The author is Sky"
+  console.log(\`The author is \${argument}\`);
 }
 
-name("Sky");`
+name("Sky");  // "The author is Sky"
+
+// function with default parameter
+function parameters(arg = "any argument") {
+  console.log(\`Argument: \${arg}\`);
+}
+
+parameters(); // "Argument: any argument"
+parameters("arg"); // "Argument: arg"`
 
 const arrayExampleCode = `var array = ["Item 1", "Item 2", "Item 3"];   // intialization
-console.log(array[0]);  // prints "Item 1"
-console.log(array[2]);  // prints "Item 3"
+console.log(array[0]);  // "Item 1"
+console.log(array[2]);  // "Item 3"
 `
 
 const arrayPushPopCode = `var array = ["Item 1", "Item 2"];
 
 array.push("Item 3"); // adds "Item 3" to array
-console.log(array); // prints ["Item 1", "Item 2", "Item 3"]
+console.log(array); // ["Item 1", "Item 2", "Item 3"]
 
 array.pop();  // removes last item in array ("Item 3")
-console.log(array); // prints ["Item 1", "Item 2"]
+console.log(array); // ["Item 1", "Item 2"]
 `
 
 const objectExampleCode = `// initalize object
@@ -124,12 +131,15 @@ computer.new = function() {
   console.log("New function");
 }
 
-computer.example()  // prints "A function"
-computer.new()  // prints "New function"`
+computer.example()  // "A function"
+computer.new()  // "New function"`
 
 const bugErrorExampleCode = `console.log("1" + 2);  // prints "12" instead of 3
+
 console.log(c);  // reference error: c is never defined
+
 var word = "Hello;  // syntax error: the " was never closed
+
 (1).pop  // type error: not a function`
 
 const tryCatchThrowCode = `try {
@@ -144,7 +154,7 @@ try {
   throw new Error("New error"); // executes catch block
 }
 catch (err) {
-  console.log(err); // prints "New error"
+  console.log(err); // "New error"
 }`
 
 const functionalExampleCode = `function doubleNumber(num) {
@@ -152,7 +162,7 @@ const functionalExampleCode = `function doubleNumber(num) {
 }
 var exampleNum = 2;
 var result = doubleNumber(exampleNum);  // passes 2 into doubleNumber function, stores return value (4) in result
-console.log(result);  // prints 4`
+console.log(result);  // 4`
 
 const objectOrientedExampleCode = `var person = {
   awake: true,
@@ -161,9 +171,193 @@ const objectOrientedExampleCode = `var person = {
   }
 }
 
-console.log(person.awake);  // prints true
+console.log(person.awake);  // true
 person.night()  // executes night function in person object, changes person.awake to false
-console.log(person.awake);  // prints false`
+console.log(person.awake);  // false`
+
+const classExampleCode = `class Person {
+  // constructor function
+  constructor(age, hairColor) {
+    this.age = age;
+    this.hairColor = hairColor;
+  }
+
+  // method
+  description() {
+    console.log(\`\${this.age} years old and \${this.hairColor} hair\`);
+  }
+}
+
+// create new instance of Person class
+// newPerson.age is 18, newPerson.hairColor is "blonde"
+const newPerson = new Person(18, "blonde")
+
+newPerson.description() // "18 years old and blonde hair"`
+
+const classPrinciplesCode = `class Animal {/* class code...*/} // base class
+
+// inheritance
+class Dog extends Animal {/* class code...*/}
+
+// encapsulation
+"abc".toUpperCase();
+// I don't know how the "toUpperCase()" method works, all I know is that it converts strings to all uppercase letters. I'm unaware of how the method is implemented in code
+
+// polymorphism
+class Dog {
+  isRunner() {
+    console.log("Is a running dog!");
+  }
+}
+
+class Pug extends Dog {
+  isRunner() {
+    // overrides isRunner() from base Dog class
+    console.log("Short-distance runner.");
+  }
+}
+
+class Greyhound extends Dog {
+  isRunner() {
+    // inherits isRunner() from base Dog class
+    super.isRunner();
+    // adds own behavior to isRunner()
+    console.log("Fast dog breed!");
+  }
+}
+
+const myDog = new Greyhound();
+const otherDog = new Pug();
+
+myDog.isRunner(); // "Is a running dog! Fast dog breed!"
+otherDog.isRunner();  // "Short-distance runner."`
+
+const dataArrayCode = `const demo = [1,2,3,4];
+
+// forEach: prints to console
+demo.forEach(function(num, index) {
+  console.log(\`\${index}: \${num}\`)
+});
+// "0: 1", "1: 2","2: 3","3: 4",
+
+// filter: filters even numbers
+console.log(demo.filter(function(num) {
+  return num % 2 == 0
+}));
+// [2, 4]
+
+// map: multiplies by 2
+console.log(demo.map(function(num) {
+  return num * 2
+}));
+// [2, 4, 6, 8]`
+
+const dataMapCode = `let example = new Map();
+example.set(1, "First");
+example.set("String", true);
+
+console.log(example); // {1 => "First", "String" => true}
+console.log(example.get("String"));  // true`
+
+const dataSetsCode = `const array = ["blue", "red", "green", "blue", "red"];
+const newSet = new Set(array);
+
+console.log(newSet);  // {"blue", "red", "green"}`
+
+const spreadCode = `const arr = [1, 2, 3];
+function print(arg1, arg2, arg3) {
+  console.log(\`3 args: \${arg1}, \${arg2}, \${arg3}\`)
+}
+
+print(arr[0], arr[1], arr[2]); // "3 args: 1, 2, 3"
+print(...arr);  // same as above
+
+// concatenate arrays
+const arr2 = [4, 5];
+const newArr = [...arr, ...arr2];
+console.log(newArr);  // [1, 2, 3, 4, 5]
+
+// concatenate objects
+const atr1 = { age: 18 }
+const atr2 = { country: "Canada" }
+const person = {...atr1, ...atr2}
+console.log(person);  // {age: 18, country: "Canada"}
+
+// convert string to array
+const name = "Sky";
+const nameArray = [...name];
+console.log(nameArray); // ["S", "k", "y"]
+
+// copying arrays
+const ogArr = ["og", "array"];
+const copiedArr = [...ogArr];
+console.log(copiedArr); // ["og", "array"]
+
+// copying objects
+const ogObj = { og: "obj" }
+const newObj = {...ogObj}
+console.log(newObj);  // { og: "obj" }`
+
+const restCode = `// collect function arguments into an array
+function taxedPrice(rate, ...items) {
+  return items.map(item => item * rate) // applies tax rate to each item
+}
+
+let taxedItems = taxedPrice(1.5, 50, 100, 10);
+
+console.log(taxedItems);  // [75, 150, 15]
+
+// gather remaining items
+const array = [1,2,3,4,5];
+const [first, second, ...rest] = array; // rest operator
+console.log(first);  // 1
+console.log(second);  // 2
+console.log(rest);  // 3`
+
+const destructureCode = `let { PI } = Math; // there is a "PI" property in the Math object
+console.log(PI);  // prints 3.1415, the value of Math.PI
+console.log(Math.PI === PI);  // true
+
+PI = 0;
+console.log(Math.PI === PI);  // false`
+
+const forOfLoop = `let car = {
+  price: 5000,
+  color: "black",
+}
+
+console.log(Object.keys(car));  // ["price", "color"]
+console.log(Object.values(car));  // [5000, "black"]
+console.log(Object.entries(car));  // [["price", 5000], ["color", "black"]]
+
+for (key of Object.keys(car)) {
+  console.log(\`\${key}: \${car[key]}\`);
+}
+// Object.keys(car) is ["price", "color"]
+// prints "price: 5000" and "color: black"
+// obtains property key and value from object`
+
+const templateLiteralsCode = `const name = "Sky"
+console.log(\`My name is \${name}!\`); // "My name is Sky!"
+console.log("My name is " + name + "!");  // same result as above, just less concise and harder to read
+
+const preserve = \`This preserves line breaks 
+    and indents\`
+
+console.log(\`\${1+1+1}\`); // 3`
+
+const jsonCode = `// convert JSON string to object
+const jsonStr = '{"name":"Sky"}';  // JSON
+const jsonStrToObj = JSON.parse(jsonStr); // converting
+console.log(jsonStrToObj); // {name: "Sky"}
+
+// convert object to JSON string
+const obj = {
+  key: "value",
+  type: "str"
+}
+const objToJsonStr = JSON.stringify(obj); // converting
+console.log(objToJsonStr);  // '{"key": "value", "type": "str"}'`
 
 const Work = () => (
   <Layout title="Programming with JavaScript">
@@ -201,6 +395,12 @@ const Work = () => (
           link="object-oriented-programming"
           title="Object-Oriented Programming"
         />
+        <TableOfContents link="data-structures" title="Data Structures" />
+        <TableOfContents
+          link="spread-&-rest-operator"
+          title="Spread & Rest Operator"
+        />
+        <TableOfContents link="other-features" title="Other Features" />
       </List>
 
       <PostBigHeading>Introduction:</PostBigHeading>
@@ -364,7 +564,9 @@ const Work = () => (
         arguments placed inside the parentheses, which are just parameters the
         function takes in that can used inside the code block. The function is
         called by typing its name, and the arguments it requires inside
-        parentheses.
+        parentheses. Functions can be provided default parameters, which are
+        values that the function will automatically use if some or none are
+        passed in.
       </P>
       <CodeBox language="javascript">{functionsExampleCode}</CodeBox>
 
@@ -459,7 +661,7 @@ const Work = () => (
       </P>
 
       <PostSmallHeading id="functional-programming">
-        Functional Programming
+        Functional Programming (FP)
       </PostSmallHeading>
       <P>
         When speaking or writing English, the style of language varies: it can
@@ -503,14 +705,204 @@ const Work = () => (
       </P>
 
       <PostSmallHeading id="object-oriented-programming">
-        Object-Oriented Programming
+        Object-Oriented Programming (OOP)
       </PostSmallHeading>
       <P>
         Another popular programming paradigm is object-oriented programming. The
         main idea is that functions and data are grouped into objects, making
-        them &quot;belong together&quot;. The methods update the properties.
+        them &quot;belong together&quot;. The methods in the object update its
+        properties. The keyword <IC>this</IC> just refers to the object itself,
+        but means the same thing as retyping the object name.
       </P>
       <CodeBox language="javascript">{objectOrientedExampleCode}</CodeBox>
+      <P>
+        Classes are a fundamental concept in OOP. They allow for the creation of
+        numerous objects that are similar, each called an &quot;instance&quot;,
+        but with different property values. The <IC>constructor</IC> function
+        takes in any parameters the user provides when creating an instance, and
+        assigns those parameters to certain property keys of that instance. Each
+        instance has the same structure and behaviour that was outlined in the
+        class definition. Classes are initialized using the <IC>class</IC>{' '}
+        keyword. A new instance of that class is initalized by assigning it to a
+        variable, using <IC>new</IC> followed by the class name, and in
+        parentheses any arguments it takes.
+      </P>
+      <CodeBox language="javascript">{classExampleCode}</CodeBox>
+      <P>
+        There are 4 major OOP principles: inheritance, encapsulation,
+        abstraction, and polymorphism.
+      </P>
+      <P>
+        Inheritance is a fairly straightforward concept. There exists a base
+        class. Sub-classes of the base class inherit the base class properties,
+        and there may even be sub-sub-classes that inherit from those classes.
+        The <IC>extends</IC> keyword is followed by the class name that it will
+        inherit from creates this inheritance relationship.
+      </P>
+      <P>
+        Encapsulation hides the internal code details from other users. The user
+        just needs to know what the method does, not how it actually works. This
+        prevents malicious access to the data, violating the data integrity.
+      </P>
+      <P>
+        Abstraction is concerned with writing code that is generalized. Classes
+        simplify complex objects, by creating a template to model objects based
+        on basic characteristics. Only the essential properties and methods are
+        included.
+      </P>
+      <P>
+        Polymorphism allows for building objects that have functions with the
+        same name but behave differently. They can be overriden partially or
+        entirely. The code below demonstrates these concepts.
+      </P>
+      <CodeBox language="javascript">{classPrinciplesCode}</CodeBox>
+
+      <PostSmallHeading id="data-structures">Data Structures</PostSmallHeading>
+      <P>
+        Data structures are a core concept to every programming language. Data
+        structures are an efficient way to store and organize data. JavaScript
+        is limited in the available types of data structures compared to other
+        programming languages. There are objects, arrays, maps, sets, and a few
+        more.
+      </P>
+      <P>
+        An object is a collection of key-value pairs that is unordered and
+        cannot be iterated over. It is used when you need to access a particular
+        value under a key, among related data that are grouped together. An
+        array is a collection of values that is ordered and can be iterated
+        over. It is used when you need to access a value under an index, not a
+        key. Maps are like iterable objects; they have key-value pairs, but
+        unlike objects, they can be iterated over and any value can be used as a
+        key (not just strings or symbols), as long as it is unique. A set is a
+        unique collection of values, there are no duplicates.
+      </P>
+      <P>
+        Some important methods for arrays are <IC>forEach()</IC>,{' '}
+        <IC>filter()</IC> and <IC>map</IC>. The <IC>forEach()</IC> method loops
+        over each item of the array, and accepts a function that will be
+        performed on every item. In the function, the first parameter is the
+        array item, and (optionally) the second parameter is the index. The{' '}
+        <IC>filter()</IC> method also accepts a function that performs on each
+        item, and filters based on that function test. If it passes the function
+        test, it stays in the returned array. The <IC>map</IC> method performs a
+        function on every item in the array.
+      </P>
+      <CodeBox language="javascript">{dataArrayCode}</CodeBox>
+      <P>
+        A lot of features regarding objects and how to work with them have
+        already been discussed. Please refer to the{' '}
+        <Link href="#objects">objects</Link> section.
+      </P>
+      <P>
+        Maps are similar to objects in JavaScript, but they have no inheritance
+        or prototypes. They are built using the <IC>Map()</IC> constructor. The
+        keys can be any data type, but cannot be duplicated. If they are
+        duplicated, it just updates that value for the key. Maps are ordered by
+        insertion order, with the earliest insertion being the first item. To
+        get the value of a particular key, use the <IC>get()</IC> method.
+      </P>
+      <CodeBox language="javascript">{dataMapCode}</CodeBox>
+      <P>
+        Sets are similar to mathematical sets, in the sense that it is a
+        collection of unique values. They are built using the <IC>Set()</IC>{' '}
+        constructor.
+      </P>
+      <CodeBox language="javascript">{dataSetsCode}</CodeBox>
+      <P>
+        There are many other types of data structures, such as queues, stacks,
+        linked lists, trees, etc. However, these are not natively implemented
+        into JavaScript, so you will have to code them on your own.
+      </P>
+
+      <PostSmallHeading id="spread-&-rest-operator">
+        Spread & Rest Operator
+      </PostSmallHeading>
+      <P>
+        The spread operator is used to expand an iterable, such as an array.
+        Denoted as <IC>...</IC>, it is placed infront of the iterable that you
+        want to expand. This should only be used in places where multiple
+        elements are expected, such as function arguments. It is much more
+        concise and readable than individually typing out indexes. Other uses of
+        the spread operator include concatenating arrays/objects together,
+        converting a string to an array, or even copying objects/arrays.
+      </P>
+      <CodeBox language="javascript">{spreadCode}</CodeBox>
+
+      <P>
+        Like the spread operator, the rest operator is denoted as <IC>...</IC>.
+        However, the functionality is very different; it packs excess items into
+        an array. It can be used in function parameters to collect all the
+        arguments into a single array, gather remaining items of an array to be
+        stored inside another array, and many other use cases.
+      </P>
+      <CodeBox language="javascript">{restCode}</CodeBox>
+
+      <PostSmallHeading id="other-features">Other Features</PostSmallHeading>
+      <P>
+        Destructuring in JavaScript can be thought of as extracting certain
+        items from arrays or objects to a different location, while leaving the
+        original data untouched. Once it has been destructured, they are
+        delinked from each other, meaning modifying one does not affect the
+        other.
+      </P>
+      <CodeBox language="javascript">{destructureCode}</CodeBox>
+
+      <P>
+        An advanced way to iterate over items is using a for of loop (also
+        referred to as for...of loop). Arrays are considered iterables, and
+        while objects are not, we can use certain methods to iterate over them.
+        But, objects themselves are not iterable. The parameter is the object we
+        want to loop over, and the return type from these methods are arrays.{' '}
+        <IC>Object.keys()</IC> returns property keys, <IC>Object.values()</IC>{' '}
+        returns property values, <IC>Object.entires()</IC> returns arrays, each
+        containing the property key and value.
+      </P>
+      <P>
+        A for of loop iterates executes the block of code for every item in the
+        iterable. For example, in an array, it will only run the loop once for
+        every entry in the array. A for of loop is useful if you need to perform
+        an action for each entry in the iterable.
+      </P>
+      <CodeBox language="javascript">{forOfLoop}</CodeBox>
+      <P>
+        Template literals are a useful feature in JavaScript. They are a type of
+        way to work with strings, using the backtick(<IC>``</IC>) characters. I
+        have used them numerous times throughout this reading, when providing
+        code examples. They allow you to directly insert variables, using{' '}
+        <IC>$&#123;variable&#125;</IC>, where the name <IC>variable</IC> is the
+        name of the variable you wish to insert. Additionally, template literals
+        preserve the original formatting; this means line breaks, indentation,
+        etc. Line breaks in particular were not achievable using single
+        (&apos;&apos;) or double (&quot;&quot;) quotes. Expressions inside the
+        template literals can also be evaluated. There are numerous other
+        features, which can be found{' '}
+        <Link
+          target="_blank"
+          href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals"
+        >
+          here
+          <ExternalLinkIcon mx="2px" />
+        </Link>
+        .
+      </P>
+      <CodeBox language="javascript">{templateLiteralsCode}</CodeBox>
+
+      <P>
+        Modules are vital to coding, since they allow for the reuse of
+        standalone units of code. This means anyone can add, remove or replace
+        modules from their own project, and everything will still work as
+        intended. Modules can be published for others to use in their own
+        workflow.
+      </P>
+      <P>
+        JavaScript Object Notation (JSON) is the most popular data interchange
+        format on the web. It is very lightweight and easy to handle with
+        JavaScript. It is derived from JavaScript&apos; object literal notation,
+        in a string format with specific rules. A JSON string can be converted
+        to a object using <IC>JSON.parse()</IC>, and an object can be converted
+        to a JSON string using <IC>JSON.stringify()</IC>.
+      </P>
+      <CodeBox language="javascript">{jsonCode}</CodeBox>
     </Container>
   </Layout>
 )

@@ -17,7 +17,8 @@ import {
   Th,
   Tbody,
   Button,
-  useClipboard
+  useClipboard,
+  useColorModeValue
 } from '@chakra-ui/react'
 import { ChevronRightIcon, CopyIcon, CheckIcon } from '@chakra-ui/icons'
 import NextImage from 'next/image'
@@ -113,6 +114,8 @@ export const CodeBox = ({ language, children }) => {
     }, 3000)
   }
 
+  const buttonColorScheme = useColorModeValue('#f0e7db', '#f0e7db')
+
   return (
     <Box mt={2} mb={2}>
       <Box
@@ -143,6 +146,8 @@ export const CodeBox = ({ language, children }) => {
             gap="0.25rem"
             alignItems="center"
             onClick={handleCopy}
+            colorScheme={buttonColorScheme}
+            color="white"
           >
             {isCopied ? (
               <CheckIcon boxSize="1em" />
@@ -153,7 +158,7 @@ export const CodeBox = ({ language, children }) => {
           </Button>
         </Box>
         <SyntaxHighlighter
-          customStyle={{ padding: '20px' }}
+          customStyle={{ padding: '20px', fontSize: '14px' }}
           language={language}
           style={nightOwl}
           wrapLongLines={true}
