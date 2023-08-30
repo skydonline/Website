@@ -17,6 +17,7 @@ import {
 import { ExternalLinkIcon } from '@chakra-ui/icons'
 
 import nestedLoops from '../../../public/images/posts/nestedLoops.png'
+import certificate from '../../../public/images/posts/program-javascript-cert.jpeg'
 
 // Codeboxes
 const variableDeclarationCode = `var name = value;`
@@ -378,6 +379,8 @@ const Work = () => (
         <PostListItem>Node.js and npm for packages</PostListItem>
         <PostListItem>Testing using Jest</PostListItem>
       </List>
+
+      <PostImage src={certificate} alt="certification" />
 
       <PostBigHeading>Table of Contents</PostBigHeading>
       <List>

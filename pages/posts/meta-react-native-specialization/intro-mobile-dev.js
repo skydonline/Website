@@ -25,6 +25,8 @@ const Work = () => (
         <PostListItem>Basics of HTML and CSS</PostListItem>
       </List>
 
+      <PostImage src={certificate} alt="certification" />
+
       <PostBigHeading>Table of Contents</PostBigHeading>
       <List>
         <TableOfContents link="web" title="Web" />
@@ -192,8 +194,6 @@ const Work = () => (
         significantly cuts resource costs and saves time, allowing developers to
         focus more on pushing out new features for the application.
       </P>
-
-      <PostImage src={certificate} alt="certification" />
     </Container>
   </Layout>
 )
