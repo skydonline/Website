@@ -359,6 +359,13 @@ const obj = {
 const objToJsonStr = JSON.stringify(obj); // converting
 console.log(objToJsonStr);  // '{"key": "value", "type": "str"}'`
 
+const jestExampleCode = `function concat(arg1, arg2) {
+  return arg1 + arg2;
+}
+
+expect(concat("concat ", "string")).toBe("concat string");  // passes test
+expect(concat(1, 2)).toBe("12"); // fails`
+
 const Work = () => (
   <Layout title="Programming with JavaScript">
     <Container>
@@ -400,7 +407,9 @@ const Work = () => (
           link="spread-&-rest-operator"
           title="Spread & Rest Operator"
         />
+        <TableOfContents link="node.js-&-npm" title="Node.js & npm" />
         <TableOfContents link="other-features" title="Other Features" />
+        <TableOfContents link="testing" title="Testing" />
       </List>
 
       <PostBigHeading>Introduction:</PostBigHeading>
@@ -837,6 +846,20 @@ const Work = () => (
       </P>
       <CodeBox language="javascript">{restCode}</CodeBox>
 
+      <PostSmallHeading id="node.js-&-npm">Node.js & npm</PostSmallHeading>
+      <P>
+        Previously, JavaScript was originally only for front-end development,
+        and was not able to be utilized for back-end development. Developers had
+        to use other languages, such as Python or C#. However, using
+        Google&apos;s V8 JavaScript Engine, Node.js was created as a environment
+        to utilize JavaScript for the back-end. This allows for full-stack
+        JavaScript development! npm is a package manager that comes with
+        Node.js, which allows developers to use other libraries and frameworks
+        as modules to use in their code. The <IC>package.json</IC> file in each
+        project is important, because it displays all the node modules
+        (dependencies) used in the project.
+      </P>
+
       <PostSmallHeading id="other-features">Other Features</PostSmallHeading>
       <P>
         Destructuring in JavaScript can be thought of as extracting certain
@@ -903,6 +926,48 @@ const Work = () => (
         to a JSON string using <IC>JSON.stringify()</IC>.
       </P>
       <CodeBox language="javascript">{jsonCode}</CodeBox>
+
+      <PostSmallHeading id="testing">Testing</PostSmallHeading>
+      <P>
+        Testing code is fundamental in software engineering, to ensure the
+        program works as intended before it is published. There are a few
+        methods of testing: end-to-end (E2E), integration and unit testing. E2E
+        testing is simulating the entire product experience as an actual user.
+        It is quite expensive and time-consuming to conduct. Integration testing
+        is checking if parts of the system work appropiately with other parts of
+        the system, ensuring separate parts of the application work together. It
+        is faster and cheaper to perform than E2E testing. Unit testing is
+        verifying all individual parts of the code work as intended, in
+        isolation of other parts of the code. This can be as simple as testing a
+        function. This is by far the cheapest and fastest method of testing,
+        since they can be automated.
+      </P>
+      <P>
+        JEST is a incredibly popular testing framework in JavaScript. It can
+        even test other frameworks, such as React or Angular. Jest is concise
+        and repeatable, allowing developers to easily test their code. It
+        creates functions <IC>expect()</IC> and <IC>toBe()</IC> to test code. If
+        a test fails, the code needs to be rewritten so that it passes the test,
+        and then optimized without changing the results.
+      </P>
+      <CodeBox language="javascript">{jestExampleCode}</CodeBox>
+      <P>
+        Code coverage is concerned with how much of your code is covered by
+        tests. While a 100% code coverage may not ensure 0 bugs, it indicates a
+        reduced chance. Mocking is separating code from it&apos;s dependencies
+        during testing, to only test the code and nothing else. An example of
+        this is simulating data coming from the back-end of the application
+        while working on the front-end.
+      </P>
+      <P>
+        Test-Driven Development (TDD) is a common approach to developing code.
+        First, read the requirements of the software. After reading, construct a
+        test that currently fails, but will pass for the correctly implemented
+        end software product. Then a working solution that passes the test needs
+        to be coded, and then refactored if possible. While it may seem like
+        more work, it prevents introduction of bugs, ensures new implementation
+        does not break the application, and can be automated.
+      </P>
     </Container>
   </Layout>
 )
