@@ -1,10 +1,12 @@
-import { Box, Button } from '@chakra-ui/react'
+import { Box, Button, useColorMode } from '@chakra-ui/react'
 import { ArrowUpIcon } from '@chakra-ui/icons'
 
 function BackToTopButton() {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }
+  const { colorMode } = useColorMode()
+  const buttonColor = colorMode === 'dark' ? 'black' : 'white'
 
   return (
     <Box
@@ -16,7 +18,7 @@ function BackToTopButton() {
       _hover={{ opacity: 1 }}
       id="backToTopButton"
     >
-      <Button onClick={scrollToTop}>
+      <Button style={{ backgroundColor: buttonColor }} onClick={scrollToTop}>
         <ArrowUpIcon />
       </Button>
     </Box>
