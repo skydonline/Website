@@ -63,11 +63,19 @@ export const PostListItem = ({ children }) => (
   </ListItem>
 )
 
-export const TableOfContents = ({ link, title }) => (
-  <PostListItem>
-    <Link href={`#${link}`}>{title}</Link>
-  </PostListItem>
-)
+export const TableOfContents = ({ title }) => {
+  // Convert title to link
+  const toLinkFormat = str => {
+    return str.replace(/\s+/g, '-').toLowerCase()
+  }
+  const link = toLinkFormat(title)
+
+  return (
+    <PostListItem>
+      <Link href={`#${link}`}>{title}</Link>
+    </PostListItem>
+  )
+}
 
 export const ImageCaption = ({ children }) => (
   <Box width="100%" textAlign="center">
@@ -83,11 +91,19 @@ export const PostBigHeading = ({ children }) => (
   </Heading>
 )
 
-export const PostSmallHeading = ({ children, id }) => (
-  <Heading id={id} as="h5" fontSize={17} mt={4}>
-    {children}
-  </Heading>
-)
+export const PostSmallHeading = ({ children }) => {
+  // Convert content to an id
+  const generateId = text => {
+    return text.toLowerCase().replace(/\s+/g, '-')
+  }
+  const ID = generateId(children)
+
+  return (
+    <Heading id={ID} as="h5" fontSize={17} mt={4}>
+      {children}
+    </Heading>
+  )
+}
 
 export const PostImage = ({ src, alt }) => (
   <Box mt={6}>

@@ -384,35 +384,23 @@ const Work = () => (
 
       <PostBigHeading>Table of Contents</PostBigHeading>
       <List>
-        <TableOfContents link="variables" title="Variables" />
-        <TableOfContents link="data-types" title="Data Types" />
-        <TableOfContents link="operators" title="Operators" />
-        <TableOfContents
-          link="conditional-statements"
-          title="Conditional Statements"
-        />
-        <TableOfContents link="loops" title="Loops" />
-        <TableOfContents link="functions" title="Functions" />
-        <TableOfContents link="arrays" title="Arrays" />
-        <TableOfContents link="objects" title="Objects" />
-        <TableOfContents link="bugs-and-errors" title="Bugs and Errors" />
-        <TableOfContents link="empty-values" title="Empty Values" />
-        <TableOfContents
-          link="functional-programming"
-          title="Functional Programming"
-        />
-        <TableOfContents
-          link="object-oriented-programming"
-          title="Object-Oriented Programming"
-        />
-        <TableOfContents link="data-structures" title="Data Structures" />
-        <TableOfContents
-          link="spread-&-rest-operator"
-          title="Spread & Rest Operator"
-        />
-        <TableOfContents link="node.js-&-npm" title="Node.js & npm" />
-        <TableOfContents link="other-features" title="Other Features" />
-        <TableOfContents link="testing" title="Testing" />
+        <TableOfContents title="Variables" />
+        <TableOfContents title="Data Types" />
+        <TableOfContents title="Operators" />
+        <TableOfContents title="Conditional Statements" />
+        <TableOfContents title="Loops" />
+        <TableOfContents title="Functions" />
+        <TableOfContents title="Arrays" />
+        <TableOfContents title="Objects" />
+        <TableOfContents title="Bugs and Errors" />
+        <TableOfContents title="Empty Values" />
+        <TableOfContents title="Functional Programming (FP)" />
+        <TableOfContents title="Object-Oriented Programming (OOP)" />
+        <TableOfContents title="Data Structures" />
+        <TableOfContents title="Spread & Rest Operator" />
+        <TableOfContents title="Node.js & npm" />
+        <TableOfContents title="Other Features" />
+        <TableOfContents title="Testing" />
       </List>
 
       <PostBigHeading>Introduction:</PostBigHeading>
@@ -433,7 +421,7 @@ const Work = () => (
         in a large community of people that can aid you in your coding journey.
       </P>
 
-      <PostSmallHeading id="variables">Variables</PostSmallHeading>
+      <PostSmallHeading>Variables</PostSmallHeading>
       <P>
         Variables in programming is very similar to variables in math; you can
         assign the variable any value, they can change if desired, and they can
@@ -451,7 +439,7 @@ const Work = () => (
         <IC>name</IC> on the left.
       </P>
 
-      <PostSmallHeading id="data-types">Data Types</PostSmallHeading>
+      <PostSmallHeading>Data Types</PostSmallHeading>
       <P>
         Data is some sort of information. This can be text, numbers, etc. Each
         programming language has their own set of data types, but each typically
@@ -465,7 +453,7 @@ const Work = () => (
       </P>
       <DataTypesTable />
 
-      <PostSmallHeading id="operators">Operators</PostSmallHeading>
+      <PostSmallHeading>Operators</PostSmallHeading>
       <P>
         Operators allow you to perform operations on variables and values. It
         has a similar meaning to mathematical operators, such as addition and
@@ -475,9 +463,7 @@ const Work = () => (
       </P>
       <OperatorTable />
 
-      <PostSmallHeading id="conditional-statements">
-        Conditional Statements
-      </PostSmallHeading>
+      <PostSmallHeading>Conditional Statements</PostSmallHeading>
       <P>
         Conditional statements only run if the condition is evaluated to true.
         This is useful if the developer only wants to run a block of code, based
@@ -504,7 +490,7 @@ const Work = () => (
       </P>
       <CodeBox language="javascript">{conditionalSwitchCode}</CodeBox>
 
-      <PostSmallHeading id="loops">Loops</PostSmallHeading>
+      <PostSmallHeading>Loops</PostSmallHeading>
       <P>
         Loops are used when a block of code needs to be repeatedly executed.
         They are similar to conditional statements, in the sense that some
@@ -544,7 +530,7 @@ const Work = () => (
         always be satisfied, so the block of code will run forever.
       </P>
 
-      <PostSmallHeading id="functions">Functions</PostSmallHeading>
+      <PostSmallHeading>Functions</PostSmallHeading>
       <P>
         Functions are a reusable block of code that can be run when it is
         called. It is declared by the <IC>function</IC> keyword, followed by the
@@ -559,7 +545,7 @@ const Work = () => (
       </P>
       <CodeBox language="javascript">{functionsExampleCode}</CodeBox>
 
-      <PostSmallHeading id="arrays">Arrays</PostSmallHeading>
+      <PostSmallHeading>Arrays</PostSmallHeading>
       <P>
         Arrays are used to store and group elements together. They allow for
         indexing into the array to access certain elements of that group. Note
@@ -579,7 +565,7 @@ const Work = () => (
       </P>
       <CodeBox language="javascript">{arrayPushPopCode}</CodeBox>
 
-      <PostSmallHeading id="objects">Objects</PostSmallHeading>
+      <PostSmallHeading>Objects</PostSmallHeading>
       <P>
         Objects are used to group related data together. The object can be
         assigned properties, which are variables that are attached to that
@@ -602,7 +588,7 @@ const Work = () => (
       </P>
       <CodeBox language="javascript">{objectFunctionCode}</CodeBox>
 
-      <PostSmallHeading id="bugs-and-errors">Bugs and Errors</PostSmallHeading>
+      <PostSmallHeading>Bugs and Errors</PostSmallHeading>
       <P>
         Bugs are defined as when the program does not run as intended. On the
         other hand, errors are when the program stops running unexpectedly. No
@@ -637,7 +623,7 @@ const Work = () => (
         Even though an error occurs, the program continues to run
       </ImageCaption>
 
-      <PostSmallHeading id="empty-values">Empty Values</PostSmallHeading>
+      <PostSmallHeading>Empty Values</PostSmallHeading>
       <P>
         In programming, there may be situations where a value should exist, but
         currently does not. This would require an empty value. In JavaScript,
@@ -649,16 +635,14 @@ const Work = () => (
         filled in later.
       </P>
 
-      <PostSmallHeading id="functional-programming">
-        Functional Programming (FP)
-      </PostSmallHeading>
+      <PostSmallHeading>Functional Programming (FP)</PostSmallHeading>
       <P>
         When speaking or writing English, the style of language varies: it can
         be very formal, casual, or somewhere inbetween. The same goes for
         programming, in the sense that there are different styles. Functional
-        programming focuses on utilizing functions to process data, and the data
-        exists outside that function. The functions can return new values, which
-        are then used elsewhere in the code.
+        programming (FP) focuses on utilizing functions to process data, and the
+        data exists outside that function. The functions can return new values,
+        which are then used elsewhere in the code.
       </P>
       <CodeBox language="javascript">{functionalExampleCode}</CodeBox>
 
@@ -693,9 +677,7 @@ const Work = () => (
         will not change, since it cannot be reassigned.
       </P>
 
-      <PostSmallHeading id="object-oriented-programming">
-        Object-Oriented Programming (OOP)
-      </PostSmallHeading>
+      <PostSmallHeading>Object-Oriented Programming (OOP)</PostSmallHeading>
       <P>
         Another popular programming paradigm is object-oriented programming. The
         main idea is that functions and data are grouped into objects, making
@@ -746,7 +728,7 @@ const Work = () => (
       </P>
       <CodeBox language="javascript">{classPrinciplesCode}</CodeBox>
 
-      <PostSmallHeading id="data-structures">Data Structures</PostSmallHeading>
+      <PostSmallHeading>Data Structures</PostSmallHeading>
       <P>
         Data structures are a core concept to every programming language. Data
         structures are an efficient way to store and organize data. JavaScript
@@ -803,9 +785,7 @@ const Work = () => (
         into JavaScript, so you will have to code them on your own.
       </P>
 
-      <PostSmallHeading id="spread-&-rest-operator">
-        Spread & Rest Operator
-      </PostSmallHeading>
+      <PostSmallHeading>Spread & Rest Operator</PostSmallHeading>
       <P>
         The spread operator is used to expand an iterable, such as an array.
         Denoted as <IC>...</IC>, it is placed infront of the iterable that you
@@ -826,7 +806,7 @@ const Work = () => (
       </P>
       <CodeBox language="javascript">{restCode}</CodeBox>
 
-      <PostSmallHeading id="node.js-&-npm">Node.js & npm</PostSmallHeading>
+      <PostSmallHeading>Node.js & npm</PostSmallHeading>
       <P>
         Previously, JavaScript was originally only for front-end development,
         and was not able to be utilized for back-end development. Developers had
@@ -840,7 +820,7 @@ const Work = () => (
         (dependencies) used in the project.
       </P>
 
-      <PostSmallHeading id="other-features">Other Features</PostSmallHeading>
+      <PostSmallHeading>Other Features</PostSmallHeading>
       <P>
         Destructuring in JavaScript can be thought of as extracting certain
         items from arrays or objects to a different location, while leaving the
@@ -907,7 +887,7 @@ const Work = () => (
       </P>
       <CodeBox language="javascript">{jsonCode}</CodeBox>
 
-      <PostSmallHeading id="testing">Testing</PostSmallHeading>
+      <PostSmallHeading>Testing</PostSmallHeading>
       <P>
         Testing code is fundamental in software engineering, to ensure the
         program works as intended before it is published. There are a few

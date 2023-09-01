@@ -88,6 +88,8 @@ grep -w Sa file.txt  # exact matches only
 
 const gitCommandsCode = `git status  # prints current git state
 
+touch file.txt  # adds file
+
 git add file.txt  # Git now tracks file.txt
 
 git restore --staged file.txt  # Git no longer tracks
@@ -96,6 +98,12 @@ git add file.txt  # Git again tracks file.txt
 git commit -m "Commit message"  # commits on local machine with message
 
 git push  # pushes to repository`
+
+const branchCommandsCode = `git branch  # lists all branches
+
+git checkout -B feature/example  
+# creates new branch called feature/example
+# automatically moves into feature/example branch`
 
 const Work = () => (
   <Layout title="Version Control">
@@ -112,12 +120,14 @@ const Work = () => (
       <PostImage src={certificate} alt="certification" />
       <PostBigHeading>Table of Contents</PostBigHeading>
       <List>
-        <TableOfContents link="benefits" title="Benefits" />
-        <TableOfContents link="types" title="Types" />
-        <TableOfContents link="environments" title="Environments" />
-        <TableOfContents link="ci/cd" title="CI/CD" />
-        <TableOfContents link="command-line" title="Command Line" />
-        <TableOfContents link="git-&-github" title="Git & GitHub" />
+        <TableOfContents title="Benefits" />
+        <TableOfContents title="Version Control Systems" />
+        <TableOfContents title="Environments" />
+        <TableOfContents title="CI/CD" />
+        <TableOfContents title="Command Line" />
+        <TableOfContents title="Git & GitHub" />
+        <TableOfContents title="Branches" />
+        <TableOfContents title="Remote vs Local" />
       </List>
       <PostBigHeading>Introduction:</PostBigHeading>
       <P>
@@ -128,7 +138,7 @@ const Work = () => (
         collaborate with each other, without messing other people&apos;s code
         up.
       </P>
-      <PostSmallHeading id="benefits">Benefits</PostSmallHeading>
+      <PostSmallHeading>Benefits</PostSmallHeading>
       <P>
         There are numerous benefits that come with version control: revision
         history, identity, collaboration, automation, and many more. Revision
@@ -146,7 +156,7 @@ const Work = () => (
         control, there are many more, and version control is an essential
         component to every software project.
       </P>
-      <PostSmallHeading id="types">Types</PostSmallHeading>
+      <PostSmallHeading>Version Control Systems</PostSmallHeading>
       <P>
         There are 2 main types of version control systems: centralized and
         distributed.
@@ -182,7 +192,7 @@ const Work = () => (
       </P>
       <PostImage src={cvcs_dvcs} alt="CVCS and DVCS" />
       <ImageCaption>Left: CVCS, Right: DVCS</ImageCaption>
-      <PostSmallHeading id="environments">Environments</PostSmallHeading>
+      <PostSmallHeading>Environments</PostSmallHeading>
       <P>
         To ensure a great user experience, development teams need to verify the
         code they are releasing does not cause any bugs. Typically, teams will
@@ -205,7 +215,7 @@ const Work = () => (
         causes distrust amoung its users. Cyber-security considerations need to
         be in place, to prevent the data of the application.
       </P>
-      <PostSmallHeading id="ci/cd">CI/CD</PostSmallHeading>
+      <PostSmallHeading>CI/CD</PostSmallHeading>
       <P>
         Continuous Integration (CI) means automating code changes into a single
         main stream. When the workflow consists of small frequent changes, this
@@ -226,7 +236,7 @@ const Work = () => (
       </P>
       <PostImage src={ci_cd} alt="CI/CD cycle" />
       <ImageCaption>Illustration of the CI/CD cycle</ImageCaption>
-      <PostSmallHeading id="command-line">Command Line</PostSmallHeading>
+      <PostSmallHeading>Command Line</PostSmallHeading>
       <P>
         People can seemlessly interact with computers on a daily basis through a
         graphical user interface (GUI), since it is visual and intuitive to use.
@@ -304,7 +314,7 @@ const Work = () => (
       <ImageCaption>names.txt</ImageCaption>
       <CodeBox language="bash">{searchGrepResultCode}</CodeBox>
 
-      <PostSmallHeading id="git-&-github">Git & GitHub</PostSmallHeading>
+      <PostSmallHeading>Git & GitHub</PostSmallHeading>
       <P>
         Git is a version control system that tracks changes to projects. Git is
         incredibly popular due to its performance and reliability. GitHub is a
@@ -335,6 +345,34 @@ const Work = () => (
         available on the main repository, run <IC>git push</IC>.
       </P>
       <CodeBox language="bash">{gitCommandsCode}</CodeBox>
+
+      <PostSmallHeading>Branches</PostSmallHeading>
+      <P>
+        Branches are a different commit version than the <IC>main</IC> branch
+        and other repository branches that can be actively developed on,
+        isolated from each other. Branches are commonly used to develop features
+        and experiment without affecting the main codebase, and allow for
+        different teams to work on code without affecting each other. If they
+        decide the code is good, they can merge it with the <IC>main</IC>{' '}
+        branch. <IC>git branch</IC> lists all the branches in the repository.{' '}
+        <IC>git checkout -B newBranch</IC> moves you to the <IC>newBranch</IC>{' '}
+        branch that was newly created.
+      </P>
+      <CodeBox language="bash">{branchCommandsCode}</CodeBox>
+
+      <PostSmallHeading>Remote vs Local</PostSmallHeading>
+      <P>
+        The internet enables wireless and fast data transfer. Local code is the
+        code only available on your local machine, only accessible to you.
+        Remote code refers to code that is accessible via URI by numerous
+        people, as long as they have permission to access it. This can be
+        something like GitHub. In order to get code from the remote repository
+        to your local machine, if it is the first time, the repository needs to
+        be cloned. After that, the local machine only needs to pull to get the
+        latest changes. The user can make changes and then push them back to the
+        server. Other developers cannot see those new changes until they pull
+        from the server.
+      </P>
     </Container>
   </Layout>
 )

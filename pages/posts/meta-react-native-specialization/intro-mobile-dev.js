@@ -30,18 +30,12 @@ const Work = () => (
 
       <PostBigHeading>Table of Contents</PostBigHeading>
       <List>
-        <TableOfContents link="web" title="Web" />
-        <TableOfContents link="mobile-development" title="Mobile Development" />
-        <TableOfContents link="html" title="HTML" />
-        <TableOfContents link="css" title="CSS" />
-        <TableOfContents
-          link="cross-platform-development"
-          title="Cross-Platform Development"
-        />
-        <TableOfContents
-          link="react-&-react-native"
-          title="React & React Native"
-        />
+        <TableOfContents title="Web" />
+        <TableOfContents title="Mobile Development" />
+        <TableOfContents title="HTML" />
+        <TableOfContents title="CSS" />
+        <TableOfContents title="Cross-Platform Development" />
+        <TableOfContents title="React & React Native" />
       </List>
 
       <PostBigHeading>Introduction:</PostBigHeading>
@@ -59,7 +53,7 @@ const Work = () => (
         accessing it.
       </P>
 
-      <PostSmallHeading id="web">Web</PostSmallHeading>
+      <PostSmallHeading>Web</PostSmallHeading>
       <P>
         A webpage is the document displayed on your screen, whereas a website is
         a collection of different webpages. Each webpage consists of 3 main
@@ -97,9 +91,7 @@ const Work = () => (
         users device.
       </P>
 
-      <PostSmallHeading id="mobile-development">
-        Mobile Development
-      </PostSmallHeading>
+      <PostSmallHeading>Mobile Development</PostSmallHeading>
       <P>
         The most popular mobile device operating systems in the world, iOS and
         Android, run on different languages. Most iOS applications run on Swift,
@@ -111,7 +103,7 @@ const Work = () => (
         concise syntax (being able to write less code and be more readable).
       </P>
 
-      <PostSmallHeading id="html">HTML</PostSmallHeading>
+      <PostSmallHeading>HTML</PostSmallHeading>
       <P>
         Hyper Text Markup Language (HTML) defines the structure of the webpage.
         It is the actual components of the webpage, such as text, images,
@@ -125,7 +117,7 @@ const Work = () => (
         Left: Example HTML, Right: DOM Structure of HTML
       </ImageCaption>
 
-      <PostSmallHeading id="css">CSS</PostSmallHeading>
+      <PostSmallHeading>CSS</PostSmallHeading>
       <P>
         Cascading Style Sheets (CSS) defines the styling of the components on
         the page. This includes, but is not limited to, color, placement, fonts.
@@ -138,9 +130,7 @@ const Work = () => (
       <PostImage src={css} alt="CSS Rule" />
       <ImageCaption>Example of a single CSS rule</ImageCaption>
 
-      <PostSmallHeading id="cross-platform-development">
-        Cross-Platform Development
-      </PostSmallHeading>
+      <PostSmallHeading>Cross-Platform Development</PostSmallHeading>
       <P>
         Cross-platform development means producing a single application that can
         be deployed or used on multiple operating systems, such as iOS, Android
@@ -154,9 +144,7 @@ const Work = () => (
         higher levels of efficiency.
       </P>
 
-      <PostSmallHeading id="react-&-react-native">
-        React & React Native
-      </PostSmallHeading>
+      <PostSmallHeading>React & React Native</PostSmallHeading>
       <P>
         React is a modern JavaScript library that is used to construct websites
         and UI. React Native is a framework that enables cross-platform app
