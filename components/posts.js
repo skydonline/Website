@@ -141,7 +141,6 @@ export const CodeBox = ({ language, children }) => {
       <Box
         backgroundColor="#3a404d"
         maxWidth="100%"
-        minWidth="25rem"
         height="auto"
         borderRadius="0.375rem"
         overflow="hidden"
