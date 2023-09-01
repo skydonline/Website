@@ -20,7 +20,12 @@ import {
   useClipboard,
   useColorModeValue
 } from '@chakra-ui/react'
-import { ChevronRightIcon, CopyIcon, CheckIcon } from '@chakra-ui/icons'
+import {
+  ChevronRightIcon,
+  CopyIcon,
+  CheckIcon,
+  ExternalLinkIcon
+} from '@chakra-ui/icons'
 import NextImage from 'next/image'
 import SyntaxHighlighter from 'react-syntax-highlighter'
 import { nightOwl } from 'react-syntax-highlighter/dist/cjs/styles/hljs'
@@ -96,9 +101,24 @@ export const PostImage = ({ src, alt }) => (
   </Box>
 )
 
-// IC shrot for "inline code", to make code cleaner
+// IC short for "inline code", to make code cleaner
 export const IC = ({ children }) => (
   <Code style={{ textIndent: '0' }}>{children}</Code>
+)
+
+// Inline code for tables
+export const TableIC = ({ children }) => (
+  <Th
+    style={{
+      borderBottom: '1px solid',
+      borderLeft: '1px solid',
+      borderRight: '1px solid',
+      textAlign: 'center',
+      textTransform: 'none'
+    }}
+  >
+    <Code style={{ textIndent: '0', fontSize: '11px' }}>{children}</Code>
+  </Th>
 )
 
 // Source: https://github.com/react-syntax-highlighter/react-syntax-highlighter#readme
@@ -120,7 +140,7 @@ export const CodeBox = ({ language, children }) => {
     <Box mt={2} mb={2}>
       <Box
         backgroundColor="#3a404d"
-        maxWidth="200%"
+        maxWidth="100%"
         minWidth="25rem"
         height="auto"
         borderRadius="0.375rem"
@@ -211,6 +231,17 @@ export const DataTypesTable = () => (
         </Tr>
       </Tbody>
     </Table>
+    <ImageCaption>
+      For a more comprehensive list, you can visit the following{' '}
+      <Link
+        target="_blank"
+        href="https://www.w3schools.com/js/js_datatypes.asp"
+      >
+        link
+        <ExternalLinkIcon mx="2px" />
+      </Link>
+      .
+    </ImageCaption>
   </TableContainer>
 )
 
@@ -276,5 +307,83 @@ export const OperatorTable = () => (
         </Tr>
       </Tbody>
     </Table>
+    <ImageCaption>
+      For a more comprehensive list, you can visit the following{' '}
+      <Link
+        target="_blank"
+        href="https://www.w3schools.com/jsref/jsref_operators.asp"
+      >
+        link
+        <ExternalLinkIcon mx="2px" />
+      </Link>
+      .
+    </ImageCaption>
+  </TableContainer>
+)
+
+export const CommandLineTable = () => (
+  <TableContainer mt={4}>
+    <Table>
+      <Thead>
+        <Tr>
+          <Th style={headerCellStyle}>Command</Th>
+          <Th style={headerCellStyle}>Usage</Th>
+          <Th style={headerCellStyle}>Example</Th>
+        </Tr>
+      </Thead>
+      <Tbody>
+        <Tr>
+          <TableIC>cd x</TableIC>
+          <Th style={dataCellStyle}>Change Directory</Th>
+          <TableIC>cd dir</TableIC>
+        </Tr>
+        <Tr>
+          <TableIC>cd ..</TableIC>
+          <Th style={dataCellStyle}>Parent Directory</Th>
+          <TableIC>cd ..</TableIC>
+        </Tr>
+        <Tr>
+          <TableIC>mkdir x</TableIC>
+          <Th style={dataCellStyle}>Make Directory</Th>
+          <TableIC>mkdir new_dir</TableIC>
+        </Tr>
+        <Tr>
+          <TableIC>touch x</TableIC>
+          <Th style={dataCellStyle}>Create New File</Th>
+          <TableIC>touch ex.js</TableIC>
+        </Tr>
+        <Tr>
+          <TableIC>code x</TableIC>
+          <Th style={dataCellStyle}>Open File in VS Code</Th>
+          <TableIC>code ex.js</TableIC>
+        </Tr>
+        <Tr>
+          <TableIC>ls</TableIC>
+          <Th style={dataCellStyle}>List Contents</Th>
+          <TableIC>ls</TableIC>
+        </Tr>
+        <Tr>
+          <TableIC>man x</TableIC>
+          <Th style={dataCellStyle}>Command Manual</Th>
+          <TableIC>man mkdir</TableIC>
+        </Tr>
+        <Tr>
+          <TableIC>pwd</TableIC>
+          <Th style={dataCellStyle}>Path to Current Directory</Th>
+          <TableIC>pwd</TableIC>
+        </Tr>
+      </Tbody>
+    </Table>
+    <ImageCaption>
+      For a more comprehensive list, you can visit the following{' '}
+      <Link
+        target="_blank"
+        href="https://inst.eecs.berkeley.edu/~cs61b/fa13/ta-materials/unix-concise-ref.pdf"
+      >
+        link
+        <ExternalLinkIcon mx="2px" />
+      </Link>
+      .
+    </ImageCaption>
   </TableContainer>
 )

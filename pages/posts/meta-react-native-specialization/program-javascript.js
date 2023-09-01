@@ -464,18 +464,6 @@ const Work = () => (
         types:
       </P>
       <DataTypesTable />
-      <ImageCaption>
-        {' '}
-        For a more comprehensive list, you can visit the following{' '}
-        <Link
-          target="_blank"
-          href="https://www.w3schools.com/js/js_datatypes.asp"
-        >
-          link
-          <ExternalLinkIcon mx="2px" />
-        </Link>
-        .
-      </ImageCaption>
 
       <PostSmallHeading id="operators">Operators</PostSmallHeading>
       <P>
@@ -486,17 +474,6 @@ const Work = () => (
         comparison operators. Here are a few common operators in JavaScript:
       </P>
       <OperatorTable />
-      <ImageCaption>
-        For a more comprehensive list, you can visit the following{' '}
-        <Link
-          target="_blank"
-          href="https://www.w3schools.com/jsref/jsref_operators.asp"
-        >
-          link
-          <ExternalLinkIcon mx="2px" />
-        </Link>
-        .
-      </ImageCaption>
 
       <PostSmallHeading id="conditional-statements">
         Conditional Statements

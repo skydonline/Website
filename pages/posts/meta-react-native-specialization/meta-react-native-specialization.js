@@ -14,8 +14,9 @@ import Layout from '../../../components/layouts/article'
 import Section from '../../../components/section'
 import { PostGridItem } from '../../../components/grid-item'
 
-import programJavaScript from '../../../public/images/posts/program-javascript.png'
 import introMobileDev from '../../../public/images/posts/intro-mobile-dev.png'
+import programJavaScript from '../../../public/images/posts/program-javascript.png'
+import versionControl from '../../../public/images/posts/version-control.png'
 
 const Work = () => (
   <Layout title="Meta React Native Specialization">
@@ -75,6 +76,16 @@ const Work = () => (
             title="Programming with JavaScript"
           >
             JavaScript, JavaScript technologies, Jest
+          </PostGridItem>
+        </Section>
+
+        <Section>
+          <PostGridItem
+            id="/meta-react-native-specialization/version-control"
+            thumbnail={versionControl}
+            title="Version Control"
+          >
+            Version Control, Git, GitHub
           </PostGridItem>
         </Section>
       </SimpleGrid>
