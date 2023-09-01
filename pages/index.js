@@ -108,6 +108,7 @@ const Page = () => {
           <Heading as="h3" variant="section-title">
             Experience
           </Heading>
+          <BioItem title="DeltaHacks Executive Team" date="Aug'23 - Present" />
           <BioItem
             title="Software Developer at Auranova Inc."
             date="Jul'23 - Aug'23"
