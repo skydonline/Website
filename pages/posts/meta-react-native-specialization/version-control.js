@@ -19,6 +19,7 @@ import certificate from '../../../public/images/posts/program-javascript-cert.jp
 import cvcs_dvcs from '../../../public/images/posts/cvcs_dvcs.png'
 import ci_cd from '../../../public/images/posts/ci_cd.png'
 import gitStates from '../../../public/images/posts/git_states.png'
+import merge_conflict from '../../../public/images/posts/merge_conflict.png'
 
 const inputRedirectCode = `cat < file.txt
 # takes file.txt as input for cat command
@@ -99,12 +100,6 @@ git commit -m "Commit message"  # commits on local machine with message
 
 git push  # pushes to repository`
 
-const branchCommandsCode = `git branch  # lists all branches
-
-git checkout -B feature/example  
-# creates new branch called feature/example
-# automatically moves into feature/example branch`
-
 const Work = () => (
   <Layout title="Version Control">
     <Container>
@@ -128,6 +123,7 @@ const Work = () => (
         <TableOfContents title="Git & GitHub" />
         <TableOfContents title="Branches" />
         <TableOfContents title="Remote vs Local" />
+        <TableOfContents title="Push and Pull" />
       </List>
       <PostBigHeading>Introduction:</PostBigHeading>
       <P>
@@ -279,7 +275,8 @@ const Work = () => (
         work. For example, the <IC>cat</IC> command concatenates and displays
         the content of the file, and needs some sort of file as an input for it
         to work. We can use the input redirection symbol, <IC>&lt;</IC> to
-        redirect an input into the <IC>cat</IC> command.
+        redirect an input into the <IC>cat</IC> command. Below is an example of
+        it in use:
       </P>
       <CodeBox language="bash">{inputRedirectCode}</CodeBox>
       <P>
@@ -342,7 +339,9 @@ const Work = () => (
         <IC>x</IC>. In order for the code to be committed on your local machine,
         run the command <IC>git commit -m &quot;x&quot;</IC>, where x is the
         message that will go along with the commit. For the changes to be
-        available on the main repository, run <IC>git push</IC>.
+        available on the main repository, run <IC>git push</IC>. More on{' '}
+        <IC>push</IC> and <IC>pull</IC> in a{' '}
+        <Link href="#push-and-pull">later section</Link>.
       </P>
       <CodeBox language="bash">{gitCommandsCode}</CodeBox>
 
@@ -358,7 +357,15 @@ const Work = () => (
         <IC>git checkout -B newBranch</IC> moves you to the <IC>newBranch</IC>{' '}
         branch that was newly created.
       </P>
-      <CodeBox language="bash">{branchCommandsCode}</CodeBox>
+      <P>
+        Feature branching is a common technique used throughout software
+        development. Feature branching means creating a new branch from the{' '}
+        <IC>main</IC> branch, and develop on that branch until the feature is
+        complete. Once the feature is complete, it can then be pushed to the{' '}
+        <IC>main</IC> branch, where then it is peer reviewed to ensure the code
+        is acceptable. If fellow developers consider it to be good code, it can
+        then be approved to merge onto the <IC>main</IC> branch.
+      </P>
 
       <PostSmallHeading>Remote vs Local</PostSmallHeading>
       <P>
@@ -372,6 +379,58 @@ const Work = () => (
         latest changes. The user can make changes and then push them back to the
         server. Other developers cannot see those new changes until they pull
         from the server.
+      </P>
+
+      <PostSmallHeading>Push and Pull</PostSmallHeading>
+      <P>
+        Recall that to check the current status of your project on your local
+        machine, run <IC>git status</IC>. It is always important to check which
+        branch you are on before pushing or pulling from the codebase. To pull
+        the latest server code, perform the <IC>git pull</IC> command. It is
+        best practice to perform this command prior to pushing code to the
+        server, since it will reduce the chance of a merge conflict. Remember,{' '}
+        <IC>git push branchName</IC> pushes the code to the <IC>branchName</IC>{' '}
+        branch.
+      </P>
+      <P>
+        Conflicts can occur when developers merge branches together but have
+        different changes on the same lines/pieces of code. While Git tries to
+        auto-merge code changes, conflicts need correction by the developer. Git
+        marks conflicting lines with markers, which then the developer has to
+        review and modify, ultimately deciding the final changes. The
+        conflicting lines are marked with <IC>&lt;&lt;&lt;&lt;&lt;&lt;&lt;</IC>{' '}
+        to indicates the start of the conflicts, <IC>=======</IC> separates the
+        branch you&apos;re trying to merge onto from the commit you&apos;re
+        trying to merge, and <IC>&gt;&gt;&gt;&gt;&gt;&gt;&gt;</IC> indicates the
+        end of the conflict. Below is an illustration of what a conflict might
+        look like in VS Code:
+      </P>
+      <PostImage src={merge_conflict} alt="Merge Conflict" />
+      <ImageCaption>Sample merge conflict in VS Code</ImageCaption>
+
+      <P>
+        <IC>Current Change</IC> represents the your changes, while{' '}
+        <IC>Incoming Change</IC> represents the changes made in the branch
+        you&apos;re trying to merge to. There are a few options to resolve the
+        merge conflict: <IC>Accept Current Change</IC>,{' '}
+        <IC>Accept Incoming Change</IC>, <IC>Accept Both Changes</IC>, and{' '}
+        <IC>Compare Changes</IC>. <IC>Accept Current Change</IC> and{' '}
+        <IC>Accept Incoming Change</IC> are self-explanatory; the chosen change
+        will be accepted, and the other will be rejected.{' '}
+        <IC>Accept Both Changes</IC> causes all the lines of code to be in the
+        codebase. <IC>Compare Changes</IC> gives a side-by-side view of the
+        incoming and current changes, to better understand where it lies in the
+        code and compare the different versions. VS Code has numerous additional
+        features to help resolve merge conflicts, and you can find a full
+        tutorial on merge conflicts{' '}
+        <Link
+          target="_blank"
+          href="https://www.youtube.com/watch?v=HosPml1qkrg"
+        >
+          here
+          <ExternalLinkIcon mx="2px" />
+        </Link>
+        .
       </P>
     </Container>
   </Layout>

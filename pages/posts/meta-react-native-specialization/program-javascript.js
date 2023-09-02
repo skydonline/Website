@@ -594,7 +594,10 @@ const Work = () => (
         other hand, errors are when the program stops running unexpectedly. No
         further code is executed. There are numerous types of errors: reference,
         syntax, type, etc. For a more comprehensive list of errors, visit this{' '}
-        <Link href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Errors">
+        <Link
+          target="_blank"
+          href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Errors"
+        >
           reference
           <ExternalLinkIcon mx="2px" />
         </Link>
