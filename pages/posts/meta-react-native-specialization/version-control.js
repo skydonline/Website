@@ -122,6 +122,7 @@ const Work = () => (
         <TableOfContents title="Command Line" />
         <TableOfContents title="Git & GitHub" />
         <TableOfContents title="Branches" />
+        <TableOfContents title="Forking" />
         <TableOfContents title="Remote vs Local" />
         <TableOfContents title="Push and Pull" />
       </List>
@@ -365,6 +366,18 @@ const Work = () => (
         <IC>main</IC> branch, where then it is peer reviewed to ensure the code
         is acceptable. If fellow developers consider it to be good code, it can
         then be approved to merge onto the <IC>main</IC> branch.
+      </P>
+
+      <PostSmallHeading>Forking</PostSmallHeading>
+      <P>
+        While branching creates a new branch from the same repository, and each
+        team member works on that same repository, Forking creates a entirely
+        new independent repository. Forking essentially creates a copy of the
+        repository and grants you ownership of that copy. The forked repository
+        and original repository are entirely disconnected from each other, so
+        changes are unlinked to every forked repository. If someone wanted their
+        code changes to be added to the original repository, the owner would
+        need to review and accept your pull request.
       </P>
 
       <PostSmallHeading>Remote vs Local</PostSmallHeading>
