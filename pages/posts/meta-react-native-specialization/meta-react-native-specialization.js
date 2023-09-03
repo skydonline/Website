@@ -17,12 +17,15 @@ import { PostGridItem } from '../../../components/grid-item'
 import introMobileDev from '../../../public/images/posts/intro-mobile-dev.png'
 import programJavaScript from '../../../public/images/posts/program-javascript.png'
 import versionControl from '../../../public/images/posts/version-control.png'
+import reactBasics from '../../../public/images/posts/react-basics.png'
+
+const title = 'Meta React Native Specialization'
 
 const Work = () => (
-  <Layout title="Meta React Native Specialization">
+  <Layout title={title}>
     <Container>
       <Title>
-        Meta React Native Specialization <Badge>August 2023</Badge>
+        {title} <Badge>August 2023</Badge>
       </Title>
       <P>
         Become a cross-platform mobile app developer. Learn in-demand skills for
@@ -84,6 +87,16 @@ const Work = () => (
             id="/meta-react-native-specialization/version-control"
             thumbnail={versionControl}
             title="Version Control"
+          >
+            Version Control, Git, GitHub
+          </PostGridItem>
+        </Section>
+
+        <Section>
+          <PostGridItem
+            id="/meta-react-native-specialization/react-basics"
+            thumbnail={reactBasics}
+            title="React Basics"
           >
             Version Control, Git, GitHub
           </PostGridItem>

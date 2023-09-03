@@ -15,15 +15,17 @@ import certificate from '../../../public/images/posts/intro-mobile-dev-cert.jpeg
 import html from '../../../public/images/posts/html-dom.png'
 import css from '../../../public/images/posts/css.png'
 
+const title = 'Introduction to Mobile Development'
+
 const Work = () => (
-  <Layout title="Meta React Native Specialization">
+  <Layout title={title}>
     <Container>
-      <Title>Introduction to Mobile Development</Title>
+      <Title>{title}</Title>
       <PostBigHeading>Main Learnings:</PostBigHeading>
       <List>
         <PostListItem>Role of a cross-platform mobile developer</PostListItem>
-        <PostListItem>Fundamentals about React and React Native</PostListItem>
-        <PostListItem>Basics of HTML and CSS</PostListItem>
+        <PostListItem>Foundations of React and React Native</PostListItem>
+        <PostListItem>Core principles of HTML and CSS</PostListItem>
       </List>
 
       <PostImage src={certificate} alt="certification" />

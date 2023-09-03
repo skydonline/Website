@@ -15,7 +15,7 @@ import {
 } from '../../../components/posts'
 import { ExternalLinkIcon } from '@chakra-ui/icons'
 
-import certificate from '../../../public/images/posts/program-javascript-cert.jpeg'
+import certificate from '../../../public/images/posts/version-control-cert.jpeg'
 import cvcs_dvcs from '../../../public/images/posts/cvcs_dvcs.png'
 import ci_cd from '../../../public/images/posts/ci_cd.png'
 import gitStates from '../../../public/images/posts/git_states.png'
@@ -100,10 +100,12 @@ git commit -m "Commit message"  # commits on local machine with message
 
 git push  # pushes to repository`
 
+const title = 'Version Control'
+
 const Work = () => (
-  <Layout title="Version Control">
+  <Layout title={title}>
     <Container>
-      <Title>Version Control</Title>
+      <Title>{title}</Title>
       <PostBigHeading>Main Learnings:</PostBigHeading>
       <List>
         <PostListItem>Version control systems and tools</PostListItem>

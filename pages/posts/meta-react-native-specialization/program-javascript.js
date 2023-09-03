@@ -367,10 +367,12 @@ const jestExampleCode = `function concat(arg1, arg2) {
 expect(concat("concat ", "string")).toBe("concat string");  // passes test
 expect(concat(1, 2)).toBe("12"); // fails`
 
+const title = 'Programming with JavaScript'
+
 const Work = () => (
-  <Layout title="Programming with JavaScript">
+  <Layout title={title}>
     <Container>
-      <Title>Programming with JavaScript</Title>
+      <Title>{title}</Title>
       <PostBigHeading>Main Learnings:</PostBigHeading>
       <List>
         <PostListItem>
