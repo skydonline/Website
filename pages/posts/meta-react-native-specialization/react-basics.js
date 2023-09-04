@@ -168,6 +168,83 @@ const Example = (props) => {
   );
 }`
 
+const ternaryOpCode = `let weather = "Rain";
+
+// if...else
+if (weather == "Rain") {
+  console.log("Stay inside");
+} else {
+  console.log("Go outside!");
+}
+
+// ternary operator
+weather == "Rain" ? console.log("Stay inside") : console.log("Go outside!");
+
+// example
+function Ternary() {
+  const age = 19;
+  return (
+    <>
+      <p>{age >= 18 ? "Adult" : "Child"}</p>
+    </>
+  )
+}`
+
+const eventExampleCode = `function doAction() {
+  console.log("Clicked button");
+}
+
+function eventListener() {
+  return (
+    // triggers doAction on button press
+    <button onClick={doAction}>Click me</button>
+  );
+}`
+
+const embedExpEventCode = `// assume wrapped is in a return statement
+// inline anonymous ES5 function
+<button onClick={function() {console.log("Clicked!"); }}>
+  Content
+</button>
+
+// inline anonymous ES6 arrow function
+<button onClick={() => console.log("Clicked!"); }>
+  Content
+</button>
+
+// separate function declaration
+function Declaration() {
+  function insideDeclaration() {
+    console.log("Example");
+  };
+  return (
+    <div>
+      <button onClick={insideDeclaration}>
+        Content
+      </button>
+    </div>
+  );
+}
+
+// separate function expressions
+function Expression() {
+  const insideExpression = () => console.log("Example");
+
+  return (
+    <div>
+      <button onClick={insideExpression}>
+        Content
+      </button>
+    </div>
+  );
+}`
+
+const errorExampleCode = `try {
+  console.log(item);
+} catch (err) {
+  console.log(\`An error occured: \${err}\`);
+}`
+
 const title = 'React Basics'
 
 const Work = () => (
@@ -192,6 +269,7 @@ const Work = () => (
         <TableOfContents title="Components" />
         <TableOfContents title="Properties (props)" />
         <TableOfContents title="JSX" />
+        <TableOfContents title="Events" />
       </List>
       <PostBigHeading>Introduction:</PostBigHeading>
       <P>
@@ -382,8 +460,8 @@ const Work = () => (
         example, HTML elements can optionally have a <IC>class</IC> attribute
         added to them. However, <IC>class</IC> is also a keyword in JavaScript,
         so <IC>className</IC> is the replacement for <IC>class</IC> attribute in
-        JSX for HTML elements. For a more comprehensive list of variations in
-        HTML attributes, visit the{' '}
+        JSX for HTML elements. For a comprehensive list of variations in HTML
+        attributes, please refer to the{' '}
         <Link
           href="https://legacy.reactjs.org/docs/dom-elements.html"
           target="_blank"
@@ -427,6 +505,74 @@ const Work = () => (
         as a replacement for the keyword <IC>function</IC>.
       </P>
       <CodeBox language="jsx">{JSXCreateComponentCode}</CodeBox>
+      <P>
+        A ternary operator is an effective and more concise way to replicate an{' '}
+        <IC>if...else</IC> conditional. While this feature is not exclusive to
+        JSX, rather is a JavaScript feature, it is commonly used in JSX because
+        of its short notation. The ternary operator consists of 2 symbols (
+        <IC>?</IC> and <IC>:</IC>), a condition and 2 statements that will be
+        evaluated based on if the condition is true or false. The syntax goes as
+        follows: <IC>condition ? true : false</IC>. Read it as if this condition
+        is true, then this will execute, else this will execute. The <IC>?</IC>{' '}
+        is essentially the block of code in the <IC>if</IC> statement, while the{' '}
+        <IC>:</IC> is the <IC>else</IC> block. Below is an example to better
+        illustrate it.
+      </P>
+      <CodeBox language="javascript">{ternaryOpCode}</CodeBox>
+      <ImageCaption>
+        Both conditionals are equivalent. The component renders
+        &quot;Adult&quot; because the condition is true
+      </ImageCaption>
+
+      <PostSmallHeading>Events</PostSmallHeading>
+      <P>
+        JavaScript events are when specified actions occur on a webpage and then
+        a repsonse is generated. Events enable developers to create a
+        interactive and dynamic UI. Some HTML attributes have unique
+        functionality and are called &quot;event listeners&quot;. This is
+        because some events have to &quot;wait and listen&quot; for the
+        interaction to occur before executing (triggering). <IC>onClick</IC> is
+        a commonly used JSX event listener, which as the name implies, is
+        triggered when the user clicks on that element. For a comprehensive list
+        of event listeners, please refer to the{' '}
+        <Link
+          href="https://legacy.reactjs.org/docs/events.html#supported-events"
+          target="_blank"
+        >
+          official documentation
+          <ExternalLinkIcon mx="2px" />
+        </Link>
+        .
+      </P>
+      <CodeBox language="jsx">{eventExampleCode}</CodeBox>
+      <P>
+        Clicking the button itself is the event. The event handler is the{' '}
+        <IC>onClick</IC> attribute, and the action is executing the{' '}
+        <IC>doAction</IC> function, which logs &quot;Clicked button&quot; to the
+        console.
+      </P>
+      <P>
+        Like previously mentioned, you can embed expressions in JSX using curly
+        braces. A common location to embed expressions is in event handlers.
+        There are numerous different ways to achieve this: an inline anonymous
+        function, a separate function declaration or a separate function
+        expression. Inline functions are concise and do not need to be reused
+        elsewhere. Function declarations and expressions make the JSX code more
+        readable by splitting the rendered components from the event action,
+        while also allowing the function to be reused.
+      </P>
+      <CodeBox language="javascript">{embedExpEventCode}</CodeBox>
+      <P>
+        With any programming environment or language, errors are an inevitable
+        part of the development process. JavaScript comes with built-in error
+        handling syntax, using <IC>try</IC> and <IC>catch</IC>. JavaScript will
+        first execute the <IC>try</IC> block. If it creates an error, the{' '}
+        <IC>catch</IC> statement stores it in a variable of your choice (most
+        people use <IC>err</IC>), then executes the <IC>catch</IC> block of
+        code. It is common to log the error to the console for debugging
+        purposes.
+      </P>
+      <CodeBox language="javascript">{errorExampleCode}</CodeBox>
     </Container>
   </Layout>
 )
