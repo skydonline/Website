@@ -245,6 +245,80 @@ const errorExampleCode = `try {
   console.log(\`An error occured: \${err}\`);
 }`
 
+const DRYExampleCode = `// StyledText.js
+function StyledText(props) {
+  const pStyles = {
+    color: "blue",
+    fontSize: "16px",
+  };
+  return (
+    <div>
+      <p style={styles}>{props.text}</p>
+    </div>
+  );
+}
+
+// in another file, assume proper imports
+function App() {
+  return (
+    <StyledText text="First Paragraph" />
+    <StyledText text="Second Paragraph" />
+  );
+}`
+
+const useStateCode = `import { useState } from 'react';
+
+// useState hook
+function StateExample() {
+  const [boolValue, setBoolValue] = useState(false);
+  function toggleBool() {
+    setBoolValue(!boolValue);
+  }
+
+  return (
+    <div>
+      <button onClick={toggleBool}>
+        Toggle boolean value
+      </button>
+      <p>{boolValue}</p>
+    </div>
+  );
+}`
+
+const contextAPICode = `// context provider (App.js)
+import { createContext, useState } from 'react';
+import Nav from './Nav';
+
+export const Context = createContext();
+
+function App() {
+  const [variable, setVariable] = useState(false);
+
+  return (
+    <Context.Provider value={[variable, setVariable]}>
+      <Nav />
+      <p>{variable ? "state: true" : "state: false"}</p>
+    </Context.Provider>
+  );
+}
+
+
+// context consumer file
+import { useContext } from 'react';
+import { Context } from './App';
+
+export default function Example() {
+  const [variable, setVariable] = useContext(Context);
+
+  return (
+    <div>
+      <button onClick={() => setVariable(!variable)}>
+        {variable ? "true" : "false"}
+      </button>
+    </div>
+  );
+}`
+
 const title = 'React Basics'
 
 const Work = () => (
@@ -270,6 +344,9 @@ const Work = () => (
         <TableOfContents title="Properties (props)" />
         <TableOfContents title="JSX" />
         <TableOfContents title="Events" />
+        <TableOfContents title="Data Flow" />
+        <TableOfContents title="State" />
+        <TableOfContents title="Hooks" />
       </List>
       <PostBigHeading>Introduction:</PostBigHeading>
       <P>
@@ -309,7 +386,6 @@ const Work = () => (
         browser cannot understand JSX, so it needs a transpiler to transform JSX
         into JavaScript, a language the browser understands.
       </P>
-
       <PostSmallHeading>Setup and Structure</PostSmallHeading>
       <P>
         To get started with a React project, first install Node.js, the runtime
@@ -355,7 +431,6 @@ const Work = () => (
         project. Do not nest files too deep within folders, since that will make
         it difficult to find the appropiate folder and file.
       </P>
-
       <PostSmallHeading>Modules</PostSmallHeading>
       <P>
         Modules are a fundamental concept in JavaScript and React. A module is a
@@ -388,7 +463,6 @@ const Work = () => (
         specify which exports you wish to import into the module.
       </P>
       <CodeBox language="jsx">{importNamedExportsCode}</CodeBox>
-
       <PostSmallHeading>Components</PostSmallHeading>
       <P>
         React has a component-based architecture, meaning software is built on
@@ -421,7 +495,6 @@ const Work = () => (
         <IC>Title</IC> component reusable, it would need to be isolated in a
         different file and exported.
       </P>
-
       <PostSmallHeading>Properties (props)</PostSmallHeading>
       <P>
         Props enable data transfer between components. The component sending the
@@ -451,7 +524,6 @@ const Work = () => (
         <IC>props.children</IC>. In the tag itself, there is no need to write{' '}
         <IC>children=&quot;&quot;</IC>, since it is implied.
       </P>
-
       <PostSmallHeading>JSX</PostSmallHeading>
       <P>
         Recall that JSX is just a JavaScript syntax extension, meaning it
@@ -523,7 +595,6 @@ const Work = () => (
         Both conditionals are equivalent. The component renders
         &quot;Adult&quot; because the condition is true
       </ImageCaption>
-
       <PostSmallHeading>Events</PostSmallHeading>
       <P>
         JavaScript events are when specified actions occur on a webpage and then
@@ -573,6 +644,92 @@ const Work = () => (
         purposes.
       </P>
       <CodeBox language="javascript">{errorExampleCode}</CodeBox>
+      <PostSmallHeading>Data Flow</PostSmallHeading>
+      <P>
+        In programming, a fundamental principle to follow is{' '}
+        <b>DRY: Don&apos;t Repeat Yourself</b>. This means to optimize code by
+        reducing code replication, rarely should you copy-paste. If you have a
+        similar component, just with some text or style differences, components
+        can be utilized to reduce code redundancy. Props can be passed in from
+        the parent to the child, which will change the data of the component,
+        but the core fundamentals will stay the same.
+      </P>
+      <CodeBox language="jsx">{DRYExampleCode}</CodeBox>
+      <P>
+        Instead of creating 2 <IC>p</IC> elements and styling them the same, we
+        can create a component that has those styles, and pass in text that we
+        want each <IC>p</IC> element to have. This reduces code redundancy and
+        chances of errors or typos. Additionally, if we need to change anything
+        in the future, you only need to modify the &quot;source of truth&quot;,
+        the component, instead of every individual <IC>p</IC> element.
+      </P>
+      <P>
+        As previously mentioned, data is passed down through the component
+        hierarchy; from the parent to the child. The child component cannot
+        manipulate the props it is given, instead only use them as they are
+        given.
+      </P>
+      <PostSmallHeading>State</PostSmallHeading>
+      <P>
+        <IC>state</IC> data is data inside the component that can be
+        manipulated. It is what enables interactivity within the application,
+        since it determines the current behavior of that component. States can
+        even be passed down from component to component, allowing them to update
+        simultaneously. Components can be stateful or stateless. Being stateful
+        means it references its own local state data, and can update its state
+        based on certain interactions. Being stateless means it does not manage
+        its own state, instead recieves props from its parent component.
+      </P>
+      <P>
+        State is used for managing data that can change in an application. State
+        data allows for components to re-render and present the latest data,
+        based on certain changes.
+      </P>
+
+      <PostSmallHeading>Hooks</PostSmallHeading>
+      <P>
+        Hooks are functions that let you look into the state data and lifecycle
+        features of components without changing component hierarchy. Without
+        hooks, it would be difficult to reuse state data between different
+        components. Hooks have to follow a few rules: they must be called at the
+        top level of the component, they cannot be called in loops or
+        doncitions, and they only be called from React functions (not JavaScript
+        functions).
+      </P>
+      <P>
+        <IC>useState</IC> is one of the most commonly used hooks in React, since
+        it directly lets you manage state data. It requires a state variable, a
+        set state function, and optionally a default parameter. Typically, the
+        set state function starts with &quot;set&quot;, followed by the variable
+        name. It cannot be updated directly, and a common convention is to use
+        an event handling attribute (e.g. <IC>onClick</IC>) to invoke it. The
+        state itself can be any data type: boolean, number, string, object, etc.
+      </P>
+      <CodeBox language="jsx">{useStateCode}</CodeBox>
+      <P>
+        Clicking the <IC>button</IC> will execute the <IC>toggleBool</IC>{' '}
+        function. The function sets the state of <IC>boolValue</IC> to the
+        opposite of its currently value, using the <IC>setBoolValue</IC>{' '}
+        function and <IC>!</IC> operator.
+      </P>
+      <P>
+        &quot;Prop drilling&quot; refers to the phenomenon of managing state in
+        a parent component, and then passes the data down components through
+        props. This should be avoided, since then the data is updated through
+        each component, resulting in each component having to re-render. There
+        also becomes a buildup of state within the parent component, which can
+        make it harder to find bugs and states within your application.
+        &quot;Context APIs&quot; solve this issue, allowing components to share
+        data without explicit prop passing.
+      </P>
+      <P>
+        In context APIs, states are extracted into a separate file that holds
+        that state, and then any other file can import it to use it. A context
+        provider is what stores the state and the context consumer is what uses
+        the state. The context consumer can directly call the custom hook inside
+        the context provider to obtain the state data.
+      </P>
+      <CodeBox language="jsx">{contextAPICode}</CodeBox>
     </Container>
   </Layout>
 )
