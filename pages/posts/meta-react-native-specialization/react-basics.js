@@ -15,6 +15,7 @@ import {
 import { ExternalLinkIcon } from '@chakra-ui/icons'
 
 import certificate from '../../../public/images/posts/program-javascript-cert.jpeg'
+import lazy_loading from '../../../public/images/posts/lazy_loading.png'
 
 const exportMethodsCode = `// export default methods
 export default function squared(a) {
@@ -347,7 +348,9 @@ const Work = () => (
         <TableOfContents title="Data Flow" />
         <TableOfContents title="State" />
         <TableOfContents title="Hooks" />
+        <TableOfContents title="Website Navigation" />
       </List>
+
       <PostBigHeading>Introduction:</PostBigHeading>
       <P>
         In order to learn React, you must have a solid understanding of HTML,
@@ -386,6 +389,7 @@ const Work = () => (
         browser cannot understand JSX, so it needs a transpiler to transform JSX
         into JavaScript, a language the browser understands.
       </P>
+
       <PostSmallHeading>Setup and Structure</PostSmallHeading>
       <P>
         To get started with a React project, first install Node.js, the runtime
@@ -431,6 +435,7 @@ const Work = () => (
         project. Do not nest files too deep within folders, since that will make
         it difficult to find the appropiate folder and file.
       </P>
+
       <PostSmallHeading>Modules</PostSmallHeading>
       <P>
         Modules are a fundamental concept in JavaScript and React. A module is a
@@ -463,6 +468,7 @@ const Work = () => (
         specify which exports you wish to import into the module.
       </P>
       <CodeBox language="jsx">{importNamedExportsCode}</CodeBox>
+
       <PostSmallHeading>Components</PostSmallHeading>
       <P>
         React has a component-based architecture, meaning software is built on
@@ -495,6 +501,7 @@ const Work = () => (
         <IC>Title</IC> component reusable, it would need to be isolated in a
         different file and exported.
       </P>
+
       <PostSmallHeading>Properties (props)</PostSmallHeading>
       <P>
         Props enable data transfer between components. The component sending the
@@ -524,6 +531,7 @@ const Work = () => (
         <IC>props.children</IC>. In the tag itself, there is no need to write{' '}
         <IC>children=&quot;&quot;</IC>, since it is implied.
       </P>
+
       <PostSmallHeading>JSX</PostSmallHeading>
       <P>
         Recall that JSX is just a JavaScript syntax extension, meaning it
@@ -595,6 +603,7 @@ const Work = () => (
         Both conditionals are equivalent. The component renders
         &quot;Adult&quot; because the condition is true
       </ImageCaption>
+
       <PostSmallHeading>Events</PostSmallHeading>
       <P>
         JavaScript events are when specified actions occur on a webpage and then
@@ -644,6 +653,7 @@ const Work = () => (
         purposes.
       </P>
       <CodeBox language="javascript">{errorExampleCode}</CodeBox>
+
       <PostSmallHeading>Data Flow</PostSmallHeading>
       <P>
         In programming, a fundamental principle to follow is{' '}
@@ -730,6 +740,58 @@ const Work = () => (
         the context provider to obtain the state data.
       </P>
       <CodeBox language="jsx">{contextAPICode}</CodeBox>
+
+      <PostSmallHeading>Website Navigation</PostSmallHeading>
+      <P>
+        Traditional web pages are very different from modern webpages, which are
+        typically single page applications (SPAs). Previously websites were
+        implemented as multi-page applications; when a user clicks on a link,
+        they are brought to a new webapge via a server request, which responds
+        with the full webpage. However, this is resource intensive to the web
+        server, since the server CPU has to use network bandwidth and send data
+        for every request. The more people, the more resources are consumed, the
+        slower the application gets. Most modern websites now adopt the SPA
+        approach; instead of downloading new webpages, the current webpage is
+        rewritten as it is interacted with using JSON data, resulting in a
+        faster application. Note that anchor tags to redirect to a new page does
+        not work in SPAs.
+      </P>
+      <P>
+        There are 2 approaches to serving code in SPAs: return all the code
+        immediately (bundling) or return the minimum code required to load the
+        application and download more as needed (lazy loading or code
+        splitting). Bundling finds all of the imported files and merges
+        everything into a single file, called a &quot;bundle&quot;. Lazy loading
+        or code splitting is only obtaining the minimum code necessary to run
+        the application. If more code is necessary, say for a new webpage, an
+        Asynchronous JavaScript and XML (AJAX) request is sent to the server for
+        data, then it retieves the JSON data necessary to update the page
+        content. Think of lazy loading as doing the bare minimum for the SPA to
+        work.
+      </P>
+      <PostImage src={lazy_loading} alt="Code Splitting and Lazy Loading" />
+      <ImageCaption>
+        Illustration of code splitting and lazy loading
+      </ImageCaption>
+
+      <P>
+        Over the years of web development, web developers settled into a few
+        conventional designs for navigating through a website:{' '}
+        <b>
+          a horizontal navigation bar, a vertical navigation, a menu behind a
+          button and a footer navigation menu
+        </b>
+        . The horizontal navigation bar (navbar) is arguably the most common,
+        since it is easily visible and simplest to use. The vertical navigation
+        menu (navigation sidebar) is great for creating sub-menus, since it can
+        create an easy-to-follow hierarchy. If a menu is behind a button, the
+        icon is conventionally a &quot;burger&quot; icon (☰), which is made up
+        of 3 horizontal lines. It is referred to as a &quot;burger menu&quot;,
+        and is commonly used on smaller screens, where space is limited. The
+        footer navigation menu is typically considered secondary navigation,
+        meaning less frequently accessed links are placed here to keep the main
+        content area clean.
+      </P>
     </Container>
   </Layout>
 )
