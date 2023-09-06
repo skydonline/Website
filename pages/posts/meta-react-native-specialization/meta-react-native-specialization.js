@@ -25,7 +25,7 @@ const Work = () => (
   <Layout title={title}>
     <Container>
       <Title>
-        {title} <Badge>August 2023</Badge>
+        {title} <Badge>Aug &apos;23 - Current</Badge>
       </Title>
       <P>
         Become a cross-platform mobile app developer. Learn in-demand skills for

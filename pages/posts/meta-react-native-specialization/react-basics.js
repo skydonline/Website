@@ -15,7 +15,7 @@ import {
 } from '../../../components/posts'
 import { ExternalLinkIcon } from '@chakra-ui/icons'
 
-import certificate from '../../../public/images/posts/program-javascript-cert.jpeg'
+import certificate from '../../../public/images/posts/react-basics-cert.jpeg'
 import lazy_loading from '../../../public/images/posts/lazy_loading.png'
 
 const exportMethodsCode = `// export default methods
