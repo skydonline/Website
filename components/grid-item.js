@@ -31,6 +31,7 @@ export const WorkGridItem = ({ children, id, title, thumbnail }) => (
           alt={title}
           className="grid-item-thumbnail"
           placeholder="blur"
+          loading="lazy"
         />
         <LinkOverlay href={`/projects/${id}`}>
           <Text mt={2} fontSize={20}>
@@ -52,6 +53,7 @@ export const PostGridItem = ({ children, id, title, thumbnail }) => (
           alt={title}
           className="grid-item-thumbnail"
           placeholder="blur"
+          loading="lazy"
         />
         <LinkOverlay href={`/posts/${id}`}>
           <Text mt={2} fontSize={20}>

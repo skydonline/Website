@@ -10,7 +10,8 @@ import {
   CodeBox,
   IC,
   PostImage,
-  TableOfContents
+  TableOfContents,
+  B
 } from '../../../components/posts'
 import { ExternalLinkIcon } from '@chakra-ui/icons'
 
@@ -320,6 +321,80 @@ export default function Example() {
   );
 }`
 
+const routerLibrary = `// index file
+<BrowserRouter>
+  <App />  // wrap app around BrowserRouter
+</BrowserRouter>
+
+// app file
+// in navbar
+<Link to="/">Homepage</Link>
+<Link to="/about">About</Link>
+<Link to="/contact">Contact</Link>
+// render webpages
+<Routes>
+  <Route element={<Homepage />} path="/" />
+  <Route element={<About />} path="/about" />
+  <Route element={<Contact />} path="/contact" />
+</Routes>`
+
+const conditionalRendering = `// component example
+function Comp() {
+  const age = 19;
+  return (
+    <>
+      {age >= 18 ? <Adult /> : <Child />}
+    </>
+  );
+}
+
+// other operators
+function Operators() {
+  const day = 2;
+  return (
+    {day >= 1 && day <= 5 ? <Weekday /> : <Weekend />}
+  );
+}
+
+// conditional message
+function Weather(props) {
+  // get weather condition from props
+  const weatherCondition = props.weatherCondition;
+  let message;
+
+  if (weatherCondition == "Sunny") {
+    message = "Bring sunglasses!";
+  } else {
+    message = "No sunglasses needed";
+  }
+
+  return (
+    <>
+      <p>{message}</p>
+    </>
+  );
+}`
+
+const assetExampleCode = `// using import statement
+import car from "./assets/images/car.png";
+
+function ShowCar() {
+  return (
+    <>
+      <img src={car} alt="Image of a car" />
+    </>
+  );
+}
+
+// using require
+function ShowCar() {
+  return (
+    <>
+      <img src={require("./assets/images/car.png")} alt="Image of a car" />
+    </>
+  );
+}`
+
 const title = 'React Basics'
 
 const Work = () => (
@@ -349,6 +424,8 @@ const Work = () => (
         <TableOfContents title="State" />
         <TableOfContents title="Hooks" />
         <TableOfContents title="Website Navigation" />
+        <TableOfContents title="Conditional Rendering" />
+        <TableOfContents title="Assets" />
       </List>
 
       <PostBigHeading>Introduction:</PostBigHeading>
@@ -596,13 +673,11 @@ const Work = () => (
         is true, then this will execute, else this will execute. The <IC>?</IC>{' '}
         is essentially the block of code in the <IC>if</IC> statement, while the{' '}
         <IC>:</IC> is the <IC>else</IC> block. Below is an example to better
-        illustrate it.
+        illustrate it. Note that this can even be used for conditional rendering
+        of components!
       </P>
       <CodeBox language="javascript">{ternaryOpCode}</CodeBox>
-      <ImageCaption>
-        Both conditionals are equivalent. The component renders
-        &quot;Adult&quot; because the condition is true
-      </ImageCaption>
+      <ImageCaption>Both conditionals are equivalent</ImageCaption>
 
       <PostSmallHeading>Events</PostSmallHeading>
       <P>
@@ -657,7 +732,7 @@ const Work = () => (
       <PostSmallHeading>Data Flow</PostSmallHeading>
       <P>
         In programming, a fundamental principle to follow is{' '}
-        <b>DRY: Don&apos;t Repeat Yourself</b>. This means to optimize code by
+        <B>DRY: Don&apos;t Repeat Yourself</B>. This means to optimize code by
         reducing code replication, rarely should you copy-paste. If you have a
         similar component, just with some text or style differences, components
         can be utilized to reduce code redundancy. Props can be passed in from
@@ -753,8 +828,9 @@ const Work = () => (
         slower the application gets. Most modern websites now adopt the SPA
         approach; instead of downloading new webpages, the current webpage is
         rewritten as it is interacted with using JSON data, resulting in a
-        faster application. Note that anchor tags to redirect to a new page does
-        not work in SPAs.
+        faster application. Note that anchor tags that redirect to a new page
+        does not work in SPAs, the React Router library has to be used; more on
+        that in a bit.
       </P>
       <P>
         There are 2 approaches to serving code in SPAs: return all the code
@@ -777,10 +853,10 @@ const Work = () => (
       <P>
         Over the years of web development, web developers settled into a few
         conventional designs for navigating through a website:{' '}
-        <b>
+        <B>
           a horizontal navigation bar, a vertical navigation, a menu behind a
           button and a footer navigation menu
-        </b>
+        </B>
         . The horizontal navigation bar (navbar) is arguably the most common,
         since it is easily visible and simplest to use. The vertical navigation
         menu (navigation sidebar) is great for creating sub-menus, since it can
@@ -791,6 +867,60 @@ const Work = () => (
         footer navigation menu is typically considered secondary navigation,
         meaning less frequently accessed links are placed here to keep the main
         content area clean.
+      </P>
+      <P>
+        The React Router library enables routing in React applications. First
+        install it by running <IC>npm i react-router-dom</IC>. In the index
+        file, everything needs to be wrapped in a <IC>BrowserRouter</IC>{' '}
+        element. In the app file, to create links, create a <IC>Link</IC>{' '}
+        element with the &quot;to&quot; attribute set to the relative URL. For
+        the webpages to render when the client visits a certain URL, create a
+        self-closing <IC>Route</IC> element, with the &quot;element&quot;
+        attribute set to the webpage component and the &quot;path&quot;
+        attribute as the relative URL. Wrap all of the <IC>Route</IC> elements
+        in a single <IC>Routes</IC> element.
+      </P>
+      <CodeBox language="jsx">{routerLibrary}</CodeBox>
+
+      <PostSmallHeading>Conditional Rendering</PostSmallHeading>
+      <P>
+        Code and components in React can be conditionally rendered. This allows
+        for a dynamic UI and responsive design. The ternary operator or{' '}
+        <IC>if...else</IC> conditional can be utilized. It becomes even more
+        powerful when used with other operators.
+      </P>
+      <CodeBox language="jsx">{conditionalRendering}</CodeBox>
+
+      <PostSmallHeading>Assets</PostSmallHeading>
+      <P>
+        An asset is a file needed by your application at runtime in order to run
+        as intended without any errors; images, stylesheets, fonts, etc. They
+        are typically stored in a &quot;public&quot; folder or an
+        &quot;assets&quot; folder in the main &quot;src&quot; folder. There are
+        2 primary ways of using images in your application: by using the{' '}
+        <IC>import</IC> statement or the <IC>require</IC> keyword. The{' '}
+        <IC>import</IC> statement is preferred, since it is more explicit and
+        readable.
+      </P>
+      <CodeBox language="jsx">{assetExampleCode}</CodeBox>
+      <P>
+        As previously mentioned, when serving code in React, the files can be{' '}
+        <B>bundled</B>; collecting all imported files and joining them into one.
+        Various tools can be used to bundle the application, such as webpack,
+        the built in tool for <IC>create-react-app</IC>.
+      </P>
+      <P>
+        Webpack is a module bundler; it takes numerous types of files (e.g.
+        images, CSS, JavaScript, etc.) and bundles them for the browser. The
+        application can get complex, as the imported files may have imported
+        files which import other files and so on. This creates a{' '}
+        <B>dependency graph</B>; a hierarchical data structure that shows the
+        relationships and dependencies of files in the project. Webpack creates
+        the dependency graph and bundles the modules so that the browser can
+        easily use them. It transpiles the code, the process of converting the
+        code to older versions of JavaScript so older browsers can understand
+        it. There are various other features of webpack, such as optimizing code
+        for faster load times, convert SCSS to CSS, etc.
       </P>
     </Container>
   </Layout>

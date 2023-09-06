@@ -117,6 +117,12 @@ export const PostImage = ({ src, alt }) => (
   </Box>
 )
 
+export const B = ({ children }) => (
+  <Text display="inline" fontWeight="extrabold">
+    {children}
+  </Text>
+)
+
 // IC short for "inline code", to make code cleaner
 export const IC = ({ children }) => (
   <Code style={{ textIndent: '0' }}>{children}</Code>

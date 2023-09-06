@@ -11,7 +11,8 @@ import {
   IC,
   PostImage,
   TableOfContents,
-  CommandLineTable
+  CommandLineTable,
+  B
 } from '../../../components/posts'
 import { ExternalLinkIcon } from '@chakra-ui/icons'
 
@@ -264,10 +265,10 @@ const Work = () => (
       <P>
         Redirection in a CLI provides control over the input, output and error
         message of a command. There are 3 input/output (IO) redirections:{' '}
-        <b>
+        <B>
           standard input (stdin), standard output (stdout), and standard error
           (stderr)
-        </b>
+        </B>
         . The command-line shell keeps references for the IO using numbers. 0
         represents standard input, 1 represents standard output, 2 represents
         standard error.

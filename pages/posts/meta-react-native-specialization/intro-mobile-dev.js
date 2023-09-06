@@ -1,5 +1,5 @@
 import { Box, Container, List, Link, Code } from '@chakra-ui/react'
-import { ImageCaption, Title } from '../../../components/posts'
+import { B, ImageCaption, Title } from '../../../components/posts'
 import P from '../../../components/paragraph'
 import Layout from '../../../components/layouts/article'
 import {
@@ -59,7 +59,7 @@ const Work = () => (
       <P>
         A webpage is the document displayed on your screen, whereas a website is
         a collection of different webpages. Each webpage consists of 3 main
-        technologies:<b> HTML, CSS and JavaScript</b>. HTML is the physical
+        technologies:<B> HTML, CSS and JavaScript</B>. HTML is the physical
         structure of the page (e.g. text, boxes), CSS is the styling of the
         physical structure (e.g. color, size), and JavaScript controls the user
         interaction (e.g. animations, dynamic UI).
