@@ -375,7 +375,7 @@ function Weather(props) {
   );
 }`
 
-const assetExampleCode = `// using import statement
+const imageImportCode = `// using import statement
 import car from "./assets/images/car.png";
 
 function ShowCar() {
@@ -391,6 +391,53 @@ function ShowCar() {
   return (
     <>
       <img src={require("./assets/images/car.png")} alt="Image of a car" />
+    </>
+  );
+}
+
+// using URL
+function ShowCar() {
+  return (
+    <>
+      <img src="https://url.com/car.png" alt="Image of a car" />
+    </>
+  );
+}`
+
+const videoImportCode = `// using video element
+import video from "./assets/video/video.mp4";
+function EmbeddedVideo() {
+  return (
+    <>
+      <video src={video} width={400} height={250} controls />
+    </>
+  );
+}
+
+// using embedded third-party videos
+function EmbeddedVideo() {
+  return (
+    <>
+      <iframe
+        src="https://www.youtube.com/embed/p6HZU5rYd-8"
+        title="YouTube Video Player"
+        frameBorder="0"
+        allowFullScreen
+      ></iframe>
+    </>
+  );
+}
+
+// using packages
+import ReactPlayer from "react-player";
+function EmbeddedVideo() {
+  return (
+    <>
+      <ReactPlayer 
+        url="https://www.youtube.com/watch?v=p6HZU5rYd-8&t" 
+        playing={false}
+        volume={0.5}
+      />
     </>
   );
 }`
@@ -897,12 +944,25 @@ const Work = () => (
         as intended without any errors; images, stylesheets, fonts, etc. They
         are typically stored in a &quot;public&quot; folder or an
         &quot;assets&quot; folder in the main &quot;src&quot; folder. There are
-        2 primary ways of using images in your application: by using the{' '}
-        <IC>import</IC> statement or the <IC>require</IC> keyword. The{' '}
-        <IC>import</IC> statement is preferred, since it is more explicit and
-        readable.
+        3 primary ways of using images in your application: using the{' '}
+        <IC>import</IC> statement, the <IC>require</IC> keyword, or the image
+        URL. The <IC>import</IC> statement is preferred over the{' '}
+        <IC>require</IC> keyword, since it is more explicit and readable. URLs
+        are for using images from remote servers.
       </P>
-      <CodeBox language="jsx">{assetExampleCode}</CodeBox>
+      <CodeBox language="jsx">{imageImportCode}</CodeBox>
+      <P>
+        Embedding videos is a little different. You can use the <IC>video</IC>{' '}
+        element, using embedded third-party videos or a npm package. The{' '}
+        <IC>video</IC> element must have the video source in the project files.
+        Embedded third-party videos typically involve using the <IC>iframe</IC>{' '}
+        element for sites such as YouTube. Notice the different URL that is used
+        for embedded videos, the site will have references. A commonly used
+        package is the <B>react-player</B> package, which is installed by
+        running <IC>npm i react-player</IC>. Included are some common
+        attributes, but consult documentation to configure them further.
+      </P>
+      <CodeBox language="jsx">{videoImportCode}</CodeBox>
       <P>
         As previously mentioned, when serving code in React, the files can be{' '}
         <B>bundled</B>; collecting all imported files and joining them into one.
@@ -920,7 +980,15 @@ const Work = () => (
         easily use them. It transpiles the code, the process of converting the
         code to older versions of JavaScript so older browsers can understand
         it. There are various other features of webpack, such as optimizing code
-        for faster load times, convert SCSS to CSS, etc.
+        for faster load times, convert SCSS to CSS, etc. While bundling is great
+        with smaller applications, with larger applications this can slow down
+        load times due to the amount of code that needs to be loaded. As
+        mentioned earlier, lazy loading is one approach to solve this problem,
+        but so is server-side rendering (SSR) and client-side renderin (CSR). In
+        SSR, the server renders the code to HTML and then the user downloads the
+        finished HTML code. In CSR, the user downloads the <IC>index.html</IC>{' '}
+        file and then React injects code into a dedicated HTML element.
+        Combining SSR and CSR creates whats called <B>isomorphic apps</B>.
       </P>
     </Container>
   </Layout>
