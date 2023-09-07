@@ -17,6 +17,7 @@ import { ExternalLinkIcon } from '@chakra-ui/icons'
 
 import certificate from '../../../public/images/posts/react-basics-cert.jpeg'
 import lazy_loading from '../../../public/images/posts/lazy_loading.png'
+import { ELink } from '../../../components/home'
 
 const exportMethodsCode = `// export default methods
 export default function squared(a) {
@@ -484,21 +485,13 @@ const Work = () => (
         packages in your application. Packages are a collection of files that
         make up a module, which you can freely use in your application. If you
         are unfamiliar with HTML, CSS or JavaScript, refer to this{' '}
-        <Link
-          target="_blank"
-          href="https://www.skydeng.com/posts/meta-react-native-specialization/intro-mobile-dev"
-        >
+        <ELink href="https://www.skydeng.com/posts/meta-react-native-specialization/intro-mobile-dev">
           post
-          <ExternalLinkIcon mx="2px" />
-        </Link>
-        . If you are unfamilar with Node.js or npm, please refer to this{' '}
-        <Link
-          target="_blank"
-          href="https://www.skydeng.com/posts/meta-react-native-specialization/program-javascript#node.js-&-npm"
-        >
+        </ELink>
+        . If you are unfamilar with Node.js or npm, refer to this{' '}
+        <ELink href="https://www.skydeng.com/posts/meta-react-native-specialization/program-javascript#node.js-&-npm">
           post
-          <ExternalLinkIcon mx="2px" />
-        </Link>
+        </ELink>
         .
       </P>
       <P>
@@ -519,17 +512,13 @@ const Work = () => (
         To get started with a React project, first install Node.js, the runtime
         environment for JavaScript. Bundled with node is npm, so there is no
         need for a separate installation. Visit the official website to download
-        Node.js, at{' '}
-        <Link target="_blank" href="https://nodejs.org/en">
-          www.nodejs.org
-          <ExternalLinkIcon mx="2px" />
-        </Link>
-        . Once installed, navigate to the directory you wish to have the React
-        app in. Then run <IC>npm init react-app appName</IC>, where{' '}
-        <IC>appName</IC> is the name of your application. It will then start
-        building the React app in the <IC>appName</IC> folder it just created.
-        Once it has finished building, run <IC>npm start</IC>, and your
-        application will be running at the specified URL in the terminal.
+        Node.js, at <ELink href="https://nodejs.org/en">www.nodejs.org</ELink>.
+        Once installed, navigate to the directory you wish to have the React app
+        in. Then run <IC>npm init react-app appName</IC>, where <IC>appName</IC>{' '}
+        is the name of your application. It will then start building the React
+        app in the <IC>appName</IC> folder it just created. Once it has finished
+        building, run <IC>npm start</IC>, and your application will be running
+        at the specified URL in the terminal.
       </P>
       <P>
         There are various different folders within the newly created React app.{' '}
@@ -666,13 +655,9 @@ const Work = () => (
         so <IC>className</IC> is the replacement for <IC>class</IC> attribute in
         JSX for HTML elements. For a comprehensive list of variations in HTML
         attributes, please refer to the{' '}
-        <Link
-          href="https://legacy.reactjs.org/docs/dom-elements.html"
-          target="_blank"
-        >
+        <ELink href="https://legacy.reactjs.org/docs/dom-elements.html">
           official documentation
-          <ExternalLinkIcon mx="2px" />
-        </Link>
+        </ELink>
         .
       </P>
       <P>
@@ -737,13 +722,9 @@ const Work = () => (
         a commonly used JSX event listener, which as the name implies, is
         triggered when the user clicks on that element. For a comprehensive list
         of event listeners, please refer to the{' '}
-        <Link
-          href="https://legacy.reactjs.org/docs/events.html#supported-events"
-          target="_blank"
-        >
+        <ELink href="https://legacy.reactjs.org/docs/events.html#supported-events">
           official documentation
-          <ExternalLinkIcon mx="2px" />
-        </Link>
+        </ELink>
         .
       </P>
       <CodeBox language="jsx">{eventExampleCode}</CodeBox>

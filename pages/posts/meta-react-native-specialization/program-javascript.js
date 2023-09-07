@@ -18,6 +18,7 @@ import { ExternalLinkIcon } from '@chakra-ui/icons'
 
 import nestedLoops from '../../../public/images/posts/nestedLoops.png'
 import certificate from '../../../public/images/posts/program-javascript-cert.jpeg'
+import { ELink } from '../../../components/home'
 
 // Codeboxes
 const variableDeclarationCode = `var name = value;`
@@ -596,13 +597,9 @@ const Work = () => (
         other hand, errors are when the program stops running unexpectedly. No
         further code is executed. There are numerous types of errors: reference,
         syntax, type, etc. For a more comprehensive list of errors, visit this{' '}
-        <Link
-          target="_blank"
-          href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Errors"
-        >
+        <ELink href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Errors">
           reference
-          <ExternalLinkIcon mx="2px" />
-        </Link>
+        </ELink>
         . A reference error is when the code tries to refer to a variable that
         does not exist. A syntax error is when there is an issue in the syntax
         of the code, when the program cannot read the code properly. A type
@@ -864,13 +861,9 @@ const Work = () => (
         (&apos;&apos;) or double (&quot;&quot;) quotes. Expressions inside the
         template literals can also be evaluated. There are numerous other
         features, which can be found{' '}
-        <Link
-          target="_blank"
-          href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals"
-        >
+        <ELink href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals">
           here
-          <ExternalLinkIcon mx="2px" />
-        </Link>
+        </ELink>
         .
       </P>
       <CodeBox language="javascript">{templateLiteralsCode}</CodeBox>

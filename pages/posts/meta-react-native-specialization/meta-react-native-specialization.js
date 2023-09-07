@@ -18,6 +18,8 @@ import introMobileDev from '../../../public/images/posts/intro-mobile-dev.png'
 import programJavaScript from '../../../public/images/posts/program-javascript.png'
 import versionControl from '../../../public/images/posts/version-control.png'
 import reactBasics from '../../../public/images/posts/react-basics.png'
+import reactNative from '../../../public/images/posts/react-native.png'
+import { ELink } from '../../../components/home'
 
 const title = 'Meta React Native Specialization'
 
@@ -35,13 +37,9 @@ const Work = () => (
       <List ml={4} my={4}>
         <ListItem>
           <Meta>Course Link</Meta>
-          <Link
-            target="_blank"
-            href="https://www.coursera.org/specializations/meta-react-native"
-          >
+          <ELink href="https://www.coursera.org/specializations/meta-react-native">
             Coursera
-            <ExternalLinkIcon mx="2px" />
-          </Link>
+          </ELink>
         </ListItem>
 
         <ListItem>
@@ -98,7 +96,17 @@ const Work = () => (
             thumbnail={reactBasics}
             title="React Basics"
           >
-            Version Control, Git, GitHub
+            React, dynamic websites, component architecture
+          </PostGridItem>
+        </Section>
+
+        <Section>
+          <PostGridItem
+            id="/meta-react-native-specialization/react-native"
+            thumbnail={reactNative}
+            title="React Native"
+          >
+            React Native
           </PostGridItem>
         </Section>
       </SimpleGrid>

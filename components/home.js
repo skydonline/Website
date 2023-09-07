@@ -1,3 +1,4 @@
+import { ExternalLinkIcon } from '@chakra-ui/icons'
 import { Button, Link, ListItem, Icon, Spacer } from '@chakra-ui/react'
 import { BioSection, BioYear } from './bio'
 
@@ -17,4 +18,12 @@ export const BioItem = ({ title, date }) => (
     <Spacer />
     <BioYear>{date}</BioYear>
   </BioSection>
+)
+
+// External link, opens in new tab and has icon
+export const ELink = ({ children, href }) => (
+  <Link href={href} target="_blank">
+    {children}
+    <ExternalLinkIcon mx="2px" />
+  </Link>
 )

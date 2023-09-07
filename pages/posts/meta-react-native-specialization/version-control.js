@@ -21,6 +21,7 @@ import cvcs_dvcs from '../../../public/images/posts/cvcs_dvcs.png'
 import ci_cd from '../../../public/images/posts/ci_cd.png'
 import gitStates from '../../../public/images/posts/git_states.png'
 import merge_conflict from '../../../public/images/posts/merge_conflict.png'
+import { ELink } from '../../../components/home'
 
 const inputRedirectCode = `cat < file.txt
 # takes file.txt as input for cat command
@@ -439,14 +440,7 @@ const Work = () => (
         code and compare the different versions. VS Code has numerous additional
         features to help resolve merge conflicts, and you can find a full
         tutorial on merge conflicts{' '}
-        <Link
-          target="_blank"
-          href="https://www.youtube.com/watch?v=HosPml1qkrg"
-        >
-          here
-          <ExternalLinkIcon mx="2px" />
-        </Link>
-        .
+        <ELink href="https://www.youtube.com/watch?v=HosPml1qkrg">here</ELink>.
       </P>
     </Container>
   </Layout>
