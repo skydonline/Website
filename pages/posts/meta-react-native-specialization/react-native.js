@@ -13,10 +13,106 @@ import {
   TableOfContents,
   B
 } from '../../../components/posts'
-import { ExternalLinkIcon } from '@chakra-ui/icons'
 
 import certificate from '../../../public/images/posts/react-basics-cert.jpeg'
 import { ELink } from '../../../components/home'
+
+const componentsCode = `// Header.js
+import { View, Text } from "react-native";
+
+export default function HComponent() {
+  return (
+    <View>
+      <Text>Header Component</Text>
+    </View>
+  );
+}
+
+// App.js
+import { View } from "react-native";
+import HComponent from "./components/Header";
+
+export default function App() {
+  return (
+    <View 
+      style={{
+        flex: 1, 
+        justifyContent: "flex-start", 
+        padding: 30
+      }}>
+      <HComponent />
+    </View>
+  );
+}`
+
+const scrollViewCode = `import { View, Text, ScrollView } from "react-native";
+
+function ScrollComponent() {
+  return (
+    <View style={{flex: 1}}>
+      <ScrollView 
+        horizontal={false}
+        style={{
+          paddingVertical: 50,
+          backgroundColor: "#fff"
+        }}>
+          <Text>Item 1</Text>
+          <Text>Item 2</Text>
+          <Text>Item 3</Text>
+          <Text>Item 4</Text>
+      </ScrollView>
+    </View>
+  );
+}`
+
+const stylesheetCode = `import { StyleSheet } from 'react-native';
+
+function App() {
+  return (
+    <View style={styles.container}>
+      <Text style={styles.title}>Title Component</Text>
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: 'black',
+  },
+  title: {
+    fontSize: 35,
+    textAlign: 'center',
+    color: 'white',
+  }
+})`
+
+const flatListCode = `import { View, Text, FlatList } from 'react-native';
+
+const data = [
+  { id: 1, text: "Item 1" },
+  { id: 2, text: "Item 2" },
+  { id: 3, text: "Item 3" },
+];
+
+function renderItem({ item }){
+  return (
+    <View>
+      <Text>{item.text}</Text>
+    </View>
+  );
+}
+
+export default function App() {
+  return (
+    <View>
+      <FlatList 
+        data={data}
+        renderItem={renderItem}
+      />
+    </View>
+  );
+}`
 
 const title = 'React Native'
 
@@ -38,6 +134,9 @@ const Work = () => (
       <PostBigHeading>Table of Contents</PostBigHeading>
       <List>
         <TableOfContents title="Setup and Structure" />
+        <TableOfContents title="Components" />
+        <TableOfContents title="Styling" />
+        <TableOfContents title="Lists" />
       </List>
 
       <PostBigHeading>Introduction:</PostBigHeading>
@@ -73,10 +172,13 @@ const Work = () => (
       </P>
       <P>
         React Native saves time, costs, and allows for quicker development by
-        utilizing one codebase. Instead of hiring 2 separate teams to develop a
-        mobile app, only 1 team needs to be hired. This eliminates the need for
-        constant communication between teams, and increases development of the
-        application.
+        utilizing one codebase. Instead of 2 separate teams to develop 2 mobile
+        apps, only 1 team needs to be hired. This eliminates the need for
+        constant communication between teams, increases development of the
+        application and reduces the time to market. Another benefit is that if
+        you understand React, React Native is very similar and can be picked up
+        very quickly. Vice versa, if you learn React Native, React can be
+        quickly learned.
       </P>
 
       <PostSmallHeading>Setup and Structure</PostSmallHeading>
@@ -88,15 +190,14 @@ const Work = () => (
         <ELink href="https://nodejs.org/en">www.nodejs.org</ELink>.
       </P>
       <P>
-        The 2 most popular development environments for React Native is Expo Go
-        and the React Native CLI. Expo Go is quicker and easier to work for
-        beginners. If you are familiar with mobile development, perhaps try the
-        React Native CLI development environment. For more information, visit
-        the{' '}
+        The 2 most popular development environments for React Native is Expo and
+        the React Native CLI. Expo is quicker and easier to work for beginners,
+        but the React Native CLI offers more customization and control of the
+        application. For more information, visit the{' '}
         <ELink href="https://reactnative.dev/docs/environment-setup">
           official website
         </ELink>
-        . This post will cover Expo Go, since it is more simple. Once installed,
+        . This post will cover Expo, since it is more simple. Once installed,
         navigate to a directory you wish to have the app in. Then run{' '}
         <IC>npx create-expo-app appName</IC>, where <IC>appName</IC> is the name
         of your application. It will start building the React Native app in the{' '}
@@ -105,15 +206,88 @@ const Work = () => (
         <IC>npx expo start</IC> to run your application.
       </P>
       <P>
+        Expo allows developers to easily build a native app for iOS and Android
+        with one codebase, using JavaScript and React; there is no need for
+        native platform code (e.g. Swift for iOS, Java for Android). Developers
+        can also access the native APIs of the device, such as the camera,
+        location services, push notifications, etc. However, keep in mind that
+        it does not support every device API, and you should consult
+        documentation to confirm which APIs are available.
+      </P>
+      <P>
         An emulator simulates what the app experience is like on that mobile
         platform. It is incredibly useful because it mimics the user experience
         of your application on that desired platform without having to purchase
         the physical device. iOS emulators can only be run on macOS devices,
-        whereas Android emulators can be run on any device. Expo Go also has the
+        whereas Android emulators can be run on any device. Expo also has the
         Metro Bundler, which bundles the JavaScript into native code. It
         provides a QR code that you can scan on your mobile device that will run
-        the app.
+        the app. Ensure you have the Expo Go app downloaded prior to scanning
+        the QR code.
       </P>
+
+      <PostSmallHeading>Components</PostSmallHeading>
+      <P>
+        React Native components are similar to React components; reusable,
+        modular pieces of code. In React Native, there are core components,
+        community components, and your own custom native components. Core
+        components come with the React Native package, and translate into native
+        components without native code. Community components need to be
+        downloaded, and are developed by the community, but enables more app
+        functionality. Custom native components need to be written in native
+        code and integrated into the project, but should only be used for
+        personal unqiue cases. Often times you can find libraries for all your
+        components. The process to utilize components in React Native are just
+        like React components; import the components into your desired file.
+        Commonly used core components include <IC>View</IC>, <IC>Text</IC>,{' '}
+        <IC>FlatList</IC>, but there are numerous ones available. Components can
+        be given styling information using the <IC>style</IC> attribute. The{' '}
+        <IC>style</IC> attributes are similar to the ones found in HTML, but are
+        slightly modified.
+      </P>
+      <CodeBox language="jsx">{componentsCode}</CodeBox>
+      <P>
+        As the name suggests, the <IC>View</IC> component is what the user sees
+        on their device. It is the layout of the mobile screen, like a HTML{' '}
+        <IC>div</IC> element. The <IC>Text</IC> component displays text similar
+        to a HTML <IC>p</IC> element. These are essential components to any
+        React Native application.
+      </P>
+      <P>
+        <IC>ScrollView</IC> is an important component in React Native, since it
+        allows for scrolling of items on the device. It needs to be bounded by a
+        height, so it is not an endless scrolling component. There are numerous
+        paramters that can be passed in to adjust the <IC>ScrollView</IC>, such
+        as <IC>horizontal</IC>, which makes the component scroll horizontally.
+      </P>
+      <CodeBox language="javascript">{scrollViewCode}</CodeBox>
+
+      <PostSmallHeading>Styling</PostSmallHeading>
+      <P>
+        Using inline styles for components may be convenient, but makes the code
+        appear more messy. This is where <IC>StyleSheet</IC> comes in; it
+        extracts styles from components, and keeps all the styles together,
+        similar to a CSS stylesheet. It is typically assigned to the{' '}
+        <IC>styles</IC> constant, and each object within <IC>styles</IC> is
+        named after the particular component it will be assigned to.
+        Additionally, styles are now reusable if you want multiple components to
+        have the same style.
+      </P>
+      <CodeBox language="javascript">{stylesheetCode}</CodeBox>
+
+      <PostSmallHeading>Lists</PostSmallHeading>
+      <P>
+        When creating large lists in React Native, using the <IC>ScrollView</IC>{' '}
+        component is not ideal, since it has to render all of its child
+        components before the app loads. This can lead to poor performance and
+        slower rendering times for larger lists. For situations like this, the{' '}
+        <IC>FlatList</IC> component is useful due to its lazy rendering; it only
+        renders the list items when they need to appear on the screen. It has{' '}
+        <IC>data</IC> and <IC>renderItem</IC> as required props. <IC>data</IC>{' '}
+        is an array of items the list will take, while <IC>renderItem</IC> is a
+        function that determines how each item is rendered to the screen.
+      </P>
+      <CodeBox language="javascript">{flatListCode}</CodeBox>
     </Container>
   </Layout>
 )
