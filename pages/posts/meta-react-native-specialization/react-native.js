@@ -109,9 +109,84 @@ export default function App() {
       <FlatList 
         data={data}
         renderItem={renderItem}
+        keyExtractor={(item) => item.id}
       />
     </View>
   );
+}`
+
+const sectionListCode = `import { View, Text, SectionList } from 'react-native';
+
+const data = [
+  { title: 'Section 1', 
+    data: [
+      'Item 1',
+      'Item 2',
+      'Item 3',
+    ],
+  },
+  { title: 'Section 2', 
+    data: [
+      'Item 4',
+      'Item 5',
+      'Item 6',
+    ],
+  },
+];
+
+
+export default function App() {
+
+  function renderItem({ item }){
+    return (
+      <View>
+        <Text>{item.text}</Text>
+      </View>
+    );
+  }
+
+  function renderSectionHeader({section: {title} }) {
+    return (
+      <Text>{title}</Text>
+    );
+  }
+
+  return (
+    <View>
+      <SectionList 
+        sections={data}
+        renderItem={renderItem}
+        renderSectionHeader={renderSectionHeader}
+      />
+    </View>
+  );
+}`
+
+const textInputCode = `import { TextInput, View, Text } from 'react-native';
+
+export default function Inputs() {
+    const [firstName, onChangeFirstName] = useState("");
+    const [lastName, onChangeLastName] = useState("");
+    const [phoneNumber, onChangePhoneNumber] = useState("");
+
+    return (
+      <View>
+        <Text>Below is some input fields.</Text>
+        <TextInput 
+          value={firstName} 
+          onChangeText={onChangeFirstName} 
+        />
+        <TextInput 
+          value={lastName} 
+          onChangeText={onChangeLastName} 
+        />
+        <TextInput 
+          value={phoneNumber} 
+          onChangeText={onChangePhoneNumber}
+          keyboardType="phone-pad"
+        />
+      </View>
+    );
 }`
 
 const title = 'React Native'
@@ -137,6 +212,7 @@ const Work = () => (
         <TableOfContents title="Components" />
         <TableOfContents title="Styling" />
         <TableOfContents title="Lists" />
+        <TableOfContents title="Input" />
       </List>
 
       <PostBigHeading>Introduction:</PostBigHeading>
@@ -285,9 +361,40 @@ const Work = () => (
         renders the list items when they need to appear on the screen. It has{' '}
         <IC>data</IC> and <IC>renderItem</IC> as required props. <IC>data</IC>{' '}
         is an array of items the list will take, while <IC>renderItem</IC> is a
-        function that determines how each item is rendered to the screen.
+        function that determines how each item is rendered to the screen.{' '}
+        <IC>keyExtractor</IC> is a useful prop because it allows React to
+        identify components to optimize rendering; it can cache items, and only
+        re-render items if it has changed.
       </P>
       <CodeBox language="javascript">{flatListCode}</CodeBox>
+      <P>
+        <IC>SectionList</IC> is another component that can be used to render
+        lists with sections. It is similar to <IC>FlatList</IC>, but enables
+        separation of items in the list, instead of a long uninterrupted list.
+        The required props are <IC>sections</IC> which is an array of list
+        sections, and <IC>renderItem</IC> which renders the item. The
+        <IC>renderSectionHeader</IC> prop identifies and renders the appropiate
+        section header.
+      </P>
+      <CodeBox language="javascript">{sectionListCode}</CodeBox>
+
+      <PostSmallHeading>Input</PostSmallHeading>
+      <P>
+        <IC>TextInput</IC> is a commonly used component for users to input text
+        into the application via their native keyboard. The <IC>placeholder</IC>{' '}
+        prop is what displays in the input field prior to any input.{' '}
+        <IC>keyboardType</IC> determines the type of keyboard that pops up for
+        the user, which for example, can be useful if you only want the user to
+        input numbers. <IC>value</IC> and <IC>onChangeText</IC> can be used in
+        combination with <IC>useState</IC> to update a variable based on the
+        contents of the input field. For more details on the <IC>TextInput</IC>{' '}
+        component, visit the{' '}
+        <ELink href="https://reactnative.dev/docs/textinput">
+          offical documentation
+        </ELink>
+        .
+      </P>
+      <CodeBox language="javascript">{textInputCode}</CodeBox>
     </Container>
   </Layout>
 )
