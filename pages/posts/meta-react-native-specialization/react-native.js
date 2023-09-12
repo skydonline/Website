@@ -189,6 +189,31 @@ export default function Inputs() {
     );
 }`
 
+const pressableCode = `import { View, Text, Pressable } from 'react-native';
+import { useState } from 'react';
+
+export default function Menu() {
+  return (
+    <View>
+      <Pressable onPressIn={() => {
+        setShowMenu(!showMenu)
+        }}>
+          <Text>{showMenu : "Home" ? "Menu"}</Text>
+      </Pressable>
+      {!showMenu && (
+        <>
+          <Text>Showing the home screen</Text>
+        </>
+      )}
+      {showMenu && (
+        <>
+          <Text>Showing the menu screen</Text>
+        </>
+      )}
+    </View>
+  );
+}`
+
 const title = 'React Native'
 
 const Work = () => (
@@ -395,6 +420,19 @@ const Work = () => (
         .
       </P>
       <CodeBox language="javascript">{textInputCode}</CodeBox>
+
+      <P>
+        <IC>Pressable</IC> is a core component in React Native that is wrapped
+        around a child component, and then can detect the users press
+        interactions on that component. The <IC>onPressIn</IC> prop is called
+        when the user presses on the element, and the <IC>onPressOut</IC> prop
+        is called when the user is no longer pressing on that element.{' '}
+        <IC>onLongPress</IC> is called when when the user holds on the pressable
+        for more than 500ms, but the time interval can be changed with{' '}
+        <IC>delayLongPress</IC>. A common use case is for updating the local
+        state of a variable, such as toggling the display of some content.
+      </P>
+      <CodeBox language="javascript">{pressableCode}</CodeBox>
     </Container>
   </Layout>
 )
