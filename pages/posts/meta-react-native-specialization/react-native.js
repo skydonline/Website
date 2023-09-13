@@ -214,6 +214,26 @@ export default function Menu() {
   );
 }`
 
+const imageCode = `import { View, Image, Text, StyleSheet } from 'react-native';
+// import local image
+import Logo from '../public/logo.png';
+
+export default function RenderImage() {
+  return (
+    <View>
+      <Image source={Logo} style={styles.logo} />
+      <Text>The logo is rendered above</Text>
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  logo: {
+    height: 100,
+    width: 100,
+  }
+})`
+
 const title = 'React Native'
 
 const Work = () => (
@@ -238,6 +258,7 @@ const Work = () => (
         <TableOfContents title="Styling" />
         <TableOfContents title="Lists" />
         <TableOfContents title="Input" />
+        <TableOfContents title="Images" />
       </List>
 
       <PostBigHeading>Introduction:</PostBigHeading>
@@ -433,6 +454,20 @@ const Work = () => (
         state of a variable, such as toggling the display of some content.
       </P>
       <CodeBox language="javascript">{pressableCode}</CodeBox>
+
+      <PostSmallHeading>Images</PostSmallHeading>
+      <P>
+        Visual components such as images elevate the application. The{' '}
+        <IC>Image</IC> component allows you to render numerous types of images:
+        from local project resources, external web images or even images from
+        the user (e.g. camera roll). The <IC>source</IC> prop is location of the
+        image source that is rendered. For more details, visit the{' '}
+        <ELink href="https://reactnative.dev/docs/image">
+          official documentation
+        </ELink>
+        .
+      </P>
+      <CodeBox language="javascript">{imageCode}</CodeBox>
     </Container>
   </Layout>
 )
