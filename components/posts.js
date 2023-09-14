@@ -78,7 +78,7 @@ export const TableOfContents = ({ title }) => {
 }
 
 export const ImageCaption = ({ children }) => (
-  <Box width="100%" textAlign="center">
+  <Box mt={-2.5} width="100%" textAlign="center" lineHeight={1.2}>
     <Text as="i" fontSize={12}>
       {children}
     </Text>
@@ -106,7 +106,7 @@ export const PostSmallHeading = ({ children }) => {
 }
 
 export const PostImage = ({ src, alt }) => (
-  <Box mt={6}>
+  <Box mt={6} mb={2}>
     <NextImage
       className="grid-item-thumbnail"
       src={src}
@@ -228,7 +228,7 @@ const dataCellStyle = {
 
 export const DataTypesTable = () => (
   <TableContainer mt={4}>
-    <Table>
+    <Table mb={2}>
       <Thead>
         <Tr>
           <Th style={headerCellStyle}>Data Type</Th>
@@ -268,7 +268,7 @@ export const DataTypesTable = () => (
 
 export const OperatorTable = () => (
   <TableContainer mt={4}>
-    <Table>
+    <Table mb={2}>
       <Thead>
         <Tr>
           <Th style={headerCellStyle}>Operator</Th>
@@ -344,7 +344,7 @@ export const OperatorTable = () => (
 
 export const CommandLineTable = () => (
   <TableContainer mt={4}>
-    <Table>
+    <Table mb={2}>
       <Thead>
         <Tr>
           <Th style={headerCellStyle}>Command</Th>

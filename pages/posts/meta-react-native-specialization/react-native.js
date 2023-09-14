@@ -234,6 +234,51 @@ const styles = StyleSheet.create({
   }
 })`
 
+const colorSchemeCode = `import { View, Text, StyleSheet, useColorScheme } from 'react-native';
+
+export default function Color() {
+  const colorScheme = useColorScheme();
+  return (
+    <View
+      style={[
+        styles.container,
+        colorScheme === 'light'
+          ? {backgroundColor: '#fff'}
+          : {backgroundColor: '#333333'}
+    ]}>
+      <Text>
+        The background color changes
+      </Text>
+    </View>
+  );
+}`
+
+const windowDimensionsCode = `import { View, Text, StyleSheet, useWindowDimensions } from 'react-native';
+
+function Window() {
+  const styles = getStyles();
+
+  return (
+    <>
+      <View style={styles.container}>
+        <Text>Some text in a box</Text>
+      </View>
+    </>
+  );
+}
+
+function getStyles() {
+  const {width, height, fontScale} = useWindowDimensions();
+  return StyleSheet.create({
+    container: {
+      height: height > 100 ? 100 : 50,
+      width: width > 100 ? 100 : 50,
+    }
+  })
+}
+
+export default Window;`
+
 const title = 'React Native'
 
 const Work = () => (
@@ -259,6 +304,8 @@ const Work = () => (
         <TableOfContents title="Lists" />
         <TableOfContents title="Input" />
         <TableOfContents title="Images" />
+        <TableOfContents title="Hooks" />
+        <TableOfContents title="React Navigation" />
       </List>
 
       <PostBigHeading>Introduction:</PostBigHeading>
@@ -460,14 +507,95 @@ const Work = () => (
         Visual components such as images elevate the application. The{' '}
         <IC>Image</IC> component allows you to render numerous types of images:
         from local project resources, external web images or even images from
-        the user (e.g. camera roll). The <IC>source</IC> prop is location of the
-        image source that is rendered. For more details, visit the{' '}
+        the user (e.g. camera roll). The mandatory <IC>source</IC> prop
+        determines the location of the image source that is rendered. The{' '}
+        <IC>style</IC> prop should be added to render the image appropiately.
+      </P>
+      <CodeBox language="javascript">{imageCode}</CodeBox>
+      <P>
+        There are numerous other props that can be passed into the{' '}
+        <IC>Image</IC> component. <IC>resizeMode</IC> is a commonly used prop,
+        that determines how the image is resized when the window frame does not
+        match the image dimensions. To account for accessibility, set the{' '}
+        <IC>accessible</IC> prop to be <IC>true</IC> and set{' '}
+        <IC>accessibilityLabel</IC> to a be description for the image. For more
+        props and details, visit the{' '}
         <ELink href="https://reactnative.dev/docs/image">
           official documentation
         </ELink>
         .
       </P>
-      <CodeBox language="javascript">{imageCode}</CodeBox>
+      <P>
+        <IC>ImageBackground</IC> allows other components to be rendered ontop of
+        the image. The <IC>source</IC> prop is required to render the image, and
+        inherits all the props from the <IC>Image</IC> component.
+      </P>
+
+      <PostSmallHeading>Hooks</PostSmallHeading>
+      <P>
+        Just like in React, there are hooks in React Native that allow you to
+        hook into state and features from other components. For a refresher on
+        hooks, refer to this{' '}
+        <ELink href="https://www.skydeng.com/posts/meta-react-native-specialization/react-basics#hooks">
+          post
+        </ELink>
+        .
+      </P>
+      <P>
+        <IC>useColorScheme</IC> listens to color scheme updates from the users
+        device. The values can be &quot;light&quot;, &quot;dark&quot;, or
+        &quot;null&quot;. A common convention is to name the constant{' '}
+        <IC>colorScheme</IC>.
+      </P>
+      <CodeBox language="javascript">{colorSchemeCode}</CodeBox>
+      <P>
+        <IC>useWindowDimensions</IC> extracts the current window or screen
+        dimensions of the device and the users font scale preference. This
+        information can be used to create a responsive layout and enable better
+        formatting of the content based on the display it is being rendered on.
+        Some layouts may work on larger screens but not on smaller screens, so
+        the developer can create a separate layout for those users.
+      </P>
+      <CodeBox language="javascript">{windowDimensionsCode}</CodeBox>
+      <ImageCaption>
+        Notice the different syntax; remember that hooks can only be called
+        within functional components, so <IC>export default</IC> must be at the
+        bottom of the file
+      </ImageCaption>
+      <P>
+        There are numerous other community hooks that can be used within your
+        application from the React Native community. To install these community
+        hooks, run <IC>npm install @react-native-community/hooks</IC>. There are
+        many useful hooks, such as <IC>useAppState</IC> which keeps track if the
+        application is in focus or in the background,{' '}
+        <IC>useDeviceOrientation</IC> which checks for if the user is in
+        landscape or portrait mode, and numerous others. For more details, visit
+        their{' '}
+        <ELink href="https://github.com/react-native-community/hooks">
+          GitHub page
+        </ELink>
+        .
+      </P>
+
+      <PostSmallHeading>React Navigation</PostSmallHeading>
+      <P>
+        Navigation or routing is the process of moving between screens. React
+        Navigation is a popular library used in React Native for customizable
+        navigation. A stack navigator can be used to transition between various
+        screens and manage the navigation history, so the user can go to the
+        previous screen. To use React Navigation, first install the necessary
+        dependencies. For more details, visit the{' '}
+        <ELink href="https://reactnavigation.org/docs/getting-started/">
+          official documentation
+        </ELink>
+        . Then import and wrap the entire application around a{' '}
+        <IC>NavigationContainer</IC> component. Inside the component, wrap
+        everything in a <IC>Stack.Navigator</IC> component. For each screen of
+        your application, create a self-closing <IC>Stack.Screen</IC> component,
+        with props of <IC>name</IC> and <IC>component</IC>. <IC>name</IC> takes
+        in the name of the screen a string, and <IC>component</IC> takes in the
+        actual component screen.
+      </P>
     </Container>
   </Layout>
 )
