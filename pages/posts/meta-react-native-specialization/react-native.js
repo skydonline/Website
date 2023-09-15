@@ -279,6 +279,47 @@ function getStyles() {
 
 export default Window;`
 
+const stackNavigatorCode = `import { NavigationContainer } from 'react-native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import Screen1 from './components/Screen1';
+import Screen2 from './components/Screen2';
+
+const Stack = createNativeStackNavigator();
+
+function App() {
+  return (
+    <NavigationContainer>
+      <Stack.Navigator 
+        initialRouteName="Screen1"
+        screenOptions={{ headerShown: false }}
+      >
+        <Stack.Screen name="Screen1" component={Screen1} />
+        <Stack.Screen name="Screen2" component={Screen2} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
+}`
+
+const navigationPropCode = `// navigate method
+<Button onPress={() => navigation.navigate('Home')}>
+  Go to Home screen
+</Button>
+
+// push method
+<Button onPress={() => navigation.push('Home')}>
+  Go to Home screen and add to navigation history stack
+</Button>
+
+// goBack method
+<Button onPress={() => navigation.goBack()}>
+  Go to previous screen in navigation history stack
+</Button>
+
+// popToTop method
+<Button onPress={() => navigation.popToTop()}>
+  Go to initial screen
+</Button>`
+
 const title = 'React Native'
 
 const Work = () => (
@@ -588,14 +629,33 @@ const Work = () => (
         <ELink href="https://reactnavigation.org/docs/getting-started/">
           official documentation
         </ELink>
-        . Then import and wrap the entire application around a{' '}
-        <IC>NavigationContainer</IC> component. Inside the component, wrap
-        everything in a <IC>Stack.Navigator</IC> component. For each screen of
-        your application, create a self-closing <IC>Stack.Screen</IC> component,
-        with props of <IC>name</IC> and <IC>component</IC>. <IC>name</IC> takes
-        in the name of the screen a string, and <IC>component</IC> takes in the
+        . Assign the constant <IC>Stack</IC> to{' '}
+        <IC>createNativeStackNavigator()</IC>. Then import and wrap the entire
+        application around a <IC>NavigationContainer</IC> component. Inside the
+        component, wrap all screens in a <IC>Stack.Navigator</IC> component. A
+        prop to change the default screen is <IC>initialRouteName</IC>, which
+        can be assigned a screen. If each screen will have the same props, use
+        the <IC>screenOptions</IC> prop. It is recommened to hide each header,
+        using <IC>headerShown: false</IC>. For each new screen of your
+        application, create a self-closing <IC>Stack.Screen</IC> component, with
+        props of <IC>name</IC> and <IC>component</IC>. <IC>name</IC> takes in
+        the name of the screen a string, and <IC>component</IC> takes in the
         actual component screen.
       </P>
+      <CodeBox language="javascript">{stackNavigatorCode}</CodeBox>
+      <P>
+        To navigate to a specific screen, a component can utilize the{' '}
+        <IC>navigation</IC>prop. For example, a <IC>button</IC> component can
+        have its <IC>onPress</IC> prop set to an anonymous or arrow function
+        that sets <IC>navigation.navigate</IC> to the screen name.{' '}
+        <IC>navigation.push</IC> navigates to the desired screen and adds it to
+        the stack. The main difference between <IC>navigate</IC> and{' '}
+        <IC>push</IC> is the latter only pushes the screen to the stack if it
+        does not exist on it already. <IC>goBack</IC> navigates to the previous
+        screen in the navigation history, while <IC>popToTop</IC> returns to the
+        initial screen.
+      </P>
+      <CodeBox language="javascript">{navigationPropCode}</CodeBox>
     </Container>
   </Layout>
 )
