@@ -1,4 +1,4 @@
-import { Box, Container, List, Link, Text, Code } from '@chakra-ui/react'
+import { Container, List } from '@chakra-ui/react'
 import P from '../../../components/paragraph'
 import Layout from '../../../components/layouts/article'
 import {
@@ -13,7 +13,6 @@ import {
   TableOfContents,
   B
 } from '../../../components/posts'
-import { ExternalLinkIcon } from '@chakra-ui/icons'
 
 import certificate from '../../../public/images/posts/react-basics-cert.jpeg'
 import lazy_loading from '../../../public/images/posts/lazy_loading.png'

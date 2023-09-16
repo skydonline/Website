@@ -1,4 +1,4 @@
-import { Box, Container, List, Link, Text, Code } from '@chakra-ui/react'
+import { Container, List, Link } from '@chakra-ui/react'
 import P from '../../../components/paragraph'
 import Layout from '../../../components/layouts/article'
 import {
@@ -14,7 +14,6 @@ import {
   CommandLineTable,
   B
 } from '../../../components/posts'
-import { ExternalLinkIcon } from '@chakra-ui/icons'
 
 import certificate from '../../../public/images/posts/version-control-cert.jpeg'
 import cvcs_dvcs from '../../../public/images/posts/cvcs_dvcs.png'

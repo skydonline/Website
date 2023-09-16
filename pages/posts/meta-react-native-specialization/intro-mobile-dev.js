@@ -1,4 +1,4 @@
-import { Box, Container, List, Link, Code } from '@chakra-ui/react'
+import { Container, List } from '@chakra-ui/react'
 import { B, ImageCaption, Title } from '../../../components/posts'
 import P from '../../../components/paragraph'
 import Layout from '../../../components/layouts/article'
@@ -7,8 +7,7 @@ import {
   PostBigHeading,
   PostSmallHeading,
   PostImage,
-  TableOfContents,
-  CodeBox
+  TableOfContents
 } from '../../../components/posts'
 
 import certificate from '../../../public/images/posts/intro-mobile-dev-cert.jpeg'

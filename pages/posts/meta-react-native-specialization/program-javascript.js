@@ -1,4 +1,4 @@
-import { Box, Container, List, Link, Text, Code } from '@chakra-ui/react'
+import { Container, List, Link, Text } from '@chakra-ui/react'
 import P from '../../../components/paragraph'
 import Layout from '../../../components/layouts/article'
 import {
@@ -14,7 +14,6 @@ import {
   PostImage,
   TableOfContents
 } from '../../../components/posts'
-import { ExternalLinkIcon } from '@chakra-ui/icons'
 
 import nestedLoops from '../../../public/images/posts/nestedLoops.png'
 import certificate from '../../../public/images/posts/program-javascript-cert.jpeg'
