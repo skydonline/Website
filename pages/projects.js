@@ -17,6 +17,16 @@ const Projects = () => {
 
         <SimpleGrid columns={[1, 1, 2]} gap={6}>
           <Section>
+            <WorkGridItem
+              id="website-v2"
+              thumbnail={pecunia}
+              title="Website V2"
+            >
+              A new personal website, designed to showcase my portfolio and
+              document my learnings.
+            </WorkGridItem>
+          </Section>
+          <Section>
             <WorkGridItem id="pecunia" thumbnail={pecunia} title="Pecunia">
               A personal finance dashboard application that provides predictions
               on future income based on machine learning.

@@ -1,15 +1,8 @@
-import {
-  Container,
-  Badge,
-  Link,
-  List,
-  ListItem,
-  AspectRatio
-} from '@chakra-ui/react'
-import { ExternalLinkIcon } from '@chakra-ui/icons'
+import { Container, Badge, List, ListItem, AspectRatio } from '@chakra-ui/react'
 import { Title, Meta } from '../../components/projects'
 import P from '../../components/paragraph'
 import Layout from '../../components/layouts/article'
+import { ELink } from '../../components/home'
 
 const Work = () => (
   <Layout title="Network">
@@ -24,13 +17,9 @@ const Work = () => (
       <List ml={4} my={4}>
         <ListItem>
           <Meta>Source Code</Meta>
-          <Link
-            target="_blank"
-            href="https://github.com/skydonline/cs50/tree/main/cs50w/project4"
-          >
+          <ELink href="https://github.com/skydonline/cs50/tree/main/cs50w/project4">
             GitHub Repository
-            <ExternalLinkIcon mx="2px" />
-          </Link>
+          </ELink>
         </ListItem>
 
         <ListItem>
