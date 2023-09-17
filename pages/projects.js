@@ -4,7 +4,8 @@ import { WorkGridItem } from '../components/grid-item'
 import Layout from '../components/layouts/article'
 
 import network from '../public/images/projects/networkThumbnail.png'
-import website from '../public/images/projects/website-v1Thumbnail.png'
+import websiteV1 from '../public/images/projects/website-v1Thumbnail.png'
+import websiteV2 from '../public/images/projects/website-v2Thumbnail.png'
 import pecunia from '../public/images/projects/pecuniaThumbnail.png'
 
 const Projects = () => {
@@ -19,7 +20,7 @@ const Projects = () => {
           <Section>
             <WorkGridItem
               id="website-v2"
-              thumbnail={pecunia}
+              thumbnail={websiteV2}
               title="Website V2"
             >
               A new personal website, designed to showcase my portfolio and
@@ -37,15 +38,6 @@ const Projects = () => {
               Developed a social media network, similar to Instagram.
             </WorkGridItem>
           </Section>
-
-          {/*
-          TEMPLATE, REMEMBER TO CREATE ACTUAL PAGE UNDERS pages/projects
-          <Section>
-            <WorkGridItem id="network" thumbnail={network} title="Network">
-              Developed a social media network, similar to Instagram.
-            </WorkGridItem>
-          </Section>
-  */}
         </SimpleGrid>
 
         <Section delay={0.4}>
@@ -60,7 +52,7 @@ const Projects = () => {
           <Section>
             <WorkGridItem
               id="website-v1"
-              thumbnail={website}
+              thumbnail={websiteV1}
               title="Website V1"
             >
               My very first project, a personal website.

@@ -1,5 +1,12 @@
 import NextLink from 'next/link'
-import { Heading, Box, Image, Link, Badge } from '@chakra-ui/react'
+import {
+  Heading,
+  Box,
+  Image,
+  Link,
+  Badge,
+  useColorModeValue
+} from '@chakra-ui/react'
 import { ChevronRightIcon } from '@chakra-ui/icons'
 
 export const Title = ({ children }) => (
@@ -18,9 +25,20 @@ export const Title = ({ children }) => (
   </Box>
 )
 
-export const WorkImage = ({ src, alt }) => (
-  <Image borderRadius="lg" w="full" src={src} alt={alt} mb={4} loading="lazy" />
-)
+export const WorkImage = ({ src, alt }) => {
+  const borderColor = useColorModeValue('#202023', '#f0e7db')
+  return (
+    <Image
+      border={`1px solid ${borderColor}`}
+      borderRadius="lg"
+      w="full"
+      src={src}
+      alt={alt}
+      mb={4}
+      loading="lazy"
+    />
+  )
+}
 
 export const Meta = ({ children }) => (
   <Badge colorScheme="green" mr={2}>

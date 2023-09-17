@@ -42,9 +42,19 @@ const Work = () => (
         </ListItem>
       </List>
 
-      <WorkImage src="/images/projects/website-v1-1.png" alt="Website-V2" />
-      <WorkImage src="/images/projects/website-v1-2.png" alt="Website-V2" />
-      <WorkImage src="/images/projects/website-v1-3.png" alt="Website-V2" />
+      <WorkImage
+        src="/images/projects/website-v2Thumbnail.png"
+        alt="Website-V2"
+      />
+      <WorkImage src="/images/projects/website-v2Light.png" alt="Website-V2" />
+      <WorkImage
+        src="/images/projects/website-v2Projects.png"
+        alt="Website-V2"
+      />
+      <WorkImage
+        src="/images/projects/website-v2ProjectsLight.png"
+        alt="Website-V2"
+      />
     </Container>
   </Layout>
 )
