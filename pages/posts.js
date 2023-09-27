@@ -3,7 +3,8 @@ import Section from '../components/section'
 import { PostGridItem } from '../components/grid-item'
 import Layout from '../components/layouts/article'
 
-import meta from '../public/images/posts/metaReactThumbnail.png'
+import metaReactNative from '../public/images/posts/metaReactThumbnail.png'
+import metaBackEndDeveloper from '../public/images/posts/metaBackEndThumbnail.png'
 
 const Posts = () => {
   return (
@@ -17,8 +18,18 @@ const Posts = () => {
           <Section>
             <PostGridItem
               id="/meta-react-native-specialization/meta-react-native-specialization"
-              thumbnail={meta}
+              thumbnail={metaReactNative}
               title="Meta React Native Specialization"
+            >
+              React, React Native, JavaScript
+            </PostGridItem>
+          </Section>
+
+          <Section>
+            <PostGridItem
+              id="/meta-back-end-dev-specialization/meta-back-end-dev-specialization"
+              thumbnail={metaBackEndDeveloper}
+              title="Meta Back-End Developer Specialization"
             >
               React, React Native, JavaScript
             </PostGridItem>
