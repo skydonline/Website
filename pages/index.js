@@ -112,6 +112,10 @@ const Page = () => {
             title="Web Developer at Auranova Inc."
             date="Jul'23 - Aug'23"
           />
+          <BioItem
+            title="Google Developer Student Clubs Open Source Team"
+            date="Sep'23 - Present"
+          />
           <BioItem title="DeltaHacks Executive Team" date="Aug'23 - Present" />
           <BioItem
             title="Lifeguard at McMaster University"
