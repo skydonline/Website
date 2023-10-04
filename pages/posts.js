@@ -25,6 +25,7 @@ const Posts = () => {
             </PostGridItem>
           </Section>
 
+          {/*
           <Section>
             <PostGridItem
               id="/meta-back-end-dev-specialization/meta-back-end-dev-specialization"
@@ -34,6 +35,7 @@ const Posts = () => {
               React, React Native, JavaScript
             </PostGridItem>
           </Section>
+  */}
         </SimpleGrid>
 
         <Section delay={0.4}>
