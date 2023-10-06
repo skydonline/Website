@@ -4,7 +4,7 @@ import { PostGridItem } from '../components/grid-item'
 import Layout from '../components/layouts/article'
 
 import metaReactNative from '../public/images/posts/metaReactThumbnail.png'
-import metaBackEndDeveloper from '../public/images/posts/metaBackEndThumbnail.png'
+import robloxThumbnail from '../public/images/posts/robloxThumbnail.png'
 
 const Posts = () => {
   return (
@@ -44,6 +44,17 @@ const Posts = () => {
           <Heading as="h3" fontSize={20} mb={4}>
             Experiences
           </Heading>
+          <SimpleGrid columns={[1, 1, 2]} gap={6}>
+            <Section>
+              <PostGridItem
+                id="/experiences/roblox-swe-intern-2024"
+                thumbnail={robloxThumbnail}
+                title="Roblox SWE Intern 2024"
+              >
+                First SWE Interview Ever
+              </PostGridItem>
+            </Section>
+          </SimpleGrid>
         </Section>
       </Container>
     </Layout>
