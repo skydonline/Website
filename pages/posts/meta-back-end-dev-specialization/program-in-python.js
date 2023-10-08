@@ -20,11 +20,6 @@ x = 10 +    2
 +4
 print(x) # prints 12
 
-# combine multiple lines of code
-x = 10 +    2 \\
-+4
-print(x) # prints 16
-
 # indentation example
 x = 10
 if x == 10:
@@ -129,16 +124,13 @@ const Work = () => (
         different line of code. If you are familiar with C, this is equivalent
         to &quot;;&quot;, but in Python it is just implicit with every newline
         entry. Any additional whitespace in a line of code is ignored, and will
-        execute as if there is only 1 space. To combine lines of code into 1,
-        use the &quot;\&quot; symbol. This removes the implicit newline, and
-        allows you to continue your line of code onto the next. Indentation
-        determines the scope of the code, and which block it belongs to, similar
-        to &quot;&#123;&quot; and &quot;&#125;&quot; in C. Comments are
-        supported in Python, and can be used to explain code, write notes or
-        write TODO tasks for later. To write single-line comments, use
-        &quot;#&quot;, and anything after it on that line will be commented out.
-        For multiline comments, use 3 apostrophes (&apos;&apos;&apos;) to start
-        and end your comments.
+        execute as if there is only 1 space. Indentation determines the scope of
+        the code, and which block it belongs to, similar to &quot;&#123;&quot;
+        and &quot;&#125;&quot; in C. Comments are supported in Python, and can
+        be used to explain code, write notes or write TODO tasks for later. To
+        write single-line comments, use &quot;#&quot;, and anything after it on
+        that line will be commented out. For multiline comments, use 3
+        apostrophes (&apos;&apos;&apos;) to start and end your comments.
       </P>
       <CodeBox language="python">{syntaxCode}</CodeBox>
       <ImageCaption>Remember that extra whitespace is ignored!</ImageCaption>
