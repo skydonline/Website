@@ -28,6 +28,7 @@ const Work = () => (
         <TableOfContents title="Online Assessment (OA)" />
         <TableOfContents title="Virtual Onsite" />
         <TableOfContents title="Learnings" />
+        <TableOfContents title="Conclusions" />
       </List>
       <PostBigHeading>Introduction</PostBigHeading>
       <P>
@@ -159,6 +160,21 @@ const Work = () => (
         feel extremely tired for it due to lack of sleep and eating poorly. I
         think I would&apos;ve performed much better had I just done these little
         things right.
+      </P>
+
+      <PostSmallHeading>Conclusions</PostSmallHeading>
+      <P>
+        I am incredibly thankful for Roblox to allow me to partake in their
+        interview process for a software engineer intern position. It has taught
+        me a lot about the difficulties on finding a job, preparing for the
+        technical and behavioural interviews, as well as balancing everything
+        else in life. I think that it&apos;s great for me to fail at getting an
+        offer, because it has made me recognize and learn a great deal about
+        myself. I am far more disciplined and motivated to secure an intern
+        position for next summer. While it may not be at Roblox, I am excited to
+        see what internship I get to work at for the summer of 2024. It&apos;s
+        been a privilege to undergo this experience, and I will undoubtly work
+        harder for the next one.
       </P>
     </Container>
   </Layout>
