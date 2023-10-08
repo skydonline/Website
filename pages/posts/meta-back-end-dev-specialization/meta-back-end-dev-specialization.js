@@ -56,7 +56,7 @@ const Work = () => (
       <SimpleGrid columns={[1, 1, 2]} gap={6}>
         <Section>
           <PostGridItem
-            id="/meta-back-end-dev-specialization/program-in-python"
+            id="meta-back-end-dev-specialization/program-in-python"
             thumbnail={programInPython}
             title="Programming In Python"
           >

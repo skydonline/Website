@@ -5,6 +5,7 @@ import Layout from '../components/layouts/article'
 
 import metaReactNative from '../public/images/posts/metaReactThumbnail.png'
 import robloxThumbnail from '../public/images/posts/robloxThumbnail.png'
+import metaBackEndDeveloper from '../public/images/posts/metaBackEndThumbnail.png'
 
 const Posts = () => {
   return (
@@ -17,7 +18,7 @@ const Posts = () => {
         <SimpleGrid columns={[1, 1, 2]} gap={6}>
           <Section>
             <PostGridItem
-              id="/meta-react-native-specialization/meta-react-native-specialization"
+              id="meta-react-native-specialization/meta-react-native-specialization"
               thumbnail={metaReactNative}
               title="Meta React Native Specialization"
             >
@@ -25,7 +26,6 @@ const Posts = () => {
             </PostGridItem>
           </Section>
 
-          {/*
           <Section>
             <PostGridItem
               id="/meta-back-end-dev-specialization/meta-back-end-dev-specialization"
@@ -35,7 +35,6 @@ const Posts = () => {
               React, React Native, JavaScript
             </PostGridItem>
           </Section>
-  */}
         </SimpleGrid>
 
         <Section delay={0.4}>
@@ -47,7 +46,7 @@ const Posts = () => {
           <SimpleGrid columns={[1, 1, 2]} gap={6}>
             <Section>
               <PostGridItem
-                id="/experiences/roblox-swe-intern-2024"
+                id="experiences/roblox-swe-intern-2024"
                 thumbnail={robloxThumbnail}
                 title="Roblox SWE Intern 2024"
               >

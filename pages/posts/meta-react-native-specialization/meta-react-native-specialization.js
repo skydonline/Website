@@ -60,7 +60,7 @@ const Work = () => (
       <SimpleGrid columns={[1, 1, 2]} gap={6}>
         <Section>
           <PostGridItem
-            id="/meta-react-native-specialization/intro-mobile-dev"
+            id="meta-react-native-specialization/intro-mobile-dev"
             thumbnail={introMobileDev}
             title="Introduction to Mobile Development"
           >
@@ -70,7 +70,7 @@ const Work = () => (
 
         <Section>
           <PostGridItem
-            id="/meta-react-native-specialization/program-javascript"
+            id="meta-react-native-specialization/program-javascript"
             thumbnail={programJavaScript}
             title="Programming with JavaScript"
           >
@@ -80,7 +80,7 @@ const Work = () => (
 
         <Section>
           <PostGridItem
-            id="/meta-react-native-specialization/version-control"
+            id="meta-react-native-specialization/version-control"
             thumbnail={versionControl}
             title="Version Control"
           >
@@ -90,7 +90,7 @@ const Work = () => (
 
         <Section>
           <PostGridItem
-            id="/meta-react-native-specialization/react-basics"
+            id="meta-react-native-specialization/react-basics"
             thumbnail={reactBasics}
             title="React Basics"
           >
@@ -100,7 +100,7 @@ const Work = () => (
 
         <Section>
           <PostGridItem
-            id="/meta-react-native-specialization/react-native"
+            id="meta-react-native-specialization/react-native"
             thumbnail={reactNative}
             title="React Native"
           >
