@@ -1,4 +1,4 @@
-import { Container, List } from '@chakra-ui/react'
+import { Code, Container, List } from '@chakra-ui/react'
 import { B, ImageCaption, Title } from '../../../components/posts'
 import P from '../../../components/paragraph'
 import Layout from '../../../components/layouts/article'
@@ -79,6 +79,15 @@ type(False) # bool
 s = {1,4,-6,'unique',True}
 type(s) # set`
 
+const typeCastingCode = `x = 10
+y = str(x) # the string '10'
+
+a = '100'
+b = int(a) # the integer 100
+
+arr = [1,2,2,3]
+new_set = set(arr) # the set {1,2,3}`
+
 const title = 'Programming In Python'
 
 const Work = () => (
@@ -101,6 +110,7 @@ const Work = () => (
         <TableOfContents title="Syntax" />
         <TableOfContents title="Variables" />
         <TableOfContents title="Data Types" />
+        <TableOfContents title="Type Casting" />
       </List>
 
       <PostBigHeading>Introduction:</PostBigHeading>
@@ -184,6 +194,19 @@ const Work = () => (
         a comma. It is unordered and cannot be indexed into.
       </P>
       <CodeBox language="python">{dataTypeCode}</CodeBox>
+
+      <PostSmallHeading>Type Casting</PostSmallHeading>
+      <P>
+        Type casting is when one data type is converted to another data type, if
+        they are compatible. There are explicit and implicit data type
+        conversions. Implicit conversion means it is done automatically by
+        Python, without the programmer doing anything. For example, this can
+        happen in comparisons or addition of <IC>int</IC> and <IC>float</IC>.
+        Programmers can perform explicit type conversion using Python functions,
+        such as <IC>str()</IC>, <IC>int()</IC>, <IC>list()</IC>, etc. They
+        convert it to its respective data type.
+      </P>
+      <CodeBox language="python">{typeCastingCode}</CodeBox>
     </Container>
   </Layout>
 )
