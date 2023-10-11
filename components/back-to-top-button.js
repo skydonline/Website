@@ -6,7 +6,7 @@ function BackToTopButton() {
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }
   const { colorMode } = useColorMode()
-  const buttonColor = colorMode === 'dark' ? 'black' : 'white'
+  const buttonColor = colorMode === 'dark' ? '#3a404d' : 'white'
 
   return (
     <Box

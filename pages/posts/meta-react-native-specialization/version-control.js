@@ -11,7 +11,7 @@ import {
   IC,
   PostImage,
   TableOfContents,
-  CommandLineTable,
+  VersionControlCommandLineTable,
   B
 } from '../../../components/posts'
 
@@ -246,7 +246,7 @@ const Work = () => (
         actions that is not possible with the GUI. Below are a few common CLI
         commands (note: variables can be any name):
       </P>
-      <CommandLineTable />
+      <VersionControlCommandLineTable />
       <P>
         Flags are optional parameters we can give to a command. They change the
         behavior or provide extra functionality of that command. For example,{' '}

@@ -9,7 +9,8 @@ import {
   PostImage,
   TableOfContents,
   CodeBox,
-  IC
+  IC,
+  PythonOperatorsTable
 } from '../../../components/posts'
 import { ELink } from '../../../components/home'
 
@@ -88,6 +89,14 @@ b = int(a) # the integer 100
 arr = [1,2,2,3]
 new_set = set(arr) # the set {1,2,3}`
 
+const inputAndOutputCode = `name = input("Your name: ")
+num1 = input("First number: ")
+num2 = input("Second number: ")
+
+print(name) # prints value of the name variable
+print(num1 + num2) # prints concatenation of both nums
+print(int(num1) + int(num2)) # prints addition of both nums`
+
 const title = 'Programming In Python'
 
 const Work = () => (
@@ -111,6 +120,8 @@ const Work = () => (
         <TableOfContents title="Variables" />
         <TableOfContents title="Data Types" />
         <TableOfContents title="Type Casting" />
+        <TableOfContents title="Input/Output" />
+        <TableOfContents title="Operators" />
       </List>
 
       <PostBigHeading>Introduction:</PostBigHeading>
@@ -207,6 +218,36 @@ const Work = () => (
         convert it to its respective data type.
       </P>
       <CodeBox language="python">{typeCastingCode}</CodeBox>
+
+      <PostSmallHeading>Input/Output</PostSmallHeading>
+      <P>
+        A common method to obtain input from the user is using the{' '}
+        <IC>input()</IC> function. Any text inside the function will be
+        displayed to the user as a prompt. Note that any input recieved will be
+        treated as a string data type, even if given an integer or float. To
+        convert them, use explicit conversion, mentioned in the previous
+        section. As for output, the <IC>print()</IC> function can be used to
+        print information to the console.
+      </P>
+      <CodeBox language="python">{inputAndOutputCode}</CodeBox>
+      <ImageCaption>
+        <IC>input()</IC> prompts the user for some input, <IC>print()</IC>{' '}
+        prints its arguments to the screen
+      </ImageCaption>
+
+      <PostSmallHeading>Operators</PostSmallHeading>
+      <P>
+        Operators are symbols that perform certain actions. There are
+        mathematical and logical operators in Python, which behave differently.
+        Math operators are just like the ones found in elementary school math:{' '}
+        <B>addition, subtraction, multiplication, division</B>, etc. Logical
+        operators are used to evaluate if a condition is <IC>True</IC> or{' '}
+        <IC>False</IC>. A common use case for logical operators is to control
+        the flow of the program; for example, whether or not to execute this
+        block of code. Below is a table of the most frequently used math and
+        logical operators in Python, along with an example.
+      </P>
+      <PythonOperatorsTable />
     </Container>
   </Layout>
 )

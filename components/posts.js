@@ -20,12 +20,15 @@ import {
   useClipboard,
   useColorModeValue
 } from '@chakra-ui/react'
+
 import {
   ChevronRightIcon,
   CopyIcon,
   CheckIcon,
   ExternalLinkIcon
 } from '@chakra-ui/icons'
+
+import { ELink } from './home'
 import NextImage from 'next/image'
 import SyntaxHighlighter from 'react-syntax-highlighter'
 import { nightOwl } from 'react-syntax-highlighter/dist/cjs/styles/hljs'
@@ -226,185 +229,237 @@ const dataCellStyle = {
   textTransform: 'none'
 }
 
-export const DataTypesTable = () => (
+const TableCaptionLink = ({ link }) => (
+  <ImageCaption>
+    For a more comprehensive list, you can visit the following{' '}
+    <ELink href={link}>link</ELink>.
+  </ImageCaption>
+)
+
+export const JavaScriptDataTypesTable = () => {
+  const JSDTTEntry = ({ dataType, examples }) => (
+    <Tr>
+      <Th style={dataCellStyle}>{dataType}</Th>
+      <Th style={dataCellStyle}>{examples}</Th>
+    </Tr>
+  )
+  return (
+    <TableContainer mt={4}>
+      <Table mb={2}>
+        <Thead>
+          <Tr>
+            <Th style={headerCellStyle}>Data Type</Th>
+            <Th style={headerCellStyle}>Examples</Th>
+          </Tr>
+        </Thead>
+        <Tbody>
+          <JSDTTEntry
+            dataType="String"
+            examples='"Hello, World!", "JavaScript"'
+          />
+          <JSDTTEntry dataType="Number" examples="1, 2.3" />
+          <JSDTTEntry dataType="Boolean" examples="true, false" />
+        </Tbody>
+      </Table>
+      <TableCaptionLink link="https://www.w3schools.com/js/js_datatypes.asp" />
+    </TableContainer>
+  )
+}
+
+const OperatorTableHeading = () => (
+  <Tr>
+    <Th style={headerCellStyle}>Operator</Th>
+    <Th style={headerCellStyle}>Meaning</Th>
+    <Th style={headerCellStyle}>Example</Th>
+    <Th style={headerCellStyle}>Result</Th>
+  </Tr>
+)
+
+const OperatorTableEntry = ({ operator, meaning, example, result }) => (
+  <Tr>
+    <Th style={dataCellStyle}>{operator}</Th>
+    <Th style={dataCellStyle}>{meaning}</Th>
+    <Th style={dataCellStyle}>{example}</Th>
+    <Th style={dataCellStyle}>{result}</Th>
+  </Tr>
+)
+
+export const JavaScriptOperatorTable = () => (
   <TableContainer mt={4}>
     <Table mb={2}>
       <Thead>
-        <Tr>
-          <Th style={headerCellStyle}>Data Type</Th>
-          <Th style={headerCellStyle}>Examples</Th>
-        </Tr>
+        <OperatorTableHeading />
       </Thead>
       <Tbody>
-        <Tr>
-          <Th style={dataCellStyle}>String</Th>
-          <Th style={dataCellStyle}>
-            &quot;Hello, World!&quot;, &quot;JavaScript&quot;
-          </Th>
-        </Tr>
-        <Tr>
-          <Th style={dataCellStyle}>Number</Th>
-          <Th style={dataCellStyle}>1, 2.3</Th>
-        </Tr>
-        <Tr>
-          <Th style={dataCellStyle}>Boolean</Th>
-          <Th style={dataCellStyle}>true, false</Th>
-        </Tr>
+        <OperatorTableEntry
+          operator="+"
+          meaning="Addition"
+          example="1 + 1"
+          result="2"
+        />
+        <OperatorTableEntry
+          operator="-"
+          meaning="Subtraction"
+          example="2 - 2"
+          result="0"
+        />
+        <OperatorTableEntry
+          operator="*"
+          meaning="Multiplication"
+          example="3 * 3"
+          result="9"
+        />
+        <OperatorTableEntry
+          operator="/"
+          meaning="Division"
+          example="4 / 4"
+          result="1"
+        />
+        <OperatorTableEntry
+          operator=">"
+          meaning="Greater Than"
+          example="5 > 5"
+          result="false"
+        />
+        <OperatorTableEntry
+          operator="<"
+          meaning="Less Than"
+          example="5 < 6"
+          result="true"
+        />
+        <OperatorTableEntry
+          operator="=="
+          meaning="Equal To"
+          example="7 == 7"
+          result="true"
+        />
+        <OperatorTableEntry
+          operator="!="
+          meaning="Not Equal To"
+          example="8 != 8"
+          result="false"
+        />
       </Tbody>
     </Table>
-    <ImageCaption>
-      For a more comprehensive list, you can visit the following{' '}
-      <Link
-        target="_blank"
-        href="https://www.w3schools.com/js/js_datatypes.asp"
-      >
-        link
-        <ExternalLinkIcon mx="2px" />
-      </Link>
-      .
-    </ImageCaption>
+    <TableCaptionLink link="https://www.w3schools.com/jsref/jsref_operators.asp" />
   </TableContainer>
 )
 
-export const OperatorTable = () => (
-  <TableContainer mt={4}>
-    <Table mb={2}>
-      <Thead>
-        <Tr>
-          <Th style={headerCellStyle}>Operator</Th>
-          <Th style={headerCellStyle}>Meaning</Th>
-          <Th style={headerCellStyle}>Example</Th>
-          <Th style={headerCellStyle}>Result</Th>
-        </Tr>
-      </Thead>
-      <Tbody>
-        <Tr>
-          <Th style={dataCellStyle}>+</Th>
-          <Th style={dataCellStyle}>Addition</Th>
-          <Th style={dataCellStyle}>1 + 1</Th>
-          <Th style={dataCellStyle}>2</Th>
-        </Tr>
-        <Tr>
-          <Th style={dataCellStyle}>-</Th>
-          <Th style={dataCellStyle}>Subtraction</Th>
-          <Th style={dataCellStyle}>2 - 2</Th>
-          <Th style={dataCellStyle}>0</Th>
-        </Tr>
-        <Tr>
-          <Th style={dataCellStyle}>*</Th>
-          <Th style={dataCellStyle}>Multiplication</Th>
-          <Th style={dataCellStyle}>3 * 3</Th>
-          <Th style={dataCellStyle}>9</Th>
-        </Tr>
-        <Tr>
-          <Th style={dataCellStyle}>/</Th>
-          <Th style={dataCellStyle}>Division</Th>
-          <Th style={dataCellStyle}>4 / 4</Th>
-          <Th style={dataCellStyle}>1</Th>
-        </Tr>
-        <Tr>
-          <Th style={dataCellStyle}>&gt;</Th>
-          <Th style={dataCellStyle}>Greater Than</Th>
-          <Th style={dataCellStyle}>5 &gt; 5</Th>
-          <Th style={dataCellStyle}>false</Th>
-        </Tr>
-        <Tr>
-          <Th style={dataCellStyle}>&lt;</Th>
-          <Th style={dataCellStyle}>Less Than</Th>
-          <Th style={dataCellStyle}>5 &lt; 6</Th>
-          <Th style={dataCellStyle}>true</Th>
-        </Tr>
-        <Tr>
-          <Th style={dataCellStyle}>==</Th>
-          <Th style={dataCellStyle}>Equal To</Th>
-          <Th style={dataCellStyle}>7 == 7</Th>
-          <Th style={dataCellStyle}>true</Th>
-        </Tr>
-        <Tr>
-          <Th style={dataCellStyle}>!=</Th>
-          <Th style={dataCellStyle}>Not Equal To</Th>
-          <Th style={dataCellStyle}>8 != 8</Th>
-          <Th style={dataCellStyle}>false</Th>
-        </Tr>
-      </Tbody>
-    </Table>
-    <ImageCaption>
-      For a more comprehensive list, you can visit the following{' '}
-      <Link
-        target="_blank"
-        href="https://www.w3schools.com/jsref/jsref_operators.asp"
-      >
-        link
-        <ExternalLinkIcon mx="2px" />
-      </Link>
-      .
-    </ImageCaption>
-  </TableContainer>
-)
+export const VersionControlCommandLineTable = () => {
+  const VCCLTEntry = ({ command, usage, example }) => (
+    <Tr>
+      <TableIC>{command}</TableIC>
+      <Th style={dataCellStyle}>{usage}</Th>
+      <TableIC>{example}</TableIC>
+    </Tr>
+  )
+  return (
+    <TableContainer mt={4}>
+      <Table mb={2}>
+        <Thead>
+          <Tr>
+            <Th style={headerCellStyle}>Command</Th>
+            <Th style={headerCellStyle}>Usage</Th>
+            <Th style={headerCellStyle}>Example</Th>
+          </Tr>
+        </Thead>
+        <Tbody>
+          <VCCLTEntry
+            command="cd x"
+            usage="Change Directory"
+            example="cd dir"
+          />
+          <VCCLTEntry
+            command="cd .."
+            usage="Parent Directory"
+            example="cd .."
+          />
+          <VCCLTEntry
+            command="mkdir x"
+            usage="Make Directory"
+            example="mkdir new_dir"
+          />
+          <VCCLTEntry
+            command="touch x"
+            usage="Create New File"
+            example="touch ex.js"
+          />
+          <VCCLTEntry
+            command="code x"
+            usage="Open File in VS Code"
+            example="code ex.js"
+          />
+          <VCCLTEntry command="ls" usage="List Contents" example="ls" />
+          <VCCLTEntry
+            command="man x"
+            usage="Command Manual"
+            example="man mkdir"
+          />
+          <VCCLTEntry
+            command="pwd"
+            usage="Path to Current Directory"
+            example="pwd"
+          />
+        </Tbody>
+      </Table>
+      <TableCaptionLink link="https://inst.eecs.berkeley.edu/~cs61b/fa13/ta-materials/unix-concise-ref.pdf" />
+    </TableContainer>
+  )
+}
 
-export const CommandLineTable = () => (
-  <TableContainer mt={4}>
-    <Table mb={2}>
-      <Thead>
-        <Tr>
-          <Th style={headerCellStyle}>Command</Th>
-          <Th style={headerCellStyle}>Usage</Th>
-          <Th style={headerCellStyle}>Example</Th>
-        </Tr>
-      </Thead>
-      <Tbody>
-        <Tr>
-          <TableIC>cd x</TableIC>
-          <Th style={dataCellStyle}>Change Directory</Th>
-          <TableIC>cd dir</TableIC>
-        </Tr>
-        <Tr>
-          <TableIC>cd ..</TableIC>
-          <Th style={dataCellStyle}>Parent Directory</Th>
-          <TableIC>cd ..</TableIC>
-        </Tr>
-        <Tr>
-          <TableIC>mkdir x</TableIC>
-          <Th style={dataCellStyle}>Make Directory</Th>
-          <TableIC>mkdir new_dir</TableIC>
-        </Tr>
-        <Tr>
-          <TableIC>touch x</TableIC>
-          <Th style={dataCellStyle}>Create New File</Th>
-          <TableIC>touch ex.js</TableIC>
-        </Tr>
-        <Tr>
-          <TableIC>code x</TableIC>
-          <Th style={dataCellStyle}>Open File in VS Code</Th>
-          <TableIC>code ex.js</TableIC>
-        </Tr>
-        <Tr>
-          <TableIC>ls</TableIC>
-          <Th style={dataCellStyle}>List Contents</Th>
-          <TableIC>ls</TableIC>
-        </Tr>
-        <Tr>
-          <TableIC>man x</TableIC>
-          <Th style={dataCellStyle}>Command Manual</Th>
-          <TableIC>man mkdir</TableIC>
-        </Tr>
-        <Tr>
-          <TableIC>pwd</TableIC>
-          <Th style={dataCellStyle}>Path to Current Directory</Th>
-          <TableIC>pwd</TableIC>
-        </Tr>
-      </Tbody>
-    </Table>
-    <ImageCaption>
-      For a more comprehensive list, you can visit the following{' '}
-      <Link
-        target="_blank"
-        href="https://inst.eecs.berkeley.edu/~cs61b/fa13/ta-materials/unix-concise-ref.pdf"
-      >
-        link
-        <ExternalLinkIcon mx="2px" />
-      </Link>
-      .
-    </ImageCaption>
-  </TableContainer>
-)
+export const PythonOperatorsTable = () => {
+  return (
+    <TableContainer mt={4}>
+      <Table mb={2}>
+        <Thead>
+          <OperatorTableHeading />
+        </Thead>
+        <Tbody>
+          <OperatorTableEntry
+            operator="+"
+            meaning="Addition"
+            example="1 + 1"
+            result="2"
+          />
+          <OperatorTableEntry
+            operator="-"
+            meaning="Subtraction"
+            example="2 - 2"
+            result="0"
+          />
+          <OperatorTableEntry
+            operator="*"
+            meaning="Mutliplication"
+            example="3 * 3"
+            result="9"
+          />
+          <OperatorTableEntry
+            operator="/"
+            meaning="Division"
+            example="4 / 4"
+            result="1"
+          />
+          <OperatorTableEntry
+            operator="and"
+            meaning="True if both are True"
+            example="True and True"
+            result="True"
+          />
+          <OperatorTableEntry
+            operator="or"
+            meaning="True if either are True"
+            example="True or False"
+            result="True"
+          />
+          <OperatorTableEntry
+            operator="not"
+            meaning="Opposite Boolean value"
+            example="not True"
+            result="False"
+          />
+        </Tbody>
+      </Table>
+      <TableCaptionLink link="https://www.w3schools.com/python/python_operators.asp" />
+    </TableContainer>
+  )
+}

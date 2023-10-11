@@ -9,8 +9,8 @@ import {
   Title,
   CodeBox,
   IC,
-  DataTypesTable,
-  OperatorTable,
+  JavaScriptDataTypesTable,
+  JavaScriptOperatorTable,
   PostImage,
   TableOfContents
 } from '../../../components/posts'
@@ -453,7 +453,7 @@ const Work = () => (
         operations you can perform on them. Below are some examples of data
         types:
       </P>
-      <DataTypesTable />
+      <JavaScriptDataTypesTable />
 
       <PostSmallHeading>Operators</PostSmallHeading>
       <P>
@@ -463,7 +463,7 @@ const Work = () => (
         In JavaScript, and in the majority of programming languages, there are
         comparison operators. Here are a few common operators in JavaScript:
       </P>
-      <OperatorTable />
+      <JavaScriptOperatorTable />
 
       <PostSmallHeading>Conditional Statements</PostSmallHeading>
       <P>
