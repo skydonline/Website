@@ -97,6 +97,21 @@ print(name) # prints value of the name variable
 print(num1 + num2) # prints concatenation of both nums
 print(int(num1) + int(num2)) # prints addition of both nums`
 
+const conditionalCode = `x = 10
+y = 9
+
+if x > y:
+    # this executes since x > y
+    print("x is greater than y")
+elif x < y:
+    # this doesn't execute
+    print("x is less than y")
+else:
+    # this doesn't execute
+    print("x is equal to y")`
+
+const iterativeCode = ``
+
 const title = 'Programming In Python'
 
 const Work = () => (
@@ -122,6 +137,7 @@ const Work = () => (
         <TableOfContents title="Type Casting" />
         <TableOfContents title="Input/Output" />
         <TableOfContents title="Operators" />
+        <TableOfContents title="Control Flow" />
       </List>
 
       <PostBigHeading>Introduction:</PostBigHeading>
@@ -242,12 +258,38 @@ const Work = () => (
         Math operators are just like the ones found in elementary school math:{' '}
         <B>addition, subtraction, multiplication, division</B>, etc. Logical
         operators are used to evaluate if a condition is <IC>True</IC> or{' '}
-        <IC>False</IC>. A common use case for logical operators is to control
-        the flow of the program; for example, whether or not to execute this
-        block of code. Below is a table of the most frequently used math and
-        logical operators in Python, along with an example.
+        <IC>False</IC>. Logical operators are used to control the flow of the
+        program; for example, whether or not to execute this block of code.
+        Below is a table of the most frequently used math and logical operators
+        in Python, along with an example.
       </P>
       <PythonOperatorsTable />
+
+      <PostSmallHeading>Control Flow</PostSmallHeading>
+      <P>
+        Control flow refers to how code in a program are executed. Different
+        decisions in the program need to be made, which ultimately changes how
+        the program performs. The 2 different types of control flow are
+        conditional and iterative. Some examples of a conditional statement is{' '}
+        <IC>if</IC>, <IC>elif</IC> (else if), <IC>else</IC>, etc. Some examples
+        of iterative control flow, mostly referring to loops, are the{' '}
+        <IC>for</IC> and <IC>while</IC> loop.
+      </P>
+      <P>
+        <IC>if</IC> checks if the condition is True, and then performs the
+        following code block. <IC>elif</IC> (also known as &quot;else if&quot;
+        in other languages) executes if it is True and the previous statements
+        were False. <IC>else</IC> is the catch-all statement, and executes if
+        all previous conditions were False.
+      </P>
+      <CodeBox language="python">{conditionalCode}</CodeBox>
+      <P>
+        The <IC>for</IC> loop checks if a condition is met, and then
+        continuously runs as long as the condition is met. The <IC>while</IC>{' '}
+        loop executes a block of code repeatedly for an unknown number of times
+        until the condition is no longer met.
+      </P>
+      <CodeBox language="python">{iterativeCode}</CodeBox>
     </Container>
   </Layout>
 )

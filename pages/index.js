@@ -89,7 +89,7 @@ const Page = () => {
 
           <Box mt="4">
             <Paragraph>
-              Other than coding, I throughly enjoy swimming, going to the gym,
+              Other than coding, I thoroughly enjoy swimming, going to the gym,
               hanging out with friends and family, or learning on the internet.
               I like to document my learning in the posts section of this
               website, which you can find below.
