@@ -102,6 +102,7 @@ y = 9
 
 if x > y:
     # this executes since x > y
+    # nothing else will execute since this has already been executed
     print("x is greater than y")
 elif x < y:
     # this doesn't execute
@@ -110,7 +111,35 @@ else:
     # this doesn't execute
     print("x is equal to y")`
 
-const iterativeCode = ``
+const iterativeCode = `# for loop
+for i in range(0,3):
+    print(i)
+# prints 0, 1, 2
+
+# while loop
+j = 0
+while j != 3:
+    print(j)
+    j += 1
+# breaks when j == 3
+# prints 0, 1, 2`
+
+const matchCode = `status = 200
+match status:
+    case 200 | 201:
+        # executes if status == 200 or status == 201
+        # is executed since status == 200
+        print("Success")
+    case 404:
+        # doesn't execute since status == 200 and an execution already occurred
+        print("Not found")
+    case 500:
+        # doesn't execute since status == 200 and an execution already occurred
+        print("Server Error")
+    case _:
+        # executes if all above conditions are false
+        # equivalent to "else"
+        print("Unknown")`
 
 const title = 'Programming In Python'
 
@@ -290,6 +319,16 @@ const Work = () => (
         until the condition is no longer met.
       </P>
       <CodeBox language="python">{iterativeCode}</CodeBox>
+      <P>
+        The <IC>match</IC> statement is a more clean and concise way to check
+        multiple conditions. Think of it as an <IC>if</IC>, <IC>elif</IC>, and{' '}
+        <IC>else</IC> statements, just using <IC>match</IC> and <IC>case</IC>.{' '}
+        <IC>case</IC> can be used to represent the<IC>if</IC>, <IC>elif</IC> and{' '}
+        <IC>else</IC> statements. Following the <IC>case</IC> is the condition,
+        and underneath is the block of code that is executed if it evaluates to
+        true. It is best visualized, so see the example below.
+      </P>
+      <CodeBox language="python">{matchCode}</CodeBox>
     </Container>
   </Layout>
 )

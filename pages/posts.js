@@ -32,7 +32,7 @@ const Posts = () => {
               thumbnail={metaBackEndDeveloper}
               title="Meta Back-End Developer Specialization"
             >
-              React, React Native, JavaScript
+              Python, SQL, REST APIs, JavaScript
             </PostGridItem>
           </Section>
         </SimpleGrid>

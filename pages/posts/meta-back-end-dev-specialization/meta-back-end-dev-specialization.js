@@ -43,9 +43,7 @@ const Work = () => (
 
         <ListItem>
           <Meta>Skills</Meta>
-          <span>
-            Python, MySQL, APIs, JavaScript, Web Development, Version Control
-          </span>
+          <span>Python, SQL, REST APIs, JavaScript, Linux</span>
         </ListItem>
       </List>
 
