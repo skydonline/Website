@@ -141,6 +141,26 @@ match status:
         # equivalent to "else"
         print("Unknown")`
 
+const loopControlCode = `# break
+for i in range(10):
+    if i == 2:
+        break # breaks out of for loop if i is 2
+  
+# continue
+# skips print statement when i == 1, doesn't print anything
+for i in range(3):
+    if i == 1:
+        continue
+    print("i is" + i)
+    
+# pass
+# something is required below the if statement
+for i in range(7):
+    if i == 0:
+        pass
+    else:
+        print("i is not 0")`
+
 const title = 'Programming In Python'
 
 const Work = () => (
@@ -316,7 +336,10 @@ const Work = () => (
         The <IC>for</IC> loop checks if a condition is met, and then
         continuously runs as long as the condition is met. The <IC>while</IC>{' '}
         loop executes a block of code repeatedly for an unknown number of times
-        until the condition is no longer met.
+        until the condition is no longer met. It is important to note that in a{' '}
+        <IC>while</IC> loop, there needs to be something within the loop that
+        can make the condition evaluate to false; otherwise, you are left with
+        an infinite loop.
       </P>
       <CodeBox language="python">{iterativeCode}</CodeBox>
       <P>
@@ -329,6 +352,19 @@ const Work = () => (
         true. It is best visualized, so see the example below.
       </P>
       <CodeBox language="python">{matchCode}</CodeBox>
+
+      <P>
+        Loop control statements change the normal execution flow within the
+        loop. <IC>break</IC> stops the loop entirely, essentially &quot;breaking
+        out&quot; of the loop. <IC>continue</IC> skips the rest of the code in
+        the current iteration of the loop, but does not break out of the whole
+        loop. For example, if you were on the first iteration, there was a{' '}
+        <IC>continue</IC> statement, it would skip over the remaining code for
+        the first iteration, but then continue on with the next iteration.{' '}
+        <IC>pass</IC> performs no operation, so it is used when there is no
+        action but syntactically, there needs to be code there.
+      </P>
+      <CodeBox language="python">{loopControlCode}</CodeBox>
     </Container>
   </Layout>
 )
