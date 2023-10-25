@@ -161,6 +161,13 @@ for i in range(7):
     else:
         print("i is not 0")`
 
+const functionsExampleCode = `# sample function returns the sum of 2 numbers
+def add(x, y):
+    return x + y
+
+print(add(4, 5)) # prints 9
+print(add(7, 1)) # prints 10`
+
 const title = 'Programming In Python'
 
 const Work = () => (
@@ -365,6 +372,19 @@ const Work = () => (
         action but syntactically, there needs to be code there.
       </P>
       <CodeBox language="python">{loopControlCode}</CodeBox>
+
+      <PostSmallHeading>Functions</PostSmallHeading>
+      <P>
+        A best practice in coding is DRY; <B>Don&apos;t Repeat Yourself</B>.
+        This means creating clean code that has little redundancy. Functions
+        enable for code reuse; you can call the function as many times as
+        you&apos;d like. It is defined using the <IC>def</IC> keyword, followed
+        by the function name of your choice. Just ensure your function name is
+        not any Python keyword. Followed by the name is its arguments enclosed
+        in parentheses, which can be anything upon function call. Then after a
+        colon is the actual code the function performs.
+      </P>
+      <CodeBox language="python">{functionsExampleCode}</CodeBox>
     </Container>
   </Layout>
 )
