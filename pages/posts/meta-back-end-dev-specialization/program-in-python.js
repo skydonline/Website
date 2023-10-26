@@ -168,6 +168,16 @@ def add(x, y):
 print(add(4, 5)) # prints 9
 print(add(7, 1)) # prints 10`
 
+const dataStructuresCode = `# lists
+list1 = [1, "any type", True]
+
+list1.pop() # removes True from the list
+print(list1) # [1, "any type"]
+list1.pop(0) # removes 1 from the list
+print(list1) # ["any type"]
+list1.append(18)
+print(list1) # ["any type", 18]`
+
 const title = 'Programming In Python'
 
 const Work = () => (
@@ -385,6 +395,29 @@ const Work = () => (
         colon is the actual code the function performs.
       </P>
       <CodeBox language="python">{functionsExampleCode}</CodeBox>
+
+      <PostSmallHeading>Data Structures</PostSmallHeading>
+      <P>
+        Data structures are essential to any programming language. There are
+        built-in and user-defined data structures that the programmer can
+        access. Some built-in data structures in Python include lists,
+        dictionaries, tuples, sets. User-defined data structures are ones that
+        the programmer can create, that are not provided by the language. This
+        can be stacks, trees, linked lists, graphs, etc.
+      </P>
+
+      <P>
+        Lists are a dynamic array of elements, which can be any data type, with
+        each item separated by a comma. Lists are 0-indexed, meaning the first
+        index is 0, the second index is 1, and so on. The * operator can be used
+        to unpack lists, meaning you can spread the elements out. Lists have
+        numerous methods that can be used; <IC>pop()</IC>, <IC>append()</IC>,
+        and many more. <IC>pop(x)</IC> returns and removes the x-th indexed
+        element in the list, and a no paramter function call defaults to the
+        last element. <IC>append(x)</IC> adds the element x to the end of the
+        list.
+      </P>
+      <CodeBox language="python">{dataStructuresCode}</CodeBox>
     </Container>
   </Layout>
 )
