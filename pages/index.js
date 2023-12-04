@@ -109,20 +109,24 @@ const Page = () => {
             Experience
           </Heading>
           <BioItem
-            title="Web Developer at Auranova Inc."
+            title="Web Developer @ Auranova Inc."
             date="Jul'23 - Aug'23"
           />
           <BioItem
-            title="Google Developer Student Clubs Open Source Team"
+            title="Open-Source Developer @ Google Developer Student Clubs"
+            date="Sep'23 - Present"
+          />
+          <BioItem
+            title="Software Engineer @ McMaster AI"
             date="Sep'23 - Present"
           />
           <BioItem title="DeltaHacks Executive Team" date="Aug'23 - Present" />
           <BioItem
-            title="Lifeguard at McMaster University"
+            title="Lifeguard @ McMaster University"
             date="May'23 - Present"
           />
           <BioItem
-            title="Tutor at McMaster Science Society"
+            title="Tutor @ McMaster Science Society"
             date="Dec'22 - Aug'23"
           />
         </Section>
