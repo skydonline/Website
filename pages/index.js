@@ -64,13 +64,13 @@ const Page = () => {
             About Me
           </Heading>
           <Paragraph>
-            Welcome! My name is Sky, and I&apos;m a Computer Science student
-            enrolled at McMaster University. I&apos;ve had a knack for all
-            things computers, ever since I was young, building little Arduino
-            projects. Through my long 10 year career as a competitive swimmer, I
-            know what it means to be dedicated, hard-working and manage time
-            well. I now apply those same skills to my early career as a software
-            engineer. You can see my projects below!{' '}
+            Welcome! My name is Sky, and I&apos;m a Computer Science co-op
+            student enrolled at McMaster University. I&apos;ve had a knack for
+            all things computers, ever since I was young, building little
+            Arduino projects. Through my long 10 year career as a competitive
+            swimmer, I know what it means to be dedicated, hard-working and
+            manage time well. I now apply those same skills to my early career
+            as a software engineer. You can see my projects below!{' '}
             {/* Adding links to paragraph
             
             <NextLink passHref href="/works/TEMPWORKS" scroll={false}>

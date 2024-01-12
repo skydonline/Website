@@ -11,8 +11,8 @@ const Work = () => (
         Social Media Network <Badge>July 2023</Badge>
       </Title>
       <P>
-        A social media network, similar to Instagram, where people can share,
-        interact, and engage with other users.
+        A mock social media network, where people can share, interact, and
+        engage with other users.
       </P>
       <List ml={4} my={4}>
         <ListItem>

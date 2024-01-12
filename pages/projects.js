@@ -35,7 +35,7 @@ const Projects = () => {
           </Section>
           <Section>
             <WorkGridItem id="network" thumbnail={network} title="Network">
-              Developed a social media network, similar to Instagram.
+              Developed a mock social media network.
             </WorkGridItem>
           </Section>
         </SimpleGrid>

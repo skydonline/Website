@@ -178,6 +178,23 @@ print(list1) # ["any type"]
 list1.append(18)
 print(list1) # ["any type", 18]`
 
+const argsCode = `def ex1(*args):
+    total = 0
+    for x in args:
+        total += x
+    return total
+
+print(ex1([1,2,3])) # prints 6
+
+def ex2(**kwargs):
+    total = 0
+    for k, v in kwargs.items():
+        total += v
+    return round(total, 2)
+
+print(ex2(eggs=5.99, bread=2.99, smoothie=3.97)) # prints 12.95
+`
+
 const title = 'Programming In Python'
 
 const Work = () => (
@@ -204,6 +221,9 @@ const Work = () => (
         <TableOfContents title="Input/Output" />
         <TableOfContents title="Operators" />
         <TableOfContents title="Control Flow" />
+        <TableOfContents title="Functions" />
+        <TableOfContents title="Data Structures" />
+        <TableOfContents title="Args & Kwargs" />
       </List>
 
       <PostBigHeading>Introduction:</PostBigHeading>
@@ -418,6 +438,14 @@ const Work = () => (
         list.
       </P>
       <CodeBox language="python">{dataStructuresCode}</CodeBox>
+
+      <PostSmallHeading>Args & Kwargs</PostSmallHeading>
+      <P>
+        Args & kwargs are used to store a variable number of arguments in the
+        function header. This can be denoted as <IC>*args</IC> and{' '}
+        <IC>**kwargs</IC> respectively.
+      </P>
+      <CodeBox language="python">{argsCode}</CodeBox>
     </Container>
   </Layout>
 )
