@@ -164,7 +164,7 @@ const Page = () => {
               skyd.online
             </SocialListItem>
           </List>
-
+          {/*
           <Heading as="h3" variant="section-title">
             Contact
           </Heading>
@@ -182,7 +182,9 @@ const Page = () => {
             >
               Email
             </Button>
+
           </Box>
+          */}
         </Section>
       </Container>
     </Layout>
