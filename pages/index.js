@@ -109,8 +109,8 @@ const Page = () => {
             Experience
           </Heading>
           <BioItem
-            title="Web Developer @ Auranova Inc."
-            date="Jul'23 - Aug'23"
+            title="Software Developer @ McMaster Interdisciplinary Satellite Team"
+            date="Feb'24 - Present"
           />
           <BioItem
             title="Open-Source Developer @ Google Developer Student Clubs"
