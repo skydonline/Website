@@ -113,11 +113,11 @@ const Page = () => {
             date="Sep'24 - Present"
           />
           <BioItem
-            title="Software Developer @ McMaster Interdisciplinary Satellite Team"
+            title="Software Developer @ McMaster Satellite Team"
             date="Feb'24 - Present"
           />
           <BioItem
-            title="Open-Source Developer @ Google Developer Student Clubs"
+            title="Software Developer @ Google Developer Student Clubs"
             date="Sep'23 - Present"
           />
           <BioItem
@@ -126,7 +126,7 @@ const Page = () => {
           />
           <BioItem title="DeltaHacks Executive Team" date="Aug'23 - Present" />
           <BioItem
-            title="Tutor @ McMaster Science Society"
+            title="Student Tutor @ McMaster Science Society"
             date="Dec'22 - Aug'23"
           />
         </Section>
