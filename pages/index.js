@@ -118,11 +118,11 @@ const Page = () => {
           />
           <BioItem
             title="Software Developer @ Google Developer Student Clubs"
-            date="Sep'23 - Present"
+            date="Sep'23 - Sep'24"
           />
           <BioItem
             title="Software Engineer @ McMaster AI"
-            date="Sep'23 - Present"
+            date="Sep'23 - Sep'24"
           />
           <BioItem title="DeltaHacks Executive Team" date="Aug'23 - Present" />
           <BioItem
