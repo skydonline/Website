@@ -18,7 +18,23 @@ import {
   IoLogoLinkedin,
   IoLogoYoutube
 } from 'react-icons/io5'
-import { BioItem, SocialListItem } from '../components/home'
+import {
+  BiLogoPython,
+  BiLogoJavascript,
+  BiLogoTypescript,
+  BiLogoJava,
+  BiLogoHtml5,
+  BiLogoCss3,
+  BiLogoReact,
+  BiLogoDjango,
+  BiLogoFlask,
+  BiLogoDocker,
+  BiLogoGit,
+  BiLogoNodejs,
+  BiLogoMongodb,
+  BiLogoGithub
+} from 'react-icons/bi'
+import { BioItem, SocialListItem, Tech } from '../components/home'
 
 const Page = () => {
   return (
@@ -116,6 +132,7 @@ const Page = () => {
             title="Software Developer @ McMaster Satellite Team"
             date="Feb'24 - Present"
           />
+          <BioItem title="DeltaHacks Executive Team" date="Aug'23 - Present" />
           <BioItem
             title="Software Developer @ Google Developer Student Clubs"
             date="Sep'23 - Sep'24"
@@ -124,7 +141,6 @@ const Page = () => {
             title="Software Engineer @ McMaster AI"
             date="Sep'23 - Sep'24"
           />
-          <BioItem title="DeltaHacks Executive Team" date="Aug'23 - Present" />
           <BioItem
             title="Student Tutor @ McMaster Science Society"
             date="Dec'22 - Aug'23"
@@ -132,6 +148,26 @@ const Page = () => {
         </Section>
 
         <Section delay={0.3}>
+          <Heading as="h3" variant="section-title">
+            Technologies
+          </Heading>
+          <Tech name="Python" icon={BiLogoPython} />
+          <Tech name="JavaScript" icon={BiLogoJavascript} />
+          <Tech name="TypeScript" icon={BiLogoTypescript} />
+          <Tech name="React" icon={BiLogoReact} />
+          <Tech name="Node.js" icon={BiLogoNodejs} />
+          <Tech name="Git" icon={BiLogoGit} />
+          <Tech name="GitHub" icon={BiLogoGithub} />
+          <Tech name="Django" icon={BiLogoDjango} />
+          <Tech name="Flask" icon={BiLogoFlask} />
+          <Tech name="Docker" icon={BiLogoDocker} />
+          <Tech name="MongoDB" icon={BiLogoMongodb} />
+          <Tech name="Java" icon={BiLogoJava} />
+          <Tech name="HTML" icon={BiLogoHtml5} />
+          <Tech name="CSS" icon={BiLogoCss3} />
+        </Section>
+
+        <Section delay={0.4}>
           <Heading as="h3" variant="section-title">
             Socials
           </Heading>
@@ -151,7 +187,7 @@ const Page = () => {
             </SocialListItem>
 
             <SocialListItem
-              link="https://www.instagram.com/skyd_2004/"
+              link="https://www.instagram.com/sky.deng_"
               icon={IoLogoInstagram}
             >
               @skyd_2004
