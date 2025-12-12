@@ -125,7 +125,11 @@ const Page = () => {
             Experience
           </Heading>
           <BioItem
-            title="Test Automation Developer @ LogiSense"
+            title="Software Engineer Intern @ HubSpot"
+            date="Jan'26 - Apr'26"
+          />
+          <BioItem
+            title="Test Software Engineer Intern @ LogiSense"
             date="May'25 - Dec'25"
           />
           <BioItem
