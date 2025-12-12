@@ -140,7 +140,7 @@ const Page = () => {
             title="Software Developer @ McMaster Satellite Team"
             date="Feb'24 - Apr'25"
           />
-          <BioItem title="DeltaHacks Executive Team" date="Aug'23 - Present" />
+          <BioItem title="DeltaHacks Executive Team" date="Aug'23 - Sep'25" />
           <BioItem
             title="Software Developer @ Google Developer Student Clubs"
             date="Sep'23 - Sep'24"
@@ -148,10 +148,6 @@ const Page = () => {
           <BioItem
             title="Software Engineer @ McMaster AI"
             date="Sep'23 - Sep'24"
-          />
-          <BioItem
-            title="Student Tutor @ McMaster Science Society"
-            date="Dec'22 - Aug'23"
           />
         </Section>
 
