@@ -4,7 +4,6 @@ import { Box, Container } from '@chakra-ui/react'
 import VoxelLaptopLoader from '../voxel-laptop-loader'
 import dynamic from 'next/dynamic'
 import Footer from '../footer'
-import Script from 'next/script'
 import BackToTopButton from '../back-to-top-button'
 import { useEffect } from 'react'
 
