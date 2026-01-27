@@ -11,9 +11,9 @@ import Section from '../components/section'
 import Layout from '../components/layouts/article'
 
 const Valentines = () => {
-  const [noCount, setNoCount] = useState(0)
+  const [noCount, setNoCount] = useState(1)
 
-  const yesSize = Math.min(10 + noCount * 2, 48)
+  const yesSize = Math.min(6 + noCount * 2, 48)
 
   const handleNoClick = () => {
     setNoCount(noCount + 2)
@@ -88,7 +88,7 @@ const Valentines = () => {
                   boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)'
                 }}
               >
-                No ({noCount / 2})
+                No ({(noCount - 1) / 2})
               </Box>
             </GridItem>
           </SimpleGrid>
