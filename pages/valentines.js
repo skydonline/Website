@@ -79,6 +79,7 @@ const Valentines = () => {
               borderRadius="md"
               px={6}
               py={3}
+              m={0}
               transition="all 0.2s"
               boxShadow="0 4px 6px rgba(0, 0, 0, 0.1)"
               transform={`scale(${yesScale})`}
@@ -103,6 +104,7 @@ const Valentines = () => {
               borderRadius="md"
               px={6}
               py={3}
+              m={0}
               transition="all 0.2s"
               boxShadow="0 4px 6px rgba(0, 0, 0, 0.1)"
               transform={`scale(${noScale})`}
