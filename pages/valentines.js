@@ -10,6 +10,11 @@ import Section from '../components/section'
 import Layout from '../components/layouts/article'
 import CustomModal from '../components/custom-modal'
 import MemoryLane from '../components/memory-lane'
+import Confetti from '../components/confetti'
+import CountdownTimer from '../components/countdown-timer'
+import FloatingHearts from '../components/floating-hearts'
+import LoveLetters from '../components/love-letters'
+import ValentinesDayAgenda from '../components/valentines-agenda'
 
 const Valentines = () => {
   const [noClicks, setNoClicks] = useState(0)
@@ -17,6 +22,7 @@ const Valentines = () => {
   const [yesScale, setYesScale] = useState(1)
   const [gap, setGap] = useState(24)
   const [noPosition, setNoPosition] = useState({ top: 0, left: 0 })
+  const [showConfetti, setShowConfetti] = useState(false)
   const { isOpen, onOpen, onClose } = useDisclosure()
 
   const maxNoClicks = 4
@@ -63,13 +69,20 @@ const Valentines = () => {
   }
 
   const handleYesClick = () => {
-    onOpen()
+    setShowConfetti(true)
+    const audio = new Audio(
+      'data:audio/wav;base64,UklGRiYAAABXQVZFZm10IBAAAAABAAEAQB8AAAB9AAACABAAZGF0YQIAAAAAAA=='
+    )
+    audio.play().catch(() => {})
+    setTimeout(() => onOpen(), 300)
   }
 
   const currentNoMessage = noButtonMessages[noClicks % maxNoClicks]
 
   return (
     <Layout>
+      <FloatingHearts />
+      <Confetti trigger={showConfetti} />
       <Container>
         <Heading as="h3" fontSize={20} mb={4}>
           Valentines
@@ -78,7 +91,21 @@ const Valentines = () => {
         <Section delay={0.4}>
           <Divider my={6} />
 
+          <CountdownTimer />
+
+          <Divider my={8} />
+
           <MemoryLane />
+
+          <Divider my={8} borderColor="pink.200" />
+
+          <LoveLetters />
+
+          <Divider my={8} borderColor="pink.200" />
+
+          <ValentinesDayAgenda />
+
+          <Divider my={8} borderColor="pink.200" />
 
           <Heading as="h3" fontSize={20} mb={20}>
             Will you be my Valentine? &lt;3
