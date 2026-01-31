@@ -53,42 +53,57 @@ const DEFAULT_MEMORIES = [
   },
   {
     image: '/images/valentines/photo4.jpg',
-    date: 'Cozy Nights',
-    title: 'Quiet Moments',
+    date: 'Dec. 22, 2025',
+    title: 'Matching Rings',
     description:
-      'The simple moments are often the best. Your company is all I ever need.'
+      'Our cute matching rings. A symbol of our connection and commitment.'
     // tags: ['Quality Time', 'Together']
   },
   {
     image: '/images/valentines/photo5.jpg',
-    date: 'Recent',
-    title: 'Us Right Now',
+    date: 'Dec. 29, 2025',
+    title: 'Rug Tufting',
     description:
-      "And here we are. Ready to spend Valentine's Day and every day after with you."
+      'First time trying rug tufting together. Loved making something creative with you.'
     // tags: ['Love', 'Future']
   },
   {
     image: '/images/valentines/photo6.MP4',
-    date: 'Recent',
-    title: 'Us Right Now',
-    description:
-      "And here we are. Ready to spend Valentine's Day and every day after with you."
+    date: 'Jan. 1, 2026',
+    title: 'New Years',
+    description: 'The start of a new year with you.'
     // tags: ['Love', 'Future']
   },
   {
     image: '/images/valentines/photo7.jpg',
-    date: 'Recent',
-    title: 'Us Right Now',
+    date: 'Jan. 3, 2026',
+    title: '1 Month Anniversary',
     description:
-      "And here we are. Ready to spend Valentine's Day and every day after with you."
+      'Celebrating one month together. Every day with you is a blessing.'
     // tags: ['Love', 'Future']
   },
   {
     image: '/images/valentines/photo8.jpg',
-    date: 'Jan 5. 2026',
+    date: 'Jan. 5, 2026',
     title: 'Leaving for Boston',
     description:
-      "And here we are. Ready to spend Valentine's Day and every day after with you."
+      "The day I left for Boston. Even miles apart, you're always in my heart."
+    // tags: ['Love', 'Future']
+  },
+  {
+    image: '/images/valentines/photo9.mp4',
+    date: 'Jan. 10, 2026',
+    title: 'First TikTok',
+    description:
+      'The first TikTok we made together. Had so much fun making it with you.'
+    // tags: ['Love', 'Future']
+  },
+  {
+    image: '/images/valentines/photo10.jpg',
+    date: 'Jan. 23, 2026',
+    title: 'Beautiful Flowers',
+    description:
+      'The beautiful flowers you get every week! To help brighten up your day and make you happy.'
     // tags: ['Love', 'Future']
   }
 ]
