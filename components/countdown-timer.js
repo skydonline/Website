@@ -59,7 +59,7 @@ const CountdownTimer = () => {
   return (
     <VStack spacing={4} my={8}>
       <Text fontSize="lg" fontWeight="bold" color="gray.700">
-        Time until Valentine's Day 💕
+        Time until Valentine&apos;s Day 💕
       </Text>
       <HStack spacing={4} justify="center">
         <TimeBox value={timeLeft.days} label="Days" />

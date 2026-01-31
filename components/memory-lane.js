@@ -30,76 +30,66 @@ const MemoryPlaceholder = ({ title, emoji, bgColor }) => (
 
 const DEFAULT_MEMORIES = [
   {
-    image: '/images/valentines/photo1.HEIC',
-    bgColor: 'purple.400',
-    date: 'First Meeting',
+    image: '/images/valentines/photo1.jpg',
+    date: 'Nov. 23, 2025',
     title: 'The Beginning',
-    description:
-      'Our first moment together. Little did we know this was just the start of something beautiful.',
-    tags: ['2024', 'First']
+    description: 'Our first moment together. A memory I will always cherish.'
+    // tags: ['2024', 'First']
   },
   {
-    image: '/images/valentines/photo2.HEIC',
-    bgColor: 'pink.400',
-    date: 'First Date',
-    title: 'Our First Adventure',
+    image: '/images/valentines/photo2.jpg',
+    date: 'Nov. 25, 2025',
+    title: 'First Flowers',
     description:
-      'Our first date was unforgettable. Every moment with you felt special from the very start.',
-    tags: ['First Date', 'Adventure']
+      'The day I surprised you with flowers. Learned about your love for them.'
+    // tags: ['First Date', 'Adventure']
   },
   {
-    image: '/images/valentines/photo3.HEIC',
-    bgColor: 'yellow.400',
-    date: 'Summer Vibes',
-    title: 'Summer Adventures',
-    description:
-      'Making memories under the sun. You make every moment an adventure worth remembering.',
-    tags: ['Summer', 'Adventure']
+    image: '/images/valentines/photo3.jpg',
+    date: 'Dec. 3, 2025',
+    title: 'Girlfriend Proposal',
+    description: 'That special moment when I asked to be your boyfriend.'
+    // tags: ['Summer', 'Adventure']
   },
   {
-    image: '/images/valentines/photo4.HEIC',
-    bgColor: 'blue.400',
+    image: '/images/valentines/photo4.jpg',
     date: 'Cozy Nights',
     title: 'Quiet Moments',
     description:
-      'The simple moments are often the best. Your company is all I ever need.',
-    tags: ['Quality Time', 'Together']
+      'The simple moments are often the best. Your company is all I ever need.'
+    // tags: ['Quality Time', 'Together']
   },
   {
-    image: '/images/valentines/photo5.HEIC',
-    bgColor: 'red.400',
+    image: '/images/valentines/photo5.jpg',
     date: 'Recent',
     title: 'Us Right Now',
     description:
-      "And here we are. Ready to spend Valentine's Day and every day after with you.",
-    tags: ['Love', 'Future']
+      "And here we are. Ready to spend Valentine's Day and every day after with you."
+    // tags: ['Love', 'Future']
   },
   {
     image: '/images/valentines/photo6.MP4',
-    bgColor: 'red.400',
     date: 'Recent',
     title: 'Us Right Now',
     description:
-      "And here we are. Ready to spend Valentine's Day and every day after with you.",
-    tags: ['Love', 'Future']
+      "And here we are. Ready to spend Valentine's Day and every day after with you."
+    // tags: ['Love', 'Future']
   },
   {
-    image: '/images/valentines/photo7.HEIC',
-    bgColor: 'red.400',
+    image: '/images/valentines/photo7.jpg',
     date: 'Recent',
     title: 'Us Right Now',
     description:
-      "And here we are. Ready to spend Valentine's Day and every day after with you.",
-    tags: ['Love', 'Future']
+      "And here we are. Ready to spend Valentine's Day and every day after with you."
+    // tags: ['Love', 'Future']
   },
   {
-    image: '/images/valentines/photo8.HEIC',
-    bgColor: 'red.400',
-    date: 'Recent',
-    title: 'Us Right Now',
+    image: '/images/valentines/photo8.jpg',
+    date: 'Jan 5. 2026',
+    title: 'Leaving for Boston',
     description:
-      "And here we are. Ready to spend Valentine's Day and every day after with you.",
-    tags: ['Love', 'Future']
+      "And here we are. Ready to spend Valentine's Day and every day after with you."
+    // tags: ['Love', 'Future']
   }
 ]
 

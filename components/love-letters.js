@@ -1,11 +1,4 @@
-import {
-  Box,
-  Text,
-  VStack,
-  useDisclosure,
-  Button,
-  keyframes
-} from '@chakra-ui/react'
+import { Box, Text, VStack, keyframes } from '@chakra-ui/react'
 import { useState } from 'react'
 
 const typewriter = keyframes`

@@ -1,12 +1,4 @@
-import {
-  Box,
-  Heading,
-  VStack,
-  HStack,
-  Text,
-  Icon,
-  useDisclosure
-} from '@chakra-ui/react'
+import { Box, Heading, VStack, HStack, Text } from '@chakra-ui/react'
 import { useState } from 'react'
 
 const ValentinesDayAgenda = () => {
@@ -15,38 +7,38 @@ const ValentinesDayAgenda = () => {
   const activities = [
     {
       id: 1,
-      time: '10:00 AM',
-      title: 'Breakfast in Bed',
-      emoji: '🥐',
-      details: 'Start the day with your favorite breakfast and cuddles'
+      time: '11:00 AM',
+      title: 'Flowers & Gifts',
+      emoji: '💐',
+      details: 'Start the day with flowers and gifts for the lovely girl!'
     },
     {
       id: 2,
       time: '12:00 PM',
-      title: 'Movie Marathon',
-      emoji: '🎬',
-      details: 'Cozy up and watch romantic movies together'
+      title: 'Home Cooked Meal',
+      emoji: '🍱',
+      details: 'Cook a special meal together at home!'
     },
     {
       id: 3,
-      time: '3:00 PM',
-      title: 'Sunset Walk',
-      emoji: '🌅',
-      details: 'Take a romantic walk and enjoy the beautiful scenery'
+      time: '5:45 PM',
+      title: 'Dinner ',
+      emoji: '🍽️',
+      details: 'Enjoy a delicious dinner at Nobu!'
     },
     {
       id: 4,
-      time: '6:00 PM',
-      title: 'Dinner Out',
-      emoji: '🍽️',
-      details: 'Enjoy a delicious dinner at your favorite restaurant'
+      time: '8:00 PM',
+      title: 'Photobooth',
+      emoji: '📸',
+      details: 'Take cute photos together and remember this special day!'
     },
     {
       id: 5,
-      time: '8:00 PM',
-      title: 'Stargazing',
-      emoji: '⭐',
-      details: 'Look at the stars and make a wish together'
+      time: '10:00 PM',
+      title: 'Bar Hop',
+      emoji: '🍸',
+      details: 'Visit bars for drinks and fun!'
     },
     {
       id: 6,
@@ -60,7 +52,7 @@ const ValentinesDayAgenda = () => {
   return (
     <VStack spacing={6} my={12} w="100%">
       <Heading as="h3" fontSize={20} color="red.500">
-        Our Valentine's Day Plan 💝
+        Our Valentine&apos;s Day Plan 💝
       </Heading>
 
       <VStack spacing={3} w="100%">
