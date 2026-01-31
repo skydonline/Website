@@ -143,40 +143,40 @@ const Valentines = () => {
               YES!!!
             </Box>
           </Box>
-
-          <Box
-            position="fixed"
-            top={`${noPosition.top}px`}
-            left={`${noPosition.left}px`}
-            zIndex={9999}
-          >
-            <Box
-              onClick={handleNoClick}
-              backgroundColor="red.500"
-              color="white"
-              fontWeight="bold"
-              borderRadius="md"
-              px={6}
-              py={3}
-              m={0}
-              transition="all 0.2s"
-              boxShadow="0 4px 6px rgba(0, 0, 0, 0.1)"
-              transform={`scale(${noScale})`}
-              transformOrigin="right center"
-              _hover={{
-                cursor: 'pointer',
-                backgroundColor: 'red.600',
-                boxShadow: '0 6px 12px rgba(0, 0, 0, 0.15)'
-              }}
-              _active={{
-                boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)'
-              }}
-            >
-              {currentNoMessage}
-            </Box>
-          </Box>
         </Section>
       </Container>
+
+      <Box
+        position="fixed"
+        top={`${noPosition.top}px`}
+        left={`${noPosition.left}px`}
+        zIndex={9999}
+      >
+        <Box
+          onClick={handleNoClick}
+          backgroundColor="red.500"
+          color="white"
+          fontWeight="bold"
+          borderRadius="md"
+          px={6}
+          py={3}
+          m={0}
+          transition="all 0.2s"
+          boxShadow="0 4px 6px rgba(0, 0, 0, 0.1)"
+          transform={`scale(${noScale})`}
+          transformOrigin="right center"
+          _hover={{
+            cursor: 'pointer',
+            backgroundColor: 'red.600',
+            boxShadow: '0 6px 12px rgba(0, 0, 0, 0.15)'
+          }}
+          _active={{
+            boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)'
+          }}
+        >
+          {currentNoMessage}
+        </Box>
+      </Box>
 
       <CustomModal
         title="Happy Valentines Baby!!! 💕"

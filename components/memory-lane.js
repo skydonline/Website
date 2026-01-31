@@ -33,7 +33,7 @@ const DEFAULT_MEMORIES = [
     image: '/images/valentines/photo1.jpg',
     date: 'Nov. 23, 2025',
     title: 'The Beginning',
-    description: 'Our first moment together. A memory I will always cherish.'
+    description: 'Our first moment together. A memory I will always cherish!'
     // tags: ['2024', 'First']
   },
   {
@@ -41,14 +41,15 @@ const DEFAULT_MEMORIES = [
     date: 'Nov. 25, 2025',
     title: 'First Flowers',
     description:
-      'The day I surprised you with flowers. Learned about your love for them.'
+      'The day I surprised you with flowers. Learned about your love for them!'
     // tags: ['First Date', 'Adventure']
   },
   {
     image: '/images/valentines/photo3.jpg',
     date: 'Dec. 3, 2025',
     title: 'Girlfriend Proposal',
-    description: 'That special moment when I asked to be your boyfriend.'
+    description:
+      'That special moment when I asked if I could be your boyfriend!'
     // tags: ['Summer', 'Adventure']
   },
   {
@@ -56,7 +57,7 @@ const DEFAULT_MEMORIES = [
     date: 'Dec. 22, 2025',
     title: 'Matching Rings',
     description:
-      'Our cute matching rings. A symbol of our connection and commitment.'
+      'Our cute matching rings. A symbol of our connection and commitment!'
     // tags: ['Quality Time', 'Together']
   },
   {
@@ -64,14 +65,14 @@ const DEFAULT_MEMORIES = [
     date: 'Dec. 29, 2025',
     title: 'Rug Tufting',
     description:
-      'First time trying rug tufting together. Loved making something creative with you.'
+      'First time trying rug tufting together. Loved making something creative with you!'
     // tags: ['Love', 'Future']
   },
   {
     image: '/images/valentines/photo6.MP4',
     date: 'Jan. 1, 2026',
     title: 'New Years',
-    description: 'The start of a new year with you.'
+    description: 'The start of a new year with you!'
     // tags: ['Love', 'Future']
   },
   {
@@ -79,7 +80,7 @@ const DEFAULT_MEMORIES = [
     date: 'Jan. 3, 2026',
     title: '1 Month Anniversary',
     description:
-      'Celebrating one month together. Every day with you is a blessing.'
+      'Celebrating one month together. Every day with you is a blessing!'
     // tags: ['Love', 'Future']
   },
   {
@@ -87,7 +88,7 @@ const DEFAULT_MEMORIES = [
     date: 'Jan. 5, 2026',
     title: 'Leaving for Boston',
     description:
-      "The day I left for Boston. Even miles apart, you're always in my heart."
+      "The day I left for Boston. Even miles apart, you're always in my heart!"
     // tags: ['Love', 'Future']
   },
   {
@@ -95,15 +96,23 @@ const DEFAULT_MEMORIES = [
     date: 'Jan. 10, 2026',
     title: 'First TikTok',
     description:
-      'The first TikTok we made together. Had so much fun making it with you.'
+      'The first TikTok we made together. Had so much fun making it with you!'
     // tags: ['Love', 'Future']
   },
   {
     image: '/images/valentines/photo10.jpg',
+    date: 'Jan. 18, 2026',
+    title: 'Board Games',
+    description:
+      'The first time we played board games on Board Game Arena. So much fun!'
+    // tags: ['Love', 'Future']
+  },
+  {
+    image: '/images/valentines/photo11.jpg',
     date: 'Jan. 23, 2026',
     title: 'Beautiful Flowers',
     description:
-      'The beautiful flowers you get every week! To help brighten up your day and make you happy.'
+      'The beautiful flowers you get every week. To help brighten up your day and make you happy!'
     // tags: ['Love', 'Future']
   }
 ]
