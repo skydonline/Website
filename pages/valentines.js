@@ -1,13 +1,22 @@
-import { Container, Heading, Divider, Box } from '@chakra-ui/react'
+import {
+  Container,
+  Heading,
+  Divider,
+  Box,
+  useDisclosure
+} from '@chakra-ui/react'
 import { useState } from 'react'
 import Section from '../components/section'
 import Layout from '../components/layouts/article'
+import CustomModal from '../components/custom-modal'
 
 const Valentines = () => {
   const [noClicks, setNoClicks] = useState(0)
   const [noScale, setNoScale] = useState(1)
   const [yesScale, setYesScale] = useState(1)
   const [gap, setGap] = useState(24)
+  const [noPosition, setNoPosition] = useState({ top: 0, left: 0 })
+  const { isOpen, onOpen, onClose } = useDisclosure()
 
   const maxNoClicks = 4
   const minNoScale = 0.65
@@ -15,12 +24,18 @@ const Valentines = () => {
   const baseYesWidth = 100
 
   const noButtonMessages = [
-    'Will you be my Valentine?',
+    'No way!',
     'Are you sure??',
-    'Pookie please',
-    'Pookie PLEASE',
+    'Baby please',
+    'BABY PLEASE',
     "You can't do this to me!"
   ]
+
+  const getRandomPosition = () => {
+    const randomTop = Math.random() * (window.innerHeight - 100)
+    const randomLeft = Math.random() * (window.innerWidth - 150)
+    return { top: randomTop, left: randomLeft }
+  }
 
   const handleNoClick = () => {
     if (noClicks < maxNoClicks) {
@@ -41,11 +56,13 @@ const Valentines = () => {
       }
     }
 
+    // Move button to random position
+    setNoPosition(getRandomPosition())
     setNoClicks(noClicks + 1)
   }
 
   const handleYesClick = () => {
-    alert('Yay! I love you! 💕')
+    onOpen()
   }
 
   const currentNoMessage = noButtonMessages[noClicks % maxNoClicks]
@@ -67,8 +84,8 @@ const Valentines = () => {
           <Box
             display="flex"
             gap={`${gap}px`}
-            mt={8}
             alignItems="center"
+            justifyContent="center"
             flexWrap="wrap"
           >
             <Box
@@ -83,7 +100,7 @@ const Valentines = () => {
               transition="all 0.2s"
               boxShadow="0 4px 6px rgba(0, 0, 0, 0.1)"
               transform={`scale(${yesScale})`}
-              transformOrigin="left center"
+              transformOrigin="center"
               _hover={{
                 cursor: 'pointer',
                 backgroundColor: 'green.600',
@@ -95,7 +112,14 @@ const Valentines = () => {
             >
               YES!!!
             </Box>
+          </Box>
 
+          <Box
+            position="fixed"
+            top={`${noPosition.top}px`}
+            left={`${noPosition.left}px`}
+            zIndex={9999}
+          >
             <Box
               onClick={handleNoClick}
               backgroundColor="red.500"
@@ -123,6 +147,13 @@ const Valentines = () => {
           </Box>
         </Section>
       </Container>
+
+      <CustomModal
+        title="Happy Valentines Baby!!! 💕"
+        message="See you February 14th! 🤍"
+        isOpen={isOpen}
+        onClose={onClose}
+      />
     </Layout>
   )
 }
