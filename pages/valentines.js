@@ -9,6 +9,7 @@ import { useState } from 'react'
 import Section from '../components/section'
 import Layout from '../components/layouts/article'
 import CustomModal from '../components/custom-modal'
+import MemoryLane from '../components/memory-lane'
 
 const Valentines = () => {
   const [noClicks, setNoClicks] = useState(0)
@@ -77,8 +78,10 @@ const Valentines = () => {
         <Section delay={0.4}>
           <Divider my={6} />
 
+          <MemoryLane />
+
           <Heading as="h3" fontSize={20} mb={20}>
-            Hi there baby! Will you be my Valentine? &lt;3
+            Will you be my Valentine? &lt;3
           </Heading>
 
           <Box
