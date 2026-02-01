@@ -99,9 +99,9 @@ const Valentines = () => {
 
           <Divider my={8} borderColor="pink.200" />
 
-          <LoveLetters />
+          {/* <LoveLetters />
 
-          <Divider my={8} borderColor="pink.200" />
+          <Divider my={8} borderColor="pink.200" /> */}
 
           <ValentinesDayAgenda />
 

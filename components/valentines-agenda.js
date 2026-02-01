@@ -21,27 +21,20 @@ const ValentinesDayAgenda = () => {
     },
     {
       id: 3,
-      time: '2:00 PM',
-      title: 'Movie/Shows',
-      emoji: '🎬',
-      details: 'Watch movies or shows we love!'
-    },
-    {
-      id: 4,
       time: '5:45 PM',
       title: 'Dinner',
       emoji: '🍽️',
       details: 'Enjoy a delicious dinner at Nobu!'
     },
     {
-      id: 5,
+      id: 4,
       time: '8:00 PM',
       title: 'Photobooth',
       emoji: '📸',
-      details: 'Take cute photos together and remember this special day!'
+      details: 'Take cute photos together @ Photoism!'
     },
     {
-      id: 6,
+      id: 5,
       time: '10:00 PM',
       title: 'Bar Hop',
       emoji: '🍸',
