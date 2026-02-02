@@ -81,6 +81,15 @@ const Valentines = () => {
 
   return (
     <Layout>
+      <Box
+        position="fixed"
+        top={0}
+        left={0}
+        right={0}
+        bottom={0}
+        background="linear-gradient(135deg, #fff5f7 0%, #ffe0ec 25%, #ffc0d9 50%, #ffb3d9 75%, #fff5f7 100%)"
+        zIndex={-1}
+      />
       <FloatingHearts />
       <Confetti trigger={showConfetti} />
       <Container>
