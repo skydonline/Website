@@ -35,10 +35,10 @@ const ValentinesDayAgenda = () => {
     },
     {
       id: 5,
-      time: '10:00 PM',
-      title: 'Bar Hop',
+      time: '9:45 PM',
+      title: 'Bar',
       emoji: '🍸',
-      details: 'Visit bars for drinks and fun!'
+      details: "Visit Saint John's Tavern\n for drinks and fun!"
     }
   ]
 
