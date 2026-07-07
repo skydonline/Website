@@ -193,20 +193,6 @@ const Page = () => {
             >
               @skydonline
             </SocialListItem>
-
-            <SocialListItem
-              link="https://www.instagram.com/sky.deng_"
-              icon={IoLogoInstagram}
-            >
-              @skyd_2004
-            </SocialListItem>
-
-            <SocialListItem
-              link="https://youtube.com/@skyd.online"
-              icon={IoLogoYoutube}
-            >
-              skyd.online
-            </SocialListItem>
           </List>
           {/*
           <Heading as="h3" variant="section-title">
