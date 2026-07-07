@@ -133,7 +133,7 @@ const Page = () => {
             date="Jan'26 - Apr'26"
           />
           <BioItem
-            title="Test Software Engineer Intern @ LogiSense"
+            title="Software Engineer Intern @ LogiSense"
             date="May'25 - Dec'25"
           />
           <BioItem
